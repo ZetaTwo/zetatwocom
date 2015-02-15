@@ -1,10 +1,8 @@
 # Site settings
 title: Zeta-Two.com
 email: calle.svensson@zeta-two.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: > # Site description
+  My blog about technology, security and life.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://zeta-two.com" # the base hostname & protocol for your site
 twitter_username: zetatwo
@@ -12,5 +10,8 @@ github_username:  ZetaTwo
 
 # Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 encoding: utf-8
+paginate: 5
+exclude: ['Gemfile.lock', 'Gemfile', 'src/']
+#paginate_path: "/blog/page:num/"

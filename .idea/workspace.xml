@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b78f7f30-ac1f-4a90-9105-a6ef45eacc08" name="Default" comment="Added old site to repo for later import.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/news/2015-05-18-site-up.md" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-anger.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-art.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-defeated.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-feeling.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-moments.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-my-broken-heart.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-poison.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-treasure.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-trust.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2005-06-06-where.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-15-glomskan.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-15-karlekshistoria.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-15-left-alone.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-15-showdown.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-15-vandringsrim.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-23-bloggen-oppnad.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-24-huvudet-rejvade-vi-skejtade.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-25-en-drog-till-frankrike-sa-var-de-bara-fem.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-28-tjejmilen-06-crew.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-08-29-calles-lag.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-09-03-malet-ar-natt-eller.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-09-11-2ssk-utbildning-forkylning-fritid.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-09-17-skol-sm.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-09-21-forst-pa-morgonen-sist-pa-kvallen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-09-30-de-som-inte-ar-som-andra-pojkar.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-14-fran-en-vandrares-verklighet-till-en-ravers-fantasy.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-14-pusslet-som-saknar-en-bit.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-aker-pa-semster.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-bildarkivet-klart.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-blogg-photoshoparbeten.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-buggfixar-och-xhtml.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-det-var-ett-tag-sen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-diktarkivet-oppet.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-fade-sidan-uppdaterad.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-fades-hemsida-hos-zeta-two-com.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-grovelsjontrondheim-bilder.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-ikon-och-rss-feed.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-kommentarerna-for-dikterna-lagade.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-lankar-och-mobilgrejs.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-mer-foton.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-ny-layout.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-nya-dikter.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-nya-utseendet.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-nyheterna-fungerar.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-omarbetning-klar.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-profiler.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-profilsidorna-reparerade.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-registrering.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-registreringen-fungerar-igen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-reklam.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-saljes-biljetter-till-bruce-springsteen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-sidan-omgjord.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-sidan-uppdaterad.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-uppdaterad-layout-ny-sida.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-uppdatering.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-utseendet-uppdaterat.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-10-19-utveckling.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-11-01-det-har-med-tjejer-del-1-kompis.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-11-11-lugn-fredag-a-just-det-inte.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-11-20-nykoping-rosvalla-eventcenter.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-11-29-karlek-fuck-you.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-12-08-god-ju.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2006-12-18-fran-sverige-till-korea.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-01-02-forsta-dagen-pa-det-sista-aret.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-01-16-7-days-of-school.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-01-24-ett-liv-en-trad-en-vav.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-01-25-fran-hej-till-hej-hej-hemskt-mycket-hej.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-02-05-tjockisar-bilar-och-fotgangare.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-02-16-calle-med-c.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-04-23-dags-att-ateruppliva-bloggen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-05-09-blogging-on-a-tuesday.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-05-16-argumentet-satt-stenhart-i-krysset.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-05-30-trottdag.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-06-20-nu-var-det-ett-tag-sen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-06-23-tisdag-igen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-07-03-omg-wtf-bif.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-07-16-klara-fardiga-cykla.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-08-28-ingen-forstar-mig.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-09-05-klent-forsok-till-ett-inlagg.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-09-23-darkness-imprisoning-me-all-i-see.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2007-11-17-tomten.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2008-12-21-det-gar-upp-det-gar-ner-den-som-lever-far-se.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2008-12-23-julafton-in-25-24-23.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2008-12-23-zeta-two-com-3-0-antligen-klar.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2008-12-29-julafton-the-aftermath.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-01-14-overgangar.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-02-04-tva-veckor-kvar.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-02-18-london-calling.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-03-02-soundtrack-of-the-week.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-03-08-brief-diary-from-london-part-i.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-03-20-brief-diary-from-london-part-ii.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-03-21-brief-diary-from-stockholm.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-05-18-nytt-bloggsystem.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-05-25-senaste-tiden.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-06-07-42-195m-senare.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-06-07-dikterna-tillbaka-blogg-gamla-nyhter.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-06-07-nya-bilder.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-06-22-dreamhack-summer-2009.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-07-13-graspop-metal-meeting.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-07-16-hem-ljuva-hem.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-07-19-skeppsloggen-dag-0.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-07-20-skeppsloggen-dag-1.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-07-21-skeppsloggen-dag-2.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-07-22-skeppsloggen-dag-3.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-07-23-skeppsloggen-dag-4.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-08-05-gotland-och-gaming.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-08-16-nya-fotografier.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-08-20-skolstart.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-09-04-slutet-pa-sommaren-borjan-pa-hosten.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-09-23-lopning-tv-spel-och-nostalgi.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-10-13-programmeringssida.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-10-18-how.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-10-18-i-would-run-a-100-kilometers.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-10-31-sa-borjar-nasta-aventyr.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-11-07-harwich-%e2%80%93-en-anledning-till-att-lasa-engelska-c.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-11-07-harwich-limerick.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-11-08-gamla-inlaggsbilder-och-nya-harwichbilder.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-11-22-dance-floor.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-11-22-toppenhelg.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-12-04-snabb-update.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-12-06-helgens-citat.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-12-13-batman.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-12-13-falling-apart.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-12-14-bilder-fran-curare.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-12-24-god-jul.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2009-12-24-nytt-utseende.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-01-01-gott-nytt-ar-2.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-01-02-ut-med-2009-in-med-2010-2.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-01-04-uppdateringar.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-01-12-skolstart-och-packad-helg.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-01-13-watch-out-for-the-curve.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-01-21-blogga-pa-bussen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-01-27-blackeberg-blackeberg-blackeberg.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-01-kalashelg-med-mustasch.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-01-langt-inlagg-och-ny-dikt.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-01-would-you-like-that.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-02-ambivalence.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-06-melodifestivalen-2010-deltavling-1.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-07-bort-med-mustaschen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-08-kryssning.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-11-kryssningsbilder.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-11-svacka.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-15-on-a-valentines-day.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-23-konsert-x-2-och-snoaventyr.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-02-26-starcraft-2-beta.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-03-01-dygnande-innan-bradakande.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-03-05-isiga-isiga-are.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-03-05-nytt-programmerinsprojekt.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-03-15-nedgang.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-03-25-jag-lever.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-03-28-pro-gamer.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-04-09-liten-update-for-att-komma-ikapp.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-04-19-fucked-up-och-aterstalld.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-05-09-electronic-sports-league.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-05-28-gaming-till-traning-till-oslo-till-metal.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-06-11-for-vi-har-tagit-studenten.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-06-27-framrotat.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-06-27-sagan.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-06-27-styrka.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-07-05-grattis-malin.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-07-07-sommar-och-sol.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-07-30-rain-rain-go-away-come-again-another-day.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-08-21-gasque-limerickar.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-08-21-oaaandligt-schlem-och-vidrog.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-08-30-limerickar-och-bilder.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-10-04-aj-aj-oj-oj.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-10-20-upphittad-musik.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-10-30-shit-happens.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-11-14-night-wish.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-12-02-bilder-fran-dhw10.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2010-12-02-nu-ar-det-vinter.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-01-11-och-dar-aker-2010-i-papperskorgen.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-01-15-terapi.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-02-12-mitt-i-kaoset.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-03-23-london-och-tentapub.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-11-02-site-rebirth.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-11-10-from-no-skill-to-null-sec-part-1.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-11-10-watch-out-for-the-curve-source-released.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-11-14-project-duck-dev-diary-project-start.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-11-18-project-duck-dev-diary-its-alive.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-12-02-live-size-minesweeper-in-lund.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2011-12-21-current-ideas.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2012-01-17-the-year-the-world-ends.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2012-02-14-article-for-the-force-adventure-games.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2012-04-02-project-easter-egg-starting.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2012-04-03-project-easter-egg-making-progress.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2013-09-15-my-semester-in-lausanne-arrival.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\_posts\2013-09-22-first-week-of-courses.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\about\index.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\pictures\index.md" afterPath="" />
+      <change type="DELETED" beforePath="F:\Dropbox\Projects\ZetaTwoCom\_drafts\old_site\quotes\index.md" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_config.yml" afterPath="$PROJECT_DIR$/_config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_sass/_layout.scss" afterPath="$PROJECT_DIR$/_sass/_layout.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about.md" afterPath="$PROJECT_DIR$/about.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/footer.html" afterPath="$PROJECT_DIR$/_includes/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/header.html" afterPath="$PROJECT_DIR$/_includes/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.scss" afterPath="$PROJECT_DIR$/css/main.scss" />
+    </list>
+    <ignored path="ZetaTwoCom.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ZetaTwoCom" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_layout.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_sass/_layout.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.056951422">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-05-18-site-up.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/news/2015-05-18-site-up.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_site/about/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="about.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/about.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2015-01-31-welcome-to-jekyll.markdown" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2015-01-31-welcome-to-jekyll.markdown">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Html5" />
+        <option value="Jekyll post" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/_site/Gemfile" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/_posts/2015-01-31-welcome-to-jekyll.markdown" />
+        <option value="$PROJECT_DIR$/_site/index.html" />
+        <option value="$PROJECT_DIR$/_includes/header.html" />
+        <option value="$PROJECT_DIR$/about.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/_posts/test/2005-06-06-anger.md" />
+        <option value="$PROJECT_DIR$/_posts/test/2005-06-06-art.md" />
+        <option value="$PROJECT_DIR$/_posts/test/2006-10-19-fade-sidan-uppdaterad.md" />
+        <option value="$PROJECT_DIR$/css/main.scss" />
+        <option value="$PROJECT_DIR$/_sass/_layout.scss" />
+        <option value="$PROJECT_DIR$/_posts/math/2015-05-18-site-up.md" />
+        <option value="$PROJECT_DIR$/_includes/footer.html" />
+        <option value="$PROJECT_DIR$/about.md" />
+        <option value="$PROJECT_DIR$/_config.yml" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ZetaTwoCom" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_posts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="E:/Programming/tools/Ruby2/bin/bundle.bat" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dropbox\Projects\ZetaTwoCom\_posts\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Dropbox\Projects\ZetaTwoCom\_posts\news" />
+      <recent name="D:\Dropbox\Projects\ZetaTwoCom\_drafts" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b78f7f30-ac1f-4a90-9105-a6ef45eacc08" name="Default" comment="" />
+      <created>1422713617183</created>
+      <option name="number" value="Default" />
+      <updated>1422713617183</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1424013664712</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1424013664712</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Improved config">
+      <created>1424020029634</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1424020029634</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added old site to repo for later import.">
+      <created>1424020071192</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1424020071192</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27133825" sideWeight="0.49878347" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284055" sideWeight="0.5072917" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3243243" sideWeight="0.49270833" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33482143" sideWeight="0.50121653" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28648648" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32792208" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Improved config" />
+    <MESSAGE value="Added old site to repo for later import." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added old site to repo for later import." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/news/2015-05-18-site-up.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-01-31-welcome-to-jekyll.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-01-31-welcome-to-jekyll.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-01-31-welcome-to-jekyll.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-01-31-welcome-to-jekyll.markdown">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/ZetaTwoCom.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/scopes/scope_settings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feed.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18378378">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2367688">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33147633">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2015-01-31-welcome-to-jekyll.markdown">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_sass/_layout.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/news/2015-05-18-site-up.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_site/about/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19036955">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056951422">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
