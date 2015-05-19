@@ -13,7 +13,7 @@ markdown: kramdown
 highlighter: rouge
 encoding: utf-8
 paginate: 5
-exclude: ['Gemfile.lock', 'Gemfile', 'src/']
+exclude: ['Gemfile.lock', 'Gemfile', 'src/', 'LICENSE', 'README.md', 'butlerfile']
 #paginate_path: "/blog/page:num/"
 
 disqusid: zetatwo
