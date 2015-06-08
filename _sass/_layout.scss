@@ -11,31 +11,29 @@ body {
  * Site header
  */
 .site-header {
-  .banner {
-    $width: 1060px;
-    background: url('/img/header.png') no-repeat;
-    height: 159px;
-    width: $width;
+  overflow: hidden;
+  position: relative;
+  height: 159px;
 
-    margin-left: -$width/2;
-    position: relative;
+  .banner-container {
+    $width: 1060px;
+    width: $width;
+    position: absolute;
     left: 50%;
+    margin-left: -$width/2;
 
     @include media-query($on-palm) {
       $zoom: 0.7;
-      background-size: $zoom*100%;
       $width: $zoom*1060px;
+      width: $width;
       margin-left: -$width/2;
     }
 
-
-    .site-title {
-      width: 520px;
-      height: 120px;
-      margin: 0 auto;
+    .banner {
       display: block;
     }
   }
+
 }
 
 
