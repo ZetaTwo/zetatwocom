@@ -19,7 +19,7 @@ The doorbell consists of two parts, the button which is supposed to be mounted n
 Building on top of Ossman's course and [a blogpost](http://blog.kismetwireless.net/2013/08/playing-with-hackrf-keyfobs.html) by Kismet, I started by recording a sample of the button signal.
 
 To record the button I first had to figure out what frequency it was running on.
-A lot of simple devices like this transmits in the 400MHz are so I fired up a waterfall plot in GNU Radio Companion, GRC, and looked at frequencies in that area.
+A lot of simple devices like this transmits in the 400MHz area so I opened up a waterfall plot in GNU Radio Companion, GRC, and looked at frequencies in that area.
 Eventually I found that the button was transmitting at around 433MHz.
 
 To record a sample of the doorbell signal with the HackRF, I used the following command
@@ -29,13 +29,13 @@ hackrf_transfer -r Doorbell-430MHz-8M-8bit.iq -f 430000000 -s 8000000
 {% endhighlight %}
 
 This records a sample of 8M samples per second at 430MHz and saved it to a file.
-The reason we set the frequency to 430MHz, slightly off from the target 433MHz to avoid noise caused by the DC offset.
+The reason we set the frequency to 430MHz, slightly off from the target 433MHz, is to avoid noise caused by the DC offset.
 I let the program run for a few seconds, then terminated it and opened the file in [Baudline](http://www.baudline.com/).
 When opening a sample recorded with hackrf_transfer you have to use the following settings in Baudline.
 
-Sample rate: custom, 8000000
-Channels: 2, check quadrature and flip complex
-Decode format: 8 bit linear (unsigned)
+* Sample rate: custom, 8000000
+* Channels: 2, check quadrature and flip complex
+* Decode format: 8 bit linear (unsigned)
 
 By inspecting the part around 433MHz we get something like this repeated several times.
 
@@ -57,6 +57,7 @@ I constructed the following flowgraph in GRC based on [part 2 of the blogpost](h
 
 ![Replaying a sample in GRC](/assets/images/radio/grc_replay.png)
 
+Not so surprisingly, this triggered the doorbell.
 Note that there are some disabled extra blocks for debugging in the flowgraph.
 
 Finally, we want to be able to synthesize the signal from scratch.
@@ -70,6 +71,8 @@ We use the "Patterned Interleaver" to combine the data source with ones and zero
 We then combine this with the zero signal again to repeat the 13 bit signal with a pause in between.
 Finally we stretch the signal by repeating each bit to make the length of each symbol match that of the recorded signal.
 We have now created the data signal, all which is left now is to us it to modulate the amplitude of the carrier signal and transmit this with the HackRF.
+With this I was able to trigger the doorbell. Furthermore, changing to a different sound was as simple as changing the last 4 bits of the data vector.
+
 
 If you want to play around with the flowgraphs in GRC I have included them in [a zip file](/assets/other/ook-doorbell.zip).
 In it you will also find a third flowgraph which I used as a oscilloscope to study the signal.
