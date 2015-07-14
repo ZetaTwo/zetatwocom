@@ -252,6 +252,6 @@ Then I tried looking at the song in a spectrogram and found a red herring like t
 
 Later in the spectrogram there was also a morse coded message with a red herring and a trollface.
 Then I sent the file to my musical genius friend and asked him if he could write down the notes or find anything else of interest.
-He sent back [the melody}(/assets/other/oldmcdonald_score.pdf) which clearly spells out the flag and fits with the hint.
+He sent back [the melody](/assets/other/oldmcdonald_score.pdf) which clearly spells out the flag and fits with the hint.
 
 Flag: feeddadeadbeef
