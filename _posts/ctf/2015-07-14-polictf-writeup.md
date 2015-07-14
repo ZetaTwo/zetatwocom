@@ -5,7 +5,7 @@ date: 2015-07-14 13:49
 type: post
 published: true
 comments: true
-categories: math
+categories: ctf
 ---
 
 This weekend we participacted in [PoliCTF](http://polictf.it), a CTF arranged by Italian team [Tower of Hanoi](towerofhanoi.github.io).
