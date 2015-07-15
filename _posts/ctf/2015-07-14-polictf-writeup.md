@@ -8,7 +8,7 @@ comments: true
 categories: ctf
 ---
 
-This weekend we participacted in [PoliCTF](http://polictf.it), a CTF arranged by Italian team [Tower of Hanoi](towerofhanoi.github.io).
+This weekend we participacted in [PoliCTF](http://polictf.it), a CTF arranged by Italian team [Tower of Hanoi](http://towerofhanoi.github.io).
 It was a very well arranged 48 hours CTF with good variety and minimal amount of guesswork.
 We had five players working throughout the weekend: mxn, capsl, ZetaTwo, avlidienbrunn and hspe.
 We performed very well and ended up on [second place](http://polictf.it/scoreboard/ranking).
