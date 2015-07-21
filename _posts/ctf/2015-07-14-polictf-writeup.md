@@ -28,7 +28,7 @@ If you want to read more writeups from this CTF, there is [a great GitHub repo w
 
 ## <a name="crypto50-exorcise"></a>Crypto 50: Exorcise
 
-Thanks to a mistake I actually solved this one in an unnecessarily complicated way.
+Due to a mistake I actually solved this one in an unnecessarily complicated way.
 The challenge provided a service which you could send text to and get it and some other text back encrypted.
 The encryption was a simple repeated XOR with the flag as a key.
 
@@ -230,7 +230,7 @@ class Magic{
 {% endhighlight %}
 
 Which indicated that we want to create a Magic object and call any function on it.
-I registered a user with name "<?php $a = new Magic(); $a->x(); ?>" and lastname "x.php".
+I registered a user with name "&lt;?php $a = new Magic(); $a->x(); ?&gt;" and lastname "x.php".
 After logging in with the user once, I used the indedx page to include the log file and get the flag.
 Of course, it would have also been possible to directly access the log file, but that is something you easily don't think about at 3am.
 
