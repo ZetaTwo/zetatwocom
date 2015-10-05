@@ -238,7 +238,7 @@ a library file "lib/armeabi/libcyberpiratelocker.so"
 
 This library consists mainly of an encryption function which takes an input of exactly 28 bytes and hashes this with a custom function.
 The hash is compared to a hard-coded target and true is returned if they match.
-The hash function works by splitting the input in seven blocks of four and xor:ing the cross product between all elements in the block.
+The hash function works by splitting the input in seven blocks of four and xor:ing each pair of the cartesian product between all elements in the block.
 
 The code is a bit messy and contains some references to the Android library but after trimming and cleaning it up, the core of it can be implemented like this in Python.
 
