@@ -25,7 +25,7 @@ This writeup will explain the challenges I solved. I try to keep the description
 
 Total contribution: 1000
 
-## <a name="crypto50-11-50"></a>Crypto 50: 11
+## <a name="crypto50-11"></a>Crypto 50: 11
 
 In this challenge we were given a text file with eleven chiphers which were said to all have been encrypted with the same stream cipher.
 
