@@ -55,8 +55,7 @@ The first plaintext was "Pass: sup3r31337. Don't loose it!"
 The second plaintext was "Pass: notAs3cre7. Don't loose it!"
 The cipher we were given was "4f3a0e1791e8c8e5fefe93f50df4d8061fee884bcc5ea90503b6ac1422bda2b2b7e6a975bfc555f44f7dbcc30aa1fd5e" with an IV of "19a9d10c3b155b55982a54439cb05dce".
 
-TODO: Image of CBC
-![CBC cipher mode](/assets/images/cryptography/cbc.png)
+![CBC cipher mode (from Wikipedia)](/assets/images/cryptography/wikipedia_cbc.png)
 
 The text we are looking to change is only in the first block which makes this easy to solve.
 Looking at how CBC works, we know that the first block of the ciphertext consists of:
