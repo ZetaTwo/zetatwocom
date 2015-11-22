@@ -16,16 +16,16 @@ This earned us a place in the finals in Bucharest at the DefCamp conference.
 
 This writeup will explain the challenges I solved. I try to keep the descriptions fairly brief so if you feel that you would like to know more details, please leave a comment.
 
-* [Crypto 50](#crypto50)
-* [Crypto 200](#crypto200)
-* [Misc 100](#misc100)
-* [Misc 200](#misc200)
-* [Misc 350](#misc350)
-* [Reversing 100](#reversing100)
+* [Crypto 50: 11](#crypto50-11)
+* [Crypto 200: No Crypto](#crypto200-no-crypto)
+* [Misc 100: She said it doesn't matter](#misc100-she-said-it-doesnt-matter)
+* [Misc 200: Try Harder](#misc200-try-harder)
+* [Misc 350: Emotional Roller Coaster](#misc350-emotional-roller-coaster)
+* [Reversing 100: Entry Language](#reversing100-entry-language)
 
 Total contribution: 1000
 
-## <a name="crypto50"></a>Crypto 50
+## <a name="crypto50-11-50"></a>Crypto 50: 11
 
 In this challenge we were given a text file with eleven chiphers which were said to all have been encrypted with the same stream cipher.
 
@@ -46,7 +46,7 @@ By XOR:ing every ciphertext with each other ciphertext, we can use the 110 combi
 
 Flag: "when using a stream cipher, never use the key more than once!"
 
-## <a name="crypto200"></a>Crypto 200
+## <a name="crypto200-no-crypto"></a>Crypto 200: No Crypto
 
 The challenge consisted of two plaintexts, and a ciphertext which was the first plaintext encrypted with AES-CBC with an unknown key.
 The question was "how would you change the ciphertext so that when decrypted it would instead give the second plaintext?".""
@@ -81,7 +81,7 @@ Therefore the flag is the new IV.
 
 Flag: "19a9d10c3b15464f9c585543cef10bce"
 
-## <a name="misc100"></a>Misc. 100
+## <a name="misc100-she-said-it-doesnt-matter"></a>Misc. 100: She said it doesn't matter
 
 In this challenge we were given a very strange looking PNG file.
 
@@ -95,7 +95,7 @@ Additionally, the CRC checksums are not correct. Changing the size in the header
 
 Flag: "s1z3\_d03s\_ma773r\_baby"
 
-## <a name="misc200"></a>Misc. 200
+## <a name="misc200-try-harder"></a>Misc. 200: Try Harder
 
 This was a multi-part challenge in which we first were given to compressed files, "misc200.part0.jpg.gz" and "part3.zip".
 The second one was password protected. Trusting the names, I started with looking at the first one. Extracting it gave us a roughly 4Gb large file which according to "file" is not a jpeg as the names suggests but instead a "DOS/MBR boot sector". We could mount it and explore the contents manually but I chose to run "binwalk" in extraction mode to get all known file types inside it. This gives us a file called "part1.zip". This archive contains a file called "3pm.redrah-yrt" which is "try-harder.mp3" spelled backwards. Looking at the metadata with "exiftool" we find that there is a comment "aHR0cDovL2RjdGYuZGVmLmNhbXAvX19kbmxkX18yMDE1X18vcGFydDEuaHRtbA" which looks a lot like base 64 encoded data. Adding the missing "==" padding at the end and running it through "base64 -d" gives an URL: "http://dctf.def.camp/__dnld__2015__/part1.html". This URL contains the description of what a CTF is also found on ctftime.org, however, some of the spaces have been replaced by a tab. Collecting them together and taking the spaces as zeroes and the tabs as ones gives you a binary string.
@@ -121,7 +121,7 @@ Doing this gives us a new BMP file which contains the password for the last part
 
 Flag: DCTF{711389441a47c19a244c8473ee5aceff}
 
-## <a name="misc350"></a>Misc. 350
+## <a name="misc350-emotional-roller-coaster"></a>Misc. 350: Emotional Roller Coaster
 
 This was a really interesting level with a nice twist.
 The challenge had a description including "you are the target".
@@ -135,7 +135,7 @@ They were all of equal length except for the eleventh image, indicating the the 
 
 Flag: DCTF{e4045481e906132b24c173c5ee52cd1e}
 
-## <a name="reversing100"></a>Reversing 100
+## <a name="reversing100-entry-language"></a>Reversing 100: Entry Language
 
 This was a standard "key verifier challenge". The binary took an input and verified it to a target value.
 By disassembling the binary it was possible to extract the verifier code and translate it to this equivalent Python code
