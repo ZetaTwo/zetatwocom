@@ -4,7 +4,7 @@ title: "DefCamp D-CTF Qualifiers 2015: Writeups"
 date: 2015-11-22 17:10
 type: post
 published: true
-comments: false
+comments: true
 categories: ctf
 ---
 
