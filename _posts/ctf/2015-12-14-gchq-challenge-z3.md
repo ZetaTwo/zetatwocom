@@ -14,7 +14,8 @@ It looked like it could be solved by hand without too much effort but I figured 
 Recently I have been playing with Microsoft's constraint solver, [Z3](https://github.com/Z3Prover/z3). I thought this would be a perfect tool to solve the challenge with.
  
 As stated previously, the challenge consists of a grid, specifically a 25x25 grid with series of numbers written next to each column and row and with some of the cells already filled in.
-Below is an image of the grid.
+Below is an image of the grid. Apparently, this is famous type of puzzle called a [Nonogram](https://en.wikipedia.org/wiki/Nonogram). I didn't know this until after I wrote this and a friend pointed it out.
+You know what they say, you learn something every day.
 
 ![The GCHQ christmas challenge grid](/assets/images/ctf/gchq_christmas_card.jpg)
 
