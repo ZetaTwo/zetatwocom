@@ -98,7 +98,15 @@ Flag: "s1z3\_d03s\_ma773r\_baby"
 ## <a name="misc200-try-harder"></a>Misc. 200: Try Harder
 
 This was a multi-part challenge in which we first were given to compressed files, "misc200.part0.jpg.gz" and "part3.zip".
-The second one was password protected. Trusting the names, I started with looking at the first one. Extracting it gave us a roughly 4Gb large file which according to "file" is not a jpeg as the names suggests but instead a "DOS/MBR boot sector". We could mount it and explore the contents manually but I chose to run "binwalk" in extraction mode to get all known file types inside it. This gives us a file called "part1.zip". This archive contains a file called "3pm.redrah-yrt" which is "try-harder.mp3" spelled backwards. Looking at the metadata with "exiftool" we find that there is a comment "aHR0cDovL2RjdGYuZGVmLmNhbXAvX19kbmxkX18yMDE1X18vcGFydDEuaHRtbA" which looks a lot like base 64 encoded data. Adding the missing "==" padding at the end and running it through "base64 -d" gives an URL: "http://dctf.def.camp/__dnld__2015__/part1.html". This URL contains the description of what a CTF is also found on ctftime.org, however, some of the spaces have been replaced by a tab. Collecting them together and taking the spaces as zeroes and the tabs as ones gives you a binary string.
+The second one was password protected. Trusting the names, I started with looking at the first one.
+Extracting it gave us a roughly 4Gb large file which according to "file" is not a jpeg as the names suggests but instead a "DOS/MBR boot sector".
+We could mount it and explore the contents manually but I chose to run "binwalk" in extraction mode to get all known file types inside it.
+
+This gives us a file called "part1.zip". This archive contains a file called "3pm.redrah-yrt" which is "try-harder.mp3" spelled backwards.
+Looking at the metadata with "exiftool" we find that there is a comment "aHR0cDovL2RjdGYuZGVmLmNhbXAvX19kbmxkX18yMDE1X18vcGFydDEuaHRtbA" which looks a lot like base 64 encoded data.
+Adding the missing "==" padding at the end and running it through "base64 -d" gives an URL: "http://dctf.def.camp/\_\_dnld\_\_2015\_\_/part1.html".
+This URL contains the description of what a CTF is also found on ctftime.org, however, some of the spaces have been replaced by a tab.
+Collecting them together and taking the spaces as zeroes and the tabs as ones gives you a binary string.
 
 > 0101001101100101011000110110111101101110011001000010000001110000
 > 0110000101110010011101000010000001101001011011100010000001101101
@@ -128,10 +136,14 @@ The challenge had a description including "you are the target".
 By listening on the network traffic with Wireshark while being connected to the VPN, you could see an incoming DNS request.
 Specifically the request was an MX request for the host name of your client on the VPN.
 Setting up a DNS server and answering to this request with for example your IP address you could see another incoming connection on the SMTP port. Since I didn't have an SMTP server readily available, I proceeded to configure one locally to recieve the e-mail.
+
 The e-mail contained an attachment in the form of a PCAP file.
 The PCAP was a recorded SMB file transfer of a zip archive, "emoticons.zip".
 That archive contained 97 gif files of emoticons. Looking at these images with "exiftool" revealed that they all had a "Camera Model Name" metadata field with something looking like base 64 data.
-They were all of equal length except for the eleventh image, indicating the the data was not in order when taking the files ordered by name. Instead, ordering the images by file modification date and concatenating the base 64 data gave us something that could be decoded to a zip file. This zip file contained a lot of junk to increase the size of the archive but also a file called "sol/flag" with the flag inside.
+
+They were all of equal length except for the eleventh image, indicating the the data was not in order when taking the files ordered by name.
+Instead, ordering the images by file modification date and concatenating the base 64 data gave us something that could be decoded to a zip file.
+This zip file contained a lot of junk to increase the size of the archive but also a file called "sol/flag" with the flag inside.
 
 Flag: DCTF{e4045481e906132b24c173c5ee52cd1e}
 
