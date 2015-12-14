@@ -4,9 +4,11 @@ title: About me
 permalink: /about/
 ---
 
-My name is Calle "Zeta Two" Svensson. I'm a 24 year old soon-to-be master's graduate in engineering physics with a master's in computer science focused on IT security.
+My name is Calle "Zeta Two" Svensson. I'm a 24 year old graduate in engineering physics with a master's in computer science focused on IT security.
 Computers and programming have basically been a large part of my life since I was very young.
 This site is the fifth incarnation of Zeta-Two.com since the original site I created in 2005 and will act as a blog about IT and other technology topics.
+
+I currently work as a IT security consultant for [Bitsec AB](http://bitsec.se) in Stockholm where I, in addition to other things, do penetration testing, code reviews and forensics. 
 
 As stated above I'm into computer science a lot and is proficient with most mainstream languages with my favorites being C++, Python and C\#.
 I've been into security for real since about three years back following a very long interest for the subject.
