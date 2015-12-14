@@ -25,10 +25,12 @@ Z3 is a theorem prover by Microsoft research which solves a model consisting of 
 The challenge is to formulate the problem as a set of constraints that Z3 can process and give us a solution for.
 
 In the end, the solution consisted of the four steps as outlined below.
+
 1. Define spacers and blocks
 2. Constrain sum of spacers and blocks sizes for rows and columns separately
 3. Relate block and spacer sizes to cell color
 4. Solve for both columns and rows simultaneously
+
 I'll go through how I arrived at the solution step by step. 
 
 My first attempt was to look at a single row and see how we can express that in Z3.
