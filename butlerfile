@@ -1,2 +1,3 @@
+update: git pull && butler build
 build: bundle exec jekyll build
 watch: bundle exec jekyll build --watch
