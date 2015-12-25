@@ -273,7 +273,7 @@ Each directory contains a "password.txt" containing a single character.
 If we take all the characters and discard all ".", we get the password (possible reversed)
 
 {% highlight bash %}
-(for f in ./0/**/*.txt; do cat $f; done;) | sed 's/\.//g' | rev
+(for f in $(find . -name '*.txt'); do cat $f; done;) | sed 's/\.//g'
 {% endhighlight %}
 > clownporr
 
