@@ -9,7 +9,7 @@ categories: ctf
 ---
 
 The computer science chapter at my alma mater, KTH, arranges an advent calendar called ["dJulkalendern"](https://djul.datasektionen.se).
-It is a CTF-like puzzle with challenges (almost) every day until christmas and also a cmpetition.
+It is a CTF-like puzzle with challenges (almost) every day until christmas and also a competition.
 Last time it was arranged in 2013, I won the challenge but this year I had to settle for a third place.
 
 The puzzles are not really security focused like regular CTF but more broader IT related puzzles.
@@ -270,7 +270,7 @@ Password: sos
 
 We are given a  ".tar.gz" file containing a lot of nested directories.
 Each directory contains a "password.txt" containing a single character.
-If we take all the characters and discard all ".", we get the password (possible reversed)
+If we take all the characters and discard all ".", we get the password (possibly reversed)
 
 {% highlight bash %}
 (for f in $(find . -name '*.txt'); do cat $f; done;) | sed 's/\.//g'
