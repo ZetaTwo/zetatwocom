@@ -170,9 +170,9 @@ if s.check() == sat:
             pixel = m.evaluate(dots[y][x]).as_long()
 
             if pixel == 0:
-                    im.putpixel((y+1,x+1), 255)
+                    im.putpixel((x+1,y+1), 255)
             else:
-                    im.putpixel((y+1,x+1), 0)
+                    im.putpixel((x+1,y+1), 0)
             row.append(str(pixel))
         print(''.join(row))
     im=im.resize((16*(size+2),16*(size+2)))
@@ -187,7 +187,8 @@ This gives us the following QR code as solution to the puzzle.
 
 ![QR code solution to the GCHQ christmas challenge](/assets/images/ctf/gchq_christmas_solution.png)
 
-Strangely enough, this code was not readable by "zbarimg" but the QR scanner on my phone worked and online tools as well.
+~~Strangely enough, this code was not readable by "zbarimg" but the QR scanner on my phone worked and online tools as well.~~
+Update: I had accidentally transposed the image by calling _im.putpixel((y,x))_ instead of _im.putpixel((x,y))_. Thanks camitz for pointing this out. With that corrected, even "zbarimg" reads the QR code correctly.
 The QR code leads to the next stage of the christmas challenge.
 I'm just a beginner with Z3 and there are probably better ways to do this.
 If you have any feedback or ideas, please post a comment below. For completeness, here is the [full solution script](/assets/other/gchq_christmas_code.py)

@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-# Author: Calle "Zeta Two" Svensson <calle.svensson@zeta-two.com>
 # Solution to http://www.gchq.gov.uk/press_and_media/news_and_features/Pages/Directors-Christmas-puzzle-2015.aspx
 
 from z3 import *
@@ -74,7 +73,6 @@ black = [
 def solve(s, dots):
 	if s.check() == sat:
 		m = s.model()
-		#print(m)
 
 		im = Image.new('L', (size+2,size+2), 255)
 		for y in range(size):
@@ -83,9 +81,9 @@ def solve(s, dots):
 				pixel = m.evaluate(dots[y][x]).as_long()
 
 				if pixel == 0:
-					im.putpixel((y+1,x+1), 255)
+					im.putpixel((x+1,y+1), 255)
 				else:
-					im.putpixel((y+1,x+1), 0)
+					im.putpixel((x+1,y+1), 0)
 				row.append(str(pixel))
 			print(''.join(row))
 		im=im.resize((16*(size+2),16*(size+2)))
@@ -112,6 +110,51 @@ for y in range(size):
 # Force blacks
 for y,x in black:
 	rule_dot_vals.append(dots[y][x] == 1)
+
+# Parse vertical rules
+spacers2 = []
+partials2 = []
+for x in range(len(rules2)):
+	col = rules2[x]
+
+	# Cumalative size
+	partials2.append([Int('part2_%d_y0' % (x))])
+	spacers2.append([])
+	rule_partials_vals.append(partials2[-1][-1] == 0)
+	
+	for y in range(len(col)+1):
+		# Spacer sizes
+		spacers2[-1].append(Int('space2_%d_%d' % (y,x)))
+
+		# Edges can be xero size
+		if y > 0 and y < len(col):
+			rule_spacer_vals.append(spacers2[-1][-1] >= 1)
+		else:
+			rule_spacer_vals.append(spacers2[-1][-1] >= 0)
+
+		# Partial size of last space
+		partials2[-1].append(Int('part2_space_%d_%d' % (y,x)))
+		rule_partials_vals.append(partials2[-1][-1] >= 0)
+		rule_partials.append(partials2[-1][-2] + spacers2[-1][-1] == partials2[-1][-1])
+
+		# Add white constraint
+		for y2 in range(size):
+			rule_dots_cover.append(If(And(partials2[-1][-2] <= y2, y2 < partials2[-1][-1]), dots[y2][x]==0, dots[y2][x]>=0))
+
+		# Block sizes
+		if y < len(col):
+			# Partial size of last block
+			partials2[-1].append(Int('part2_block_%d_%d' % (y,x)))
+			rule_partials_vals.append(partials2[-1][-1] >= 0)
+			rule_partials.append(partials2[-1][-2] + col[y] == partials2[-1][-1])
+
+			# Add black constraint
+			for y2 in range(size):
+				rule_dots_cover.append(If(And(partials2[-1][-2] <= y2, y2 < partials2[-1][-1]), dots[y2][x]==1, dots[y2][x]>=0))
+
+
+	# Add up to col height
+	rule_partials.append(partials2[-1][-1] == size)
 
 # Parse horizintal rules
 spacers = []
@@ -158,50 +201,6 @@ for y in range(len(rules)):
 	# Add up to row width
 	rule_partials.append(partials[-1][-1] == size)
 
-# Parse vertical rules
-spacers2 = []
-partials2 = []
-for x in range(len(rules2)):
-	col = rules2[x]
-
-	# Cumalative size
-	partials2.append([Int('part2_%d_y0' % (x))])
-	spacers2.append([])
-	rule_partials_vals.append(partials2[-1][-1] == 0)
-	
-	for y in range(len(col)+1):
-		# Spacer sizes
-		spacers2[-1].append(Int('space2_%d_%d' % (y,x)))
-
-		# Edges can be xero size
-		if y > 0 and y < len(col):
-			rule_spacer_vals.append(spacers2[-1][-1] >= 1)
-		else:
-			rule_spacer_vals.append(spacers2[-1][-1] >= 0)
-
-		# Partial size of last space
-		partials2[-1].append(Int('part2_space_%d_%d' % (y,x)))
-		rule_partials_vals.append(partials2[-1][-1] >= 0)
-		rule_partials.append(partials2[-1][-2] + spacers2[-1][-1] == partials2[-1][-1])
-
-		# Add white constraint
-		for y2 in range(size):
-			rule_dots_cover.append(If(And(partials2[-1][-2] <= y2, y2 < partials2[-1][-1]), dots[y2][x]==0, dots[y2][x]>=0))
-
-		# Block sizes
-		if y < len(col):
-			# Partial size of last block
-			partials2[-1].append(Int('part2_block_%d_%d' % (y,x)))
-			rule_partials_vals.append(partials2[-1][-1] >= 0)
-			rule_partials.append(partials2[-1][-2] + col[y] == partials2[-1][-1])
-
-			# Add black constraint
-			for y2 in range(size):
-				rule_dots_cover.append(If(And(partials2[-1][-2] <= y2, y2 < partials2[-1][-1]), dots[y2][x]==1, dots[y2][x]>=0))
-
-	# Add up to col height
-	rule_partials.append(partials2[-1][-1] == size)
-
 # Add rulesets to solver
 s = Solver()
 s.add(rule_spacer_vals)
@@ -211,4 +210,5 @@ s.add(rule_partials)
 s.add(rule_dots_cover)
 
 # Show solution
+print('Solving...')
 solve(s, dots)
