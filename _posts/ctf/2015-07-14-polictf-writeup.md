@@ -44,7 +44,7 @@ By sending short messages of a single byte repeated, I figured out that the leng
 Then I tried one value for first byte of {% latex %}m{% endlatex %} and with the help of the response, I calculated which byte was in the key.
 I then repeated this for each byte in the message until I had the full key.
 
-Flag: flag{_this_1s_s0_simple_you_should_have_solved__it_1n_5_sec}
+Flag: flag{\_this\_1s\_s0\_simple\_you\_should\_have\_solved\_\_it\_1n\_5\_sec}
 
 
 ## <a name="pwnable100-john-pastry-shop"></a>Pwnable 100: John Pastry Shop
@@ -154,7 +154,7 @@ Using Chrome's developer tools, we went into mobile mode and set the viewport to
 
 Decoding the QR code gives us the flag.
 
-Flag: flag{run_to_the_hills_run_for_your_life}
+Flag: flag{run\_to\_the\_hills\_run\_for\_your\_life}
 
 
 ## <a name="web350-magic"></a>Web 350: Magic chall
@@ -234,7 +234,7 @@ I registered a user with name "&lt;?php $a = new Magic(); $a->x(); ?&gt;" and la
 After logging in with the user once, I used the indedx page to include the log file and get the flag.
 Of course, it would have also been possible to directly access the log file, but that is something you easily don't think about at 3am.
 
-Flag: flag{session_regenerate_id()_is_a_very_cool_function_use_it_whenever_you_happen_to_use_session_start()}
+Flag: flag{session\_regenerate\_id()\_is\_a\_very\_cool\_function\_use\_it\_whenever\_you\_happen\_to\_use\_session\_start()}
 
 ## <a name="forensics100-hungry"></a>Forensics 100: It's Hungry
 

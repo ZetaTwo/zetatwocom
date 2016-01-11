@@ -33,7 +33,7 @@ Total score: 1160
 
 A standard simple challenge to lure people in to the IRC channel. I simply sent a PM to the user "CTFBot" in the IRC channel and it responded with the flag.
 
-Flag: sect{hello_sect_ctf_2015}
+Flag: sect{hello\_sect\_ctf\_2015}
 
 ## <a name="forensics100-leetphone"></a>Forensics 100: Leet Phone
 
@@ -65,7 +65,7 @@ i.e. the series: 2255063062923
 Inputing this into a [T9](http://en.wikipedia.org/wiki/T9_(predictive_text)) [simulator](http://www.sainsmograf.com/labs/t9-emulator) gives the string "balk me maybe".
 Recalling the theme, the instruction to convert zeros to underscores and everyone's favorite song of the last few years gives us the flag.
 
-Flag: call_me_maybe
+Flag: call\_me\_maybe
 
 ## <a name="forensics200-drunkfs"></a>Forensics 200: Drunk-FS
 
@@ -80,7 +80,7 @@ This file is larger and significantly different than the others. Opening this im
 
 ![The second image with contrast raised](/assets/images/ctf/sect_nope2.jpg)
 
-Flag: sect{hidden_in_plain_sight}
+Flag: sect{hidden\_in\_plain\_sight}
 
 ## <a name="pwnable50-ssftp1"></a>Pwnable 50: SSFTP I
 
@@ -130,7 +130,7 @@ Main menu
 > 
 {% endhighlight %}
 
-Flag: sect{y0u_n33d_m0r3_f1re3y3s}
+Flag: sect{y0u\_n33d\_m0r3\_f1re3y3s}
 
 ## <a name="pwnable100-ssftp2"></a>Pwnable 100: SSFTP II
 
@@ -188,7 +188,7 @@ Main menu
 > 
 {% endhighlight %}
 
-Flag: sect{yoU_and_1_ar3_bss_fri3nds}
+Flag: sect{yoU\_and\_1\_ar3\_bss\_fri3nds}
 
 ## <a name="pwnable200-beergame"></a>Pwnable 200: Beergame
 
@@ -230,7 +230,7 @@ cat FLAG
 sect{n0w_yOu_d3serv_a_b33r}
 {% endhighlight %}
 
-Flag: sect{n0w_yOu_d3serv_a_b33r}
+Flag: sect{n0w\_yOu\_d3serv\_a\_b33r}
 
 ## <a name="reversing250-piratelocker"></a>Reversing 250: Pirate Locker
 
@@ -266,9 +266,9 @@ There are a lot of valid blocks for each part but to fit the flag format we get
 a single candidate for block 1,2 and 7 and gives us the partial flag: sect{3nc\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_tY!}
 
 Only two combinations of blocks gives something sensible and we get two flags:
-"sect{3ncRypt_4ll_th3_b00tY!}" and "sect{3ncrYPT_4ll_th3_b00tY!}". By a qualified guess or just trying, we find the correct one.
+"sect{3ncRypt\_4ll\_th3\_b00tY!}" and "sect{3ncrYPT\_4ll\_th3\_b00tY!}". By a qualified guess or just trying, we find the correct one.
 
-Flag: sect{3ncRypt_4ll_th3_b00tY!}
+Flag: sect{3ncRypt\_4ll\_th3\_b00tY!}
 
 ## <a name="web250-davyjones"></a>Web 250: Davy Jones
 
@@ -314,4 +314,4 @@ cURL stopped at the space, resulting in just "http://127.0.0.1".
 The slash at the end was required to have a non-empty path so that the first if-clause passed.
 With this knowledge the only remaining thing was to append the query-string, giving "http://127.0.0.1?template=davyjones i.imgur.com/" to get the right page and the flag.
 
-Flag: sect{cURLing_1z_n0t_f0r_p1rate5!!}
+Flag: sect{cURLing\_1z_n0t\_f0r\_p1rate5!!}

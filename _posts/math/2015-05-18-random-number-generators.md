@@ -50,10 +50,10 @@ From now on {% latex %}X=B-A{% endlatex %} and {% latex %}Y=D-C{% endlatex %}. T
 The centerpiece of this play will be the entropy pool, which is just a fancy name for a list of uniformly distributed bits.
 That is, they have exactly 50% probability of being either 0 or 1.
 The process can thus be divided into getting these "good" bits into the list and using them to create a random number.
-Creating a number is easy, let's say that {% latex %}m = \lceil log_2(Y) \rceil{% endlatex %}, that is we need m bits to represent Y. Then we simply take m bits from the list and create a number from them.
+Creating a number is easy, let's say that {% latex %} m = \lceil log_2(Y) \rceil {% endlatex %}, that is we need m bits to represent Y. Then we simply take m bits from the list and create a number from them.
 We then check that the number is at most Y, if so, we output it, otherwise, we try again.
-In the worst case, when Y is chosen to be {% latex %}2^i{% endlatex %} for some i we will have to throw away roughly half of the numbers generated but that's not too bad.
-To get numbers into the pool we generate a number from the input range. If {% latex %}n = \lfloor log_2(X) \rfloor{% endlatex %}, we check that the generated number is within {% latex %}[0,2^n){% endlatex %}.
+In the worst case, when Y is chosen to be {% latex %} 2^i {% endlatex %} for some i we will have to throw away roughly half of the numbers generated but that's not too bad.
+To get numbers into the pool we generate a number from the input range. If {% latex %}n = \lfloor log_2(X) \rfloor{% endlatex %}, we check that the generated number is within {% latex %} [0,2^n) {% endlatex %}.
 If it is then we know that all the bits of the generated numbers have exactly 50% probability of being 1 or 0, assuming the input function is uniformly distributed of course.
 In this case we take all the bits of the number and put them in the list. Otherwise, we throw away the number and try again. Similarly to the output part this may have to be done about half the time in the worst case.
 In total we throw away half the numbers on the way in and half the numbers on the way out but we end up with perfectly uniformly distributed numbers.
