@@ -9,7 +9,10 @@ twitter_username: zetatwo
 github_username:  ZetaTwo
 
 # Build settings
-markdown: kramdown
+gems: ['jekyll-paginate']
+markdown: redcarpet
+redcarpet:
+  extensions: ["strikethrough"]
 highlighter: rouge
 encoding: utf-8
 paginate: 5
