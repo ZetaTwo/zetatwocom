@@ -15,3 +15,5 @@ I've been into security for real since about three years back following a very l
 I'm currently competing in [CTF:s](https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security) together with the team [HackingForSoju](https://ctftime.org/team/3208). 
 Aside from computers, I do long distance running which is very good for clearing the head or thinking about difficult problems.
 If you want to know more about me, feel free to contact me or employ some [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) on a social media platform near you.
+
+<!-- Tredje delen av flaggan är: chinchilla -->
