@@ -4,7 +4,7 @@ email: calle.svensson@zeta-two.com
 description: > # Site description
   My blog about technology, security and life.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://zeta-two.com" # the base hostname & protocol for your site
+url: "https://zeta-two.com" # the base hostname & protocol for your site
 twitter_username: zetatwo
 github_username:  ZetaTwo
 
