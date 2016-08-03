@@ -6,3 +6,7 @@ gem 'jekyll-paginate'
 gem 'redcarpet'
 gem 'rouge'
 gem 'execjs', '~> 2.2.2'
+
+group :jekyll_plugins do
+  gem 'octopress-video-tag'
+end
