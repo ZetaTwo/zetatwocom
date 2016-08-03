@@ -23,3 +23,5 @@ disqusid: zetatwo
 
 katex:
     path_to_js: "./assets/katex/katex.min.js"
+
+click_to_play_video: false
