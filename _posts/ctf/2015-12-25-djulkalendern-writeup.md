@@ -15,7 +15,7 @@ Last time it was arranged in 2013, I won the challenge but this year I had to se
 The puzzles are not really security focused like regular CTF but more broader IT related puzzles.
 The competiton was held in Swedish but I will still do this writeup in English since anyone might learn a thing or two from it.
 This means that I will also write any clues freely translated into English.
-This year, the puzzles there was a puzzle everyday except Sundays and I will go through and explain them all.
+This year, there was a puzzle everyday except Sundays and I will go through and explain them all.
 To prevent this post from being too long, I will be pretty brief in my explanations. If you have any questions or solved something in a different way, please comment below.
 
 ## Day 1: Use the Source Luke
