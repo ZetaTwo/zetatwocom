@@ -5,6 +5,7 @@
 * FlareOn #1 2014 (1xx place)
 * FlareOn #3 2016 (1xx place)
 * LabyREnth 2016 (9th place)
+* LabyREnth 2017 (3rd place)
 * [RHME2 2016, 6th place](https://rhme.riscure.com/scores)
 * dJulkalendern 2016, 2014(?), 2013(?)
 * T2 Challenge 2016
