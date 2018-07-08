@@ -3,7 +3,7 @@ version: 0.1
 phases:
   install:
     commands:
-      - gem install bundler therubyracer
+      - gem install bundler execjs therubyracer
       - bundle install
   build:
     commands:
