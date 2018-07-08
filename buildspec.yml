@@ -3,6 +3,9 @@ version: 0.1
 phases:
   install:
     commands:
+      - gem install bundler
+      - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+      - apt-get install nodejs
       - bundle install
   build:
     commands:
