@@ -3,7 +3,7 @@ version: 0.1
 phases:
   install:
     commands:
-      - gem install bundler
+      - gem install bundler therubyracer
       - bundle install
   build:
     commands:
