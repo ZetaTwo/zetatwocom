@@ -9,7 +9,7 @@ twitter_username: zetatwo
 github_username:  ZetaTwo
 
 # Build settings
-gems: ['jekyll-paginate']
+plugins: ['jekyll-paginate']
 markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
@@ -20,6 +20,7 @@ exclude: ['Gemfile.lock', 'Gemfile', 'src/', 'LICENSE', 'README.md', 'butlerfile
 #paginate_path: "/blog/page:num/"
 
 disqusid: zetatwo
+theme: jekyll-theme-zetatwo
 
 katex:
     path_to_js: "./assets/katex/katex.min.js"

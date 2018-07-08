@@ -4,7 +4,7 @@ body {
 }
 
 .site-content {
-  background: url('/img/background.png') repeat;
+  background: url('/assets/img/background.png') repeat;
 }
 
 /**
@@ -56,7 +56,7 @@ body {
 
   .footer-border {
     height: 51px;
-    background: url('/img/footer_border.png') repeat-x;
+    background: url('/assets/img/footer_border.png') repeat-x;
   }
 
   .footer-content {
@@ -162,7 +162,7 @@ body {
 .post-link {
 
   font-family: 'Questrial', sans-serif;
-  background: url("/img/post_header.png") no-repeat;
+  background: url("/assets/img/post_header.png") no-repeat;
   height: 63px;
   padding: 10px 20px;
   margin-left: 40px;
@@ -177,7 +177,7 @@ body {
 
 .post-read-more {
   font-family: 'Questrial', sans-serif;
-  background: url("/img/read_more_btn.png") no-repeat;
+  background: url("/assets/img/read_more_btn.png") no-repeat;
   padding: 10px 20px;
   a {
     display: block;
