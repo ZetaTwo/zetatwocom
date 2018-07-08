@@ -3,11 +3,8 @@ version: 0.1
 phases:
   install:
     commands:
-      - gem install bundler
-      - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-      - apt-get install nodejs
       - bundle install
   build:
     commands:
       - bundle exec jekyll build
-      - aws s3 sync _site/ s3://www.zeta-two.com
+      - aws s3 sync --delete _site/ s3://www.zeta-two.com
