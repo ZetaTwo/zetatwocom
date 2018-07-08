@@ -1,0 +1,11 @@
+version: 0.1
+   
+phases:
+  install:
+    commands:
+      - gem install bundler
+      - bundle install
+  build:
+    commands:
+      - bundle exec jekyll build
+      - aws s3 sync _site/ s3://www.zeta-two.com
