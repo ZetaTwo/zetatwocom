@@ -6,7 +6,6 @@ gem 'jekyll-paginate'
 gem 'redcarpet'
 gem 'rouge'
 gem 'execjs', '~> 2.2.2'
-gem 'therubyracer'
 
 gem "jekyll-theme-zetatwo", :path => "_themes/zetatwo"
 
