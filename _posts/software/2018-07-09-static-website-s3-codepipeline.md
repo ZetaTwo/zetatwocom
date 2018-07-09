@@ -4,7 +4,7 @@ title: "Static Jekyll site with S3, CloudFront & CodePipeline"
 date: 2018-07-09 23:21
 type: post
 published: true
-comments: false
+comments: true
 categories: software
 ---
 
