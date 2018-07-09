@@ -9,7 +9,7 @@ phases:
       - bundle install
   build:
     commands:
-      - bundle exec jekyll build
+      - bundle exec jekyll build -V
       - echo "DEBUG"
       - find _posts
       - find _site
