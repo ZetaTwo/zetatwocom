@@ -21,6 +21,7 @@ exclude: ['Gemfile.lock', 'Gemfile', 'src/', 'LICENSE', 'README.md', 'butlerfile
 
 disqusid: zetatwo
 theme: jekyll-theme-zetatwo
+timezone: Europe/Stockholm
 
 katex:
     path_to_js: "./assets/katex/katex.min.js"

@@ -5,7 +5,7 @@ date: 2018-07-09 23:21
 type: post
 published: true
 comments: true
-categories: software_test
+categories: software
 ---
 
 Through my day job I been exposed a lot to AWS. I really like AWS and I think they create some cool services.

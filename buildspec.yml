@@ -9,8 +9,5 @@ phases:
       - bundle install
   build:
     commands:
-      - bundle exec jekyll build -V
-      - echo "DEBUG"
-      - find _posts
-      - find _site
+      - bundle exec jekyll build
       - aws s3 sync --delete _site/ s3://www.zeta-two.com
