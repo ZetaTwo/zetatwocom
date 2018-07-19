@@ -1,20 +1,22 @@
 ---
 layout: post
 title: "Security Fest 2018 Challenge Badge & Prize Assembly"
-date: 2018-07-07 23:50
+date: 2018-07-20 01:28
 type: post
 published: true
-comments: false
+comments: true
 categories: hardware
 ---
 
-TODO
+At this year's [Security Fest](https://securityfest.com) fellow security enthusiast Weckzén ([@Wecksten](https://twitter.com/Wecksten)) had created a challenge badge since he (rightly) believe that every con needs a challenge badge. I solved the challenge badge, got a prize from him in the form of a [Pimoroni Pirate Radio](https://shop.pimoroni.com/products/pirate-radio-pi-zero-w-project-kit) which I assembled and documented here.
 
 ## The Challenge Badge
 
+The challenge badge was a fairly simple looking circuit with two buttons, four DIP switches a USB connector and two LEDs.
+
 ![Challenge Badge](/assets/images/hardware/pirateradio/challenge-badge.jpg)
 
-TODO
+Inserting the board into a computer identifies it a HID device and a serial interface. Pressing one of the button types out the following text via the HID interface:
 
 > Welcome to the Bug Bounty Hunter Swedens Challenge Badge!  
 > All the great conferences have extra badges and all the badges are tied to a great community, so here we are!  
@@ -28,11 +30,11 @@ TODO
 >   
 > P.S Huge thanks to Zkylark Electronics with all the help with the badge. If you are interested in getting any custom hardware done, hit them up!  
 
-TODO
+Toggling the first DIP switch and pressing the button again gives this message instead:
 
 > I saved /ch1.txt! I did! I would get it myself but I.  n't re. b r wh. e. ome i. any ore.          ... :()
 
-TODO
+Moving on to the next switch gives this message:
 
 > -----BEGIN PGP PRIVATE KEY BLOCK-----  
 > Version: GnuPG v2  
@@ -61,22 +63,26 @@ TODO
 > =V6y8  
 > -----END PGP PRIVATE KEY BLOCK-----  
 
-TODO
+The fourth message reads:
 
 > Apparently it is super important that I tell you that I don't write in Swedish! So if my text looks garbled I am blaming U! K?  
 > But don't worry, I have something nice for you too! It's called a /ch2.txt! But... I seemed to have left it at home. Sorry! Maybe you can find it for me?  
 
-TODO
+Finally flipping the final switch and pressing the button gives us this:
 
 > Im writing but seemingly no one is listening.  
 > Have not even had breakfast yet. Maybe I will get some Cereal  
 > You should too!  
 
-TODO
+Get it? Cereal sound like Serial. Listening on the serial interface with for example picocom and pressing the button gives the following message.
 
 > There is no place like 127.0.0.1. In my case that is at 95.215.46.212!
 
-TODO
+Combining the IP address with the paths from the messages we can download two files.
+The first file contains a PGP encrypted message encoded in hex.
+The second file contains the second half of the PGP key base64 encoded a couple of times.
+Decoding the file a few times, combining it with the part in the message and importing it to GPG allows us to decrypt the message.
+Basically, the following script solves the challenge.
 
 {% highlight bash %}
 wget http://95.215.46.212/ch1.txt
@@ -115,7 +121,7 @@ gpg -d message.gpg > ch1.dec.txt
 cat ch1.dec.txt
 {% endhighlight %}
 
-TODO
+Which gives us this message and the challenge is solved!
 
 > Congratulations on solving all the puzzles!  
 > ---  
@@ -130,52 +136,53 @@ TODO
 > If you prefer to not claim the prize you can also give it away.  
 > Or if you don't want to give out your address you can also get it at the next Sec-T/Security Fest/OWASP GBG Day event.  
 
-TODO
+Thanks for Weckzen for a simple but nice challenge.
 
 ## The Prize
 
-TODO
+A couple of days later I received this cute little kit. A followed the [assembly guide from their website](https://learn.pimoroni.com/tutorial/sandyj/assembling-pirate-radio).
 
 ![Pirate Radio Box](/assets/images/hardware/pirateradio/pirate-chest.jpg)
 
-TODO
+First, let's lay out all the parts:
 
 ![Components](/assets/images/hardware/pirateradio/components.jpg)
 
-TODO
+Start with the chassi, remove the plastic covers:
 
 ![Chassi Parts](/assets/images/hardware/pirateradio/chassi-parts.jpg)
 
-TODO
+Use the neat little plastic nuts and bolts to assemble the frame and legs:
 
 ![Chassi Assembly](/assets/images/hardware/pirateradio/chassi-assembly.jpg)
 
-TODO
+Then add the speaker and fasten it with the nuts and bolts:
 
 ![Speaker Mounted](/assets/images/hardware/pirateradio/speaker-mounted.jpg)
 
-TODO
+The Pi Zero W and the DAC with accompanying headers:
 
 ![Electronics Components](/assets/images/hardware/pirateradio/electronics-components.jpg)
 
-TODO
+Soldering them in place to prepare for final assembly:
 
 ![Pins Soldered](/assets/images/hardware/pirateradio/pins-soldered.jpg)
 
-TODO
+Mounting the DAC and connecting the speaker:
 
 ![DAC Mounted](/assets/images/hardware/pirateradio/dac-mounted.jpg)
 
-TODO
+Finally, mounting the Pi Zero on top:
 
 ![Pi Zero Mounted](/assets/images/hardware/pirateradio/pi-mounted.jpg)
 
-TODO
+This completes the assembly of the radio:
 
 ![Final Radio](/assets/images/hardware/pirateradio/final-radio.jpg)
 
-TODO
+I have just recently started doing some home automation with Philips Hue and Alexa.
+This will be a perfect component for some audio related parts of that.
 
 ## Conclusion
 
-TODO
+There isn't that much more to say. Thank you Weckzén for a nice little challenge and a beautiful prize and thanks to the Security Fest organizers for a great conference!
