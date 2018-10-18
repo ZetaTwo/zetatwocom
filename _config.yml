@@ -12,7 +12,7 @@ github_username:  ZetaTwo
 plugins: ['jekyll-paginate']
 markdown: redcarpet
 redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables"]
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data", "tables", "footnotes"]
 highlighter: rouge
 encoding: utf-8
 paginate: 5
