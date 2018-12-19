@@ -107,7 +107,7 @@ Look at all that chocolate.
 
 ![Bought a bad of chocolate](/assets/images/hardware/secretsanta/21-candy-2.jpg)
 
-I bought a generous bad to have plenty for the gift but maybe also leave some spare ones to the maker.
+I bought a generous bag to have plenty for the gift but maybe also leave some spare ones to the maker.
 
 ![All skulls being coated](/assets/images/hardware/secretsanta/22-coating-4.jpg)
 
