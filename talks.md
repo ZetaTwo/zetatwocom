@@ -10,7 +10,7 @@ I have given a few talks at various conferences and other contexts. I have colle
 * [SEC-T 2016 Talk: SMT in RE](/education/2016/09/08/sect2016-talk.html) - A talk about how SMT can be used in Reverse Engineering originally given at SEC-T 2016.
 * [Security Fest 2017 Talk: Reversing with determination](/education/2017/09/21/secfest17-talk.html) - A talk about Reverse Engineering techniques at Security Fest 2017.
 * [SEC-T 2017 Talk: Unauthenticated encryption in the wild](/education/2017/10/22/sect2017-talk.html) - A talk about the problems of using unauthenticated encryption given at SEC-T 2017.
-* Nixucon 2018: Using SMT solvers for binary analysis and exploitation (Slides and video TBA)
+* [Nixucon 2018: Using SMT solvers for binary analysis and exploitation](/education/2019/01/01/passwordscon18-talk.html) - Essentially my SEC-T 2016 and 2018 talks combined into a longer talk.
 * [SEC-T 2018 Talk: Fun with symbolic execution](/education/2019/01/01/sect18-talk.html) - A talk about symbolic exection and examples on how to use it.
 * [PasswordsCon 2018 - Protecting medical data with passwordless authentication](/education/2019/01/01/passwordscon18-talk.html) - A talk about how we do authentication and identification at KRY/LIVI.
 * Talk at Detectify - From Zero to Zero Day (Slides TBA)
