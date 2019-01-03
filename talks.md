@@ -11,7 +11,7 @@ I have given a few talks at various conferences and other contexts. I have colle
 * [Security Fest 2017 Talk: Reversing with determination](/education/2017/09/21/secfest17-talk.html) - A talk about Reverse Engineering techniques at Security Fest 2017.
 * [SEC-T 2017 Talk: Unauthenticated encryption in the wild](/education/2017/10/22/sect2017-talk.html) - A talk about the problems of using unauthenticated encryption given at SEC-T 2017.
 * Nixucon 2018: Using SMT solvers for binary analysis and exploitation (Slides and video TBA)
-* SEC-T 2018 Talk: Fun with symbolic execution (Slides and video TBA)
+* [SEC-T 2018 Talk: Fun with symbolic execution](/education/2019/01/01/sect18-talk.html)
 * [PasswordsCon 2018 - Protecting medical data with passwordless authentication](/education/2019/01/01/passwordscon18-talk.html)
 * Talk at Detectify - From Zero to Zero Day (Slides TBA)
 * Talk at Google Stockholm - From Overflow to Shell (Slides TBA)
