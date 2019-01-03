@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "NixuCon 2018: SMT solvers for analysis and exploitation"
-date: 2019-01-01 01:12
+date: 2019-01-03 01:20
 type: post
 published: true
 comments: false
