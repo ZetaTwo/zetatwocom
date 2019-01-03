@@ -4,7 +4,7 @@ title: "Talk at Försäkringsföreningen"
 date: 2019-01-03 01:10
 type: post
 published: true
-comments: false
+comments: true
 categories: education
 ---
 

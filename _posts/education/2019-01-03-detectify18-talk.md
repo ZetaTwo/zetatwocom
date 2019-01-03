@@ -4,7 +4,7 @@ title: "Detectify Hacker School: From Zero to Zero Day"
 date: 2019-01-03 01:30
 type: post
 published: true
-comments: false
+comments: true
 categories: education
 ---
 
