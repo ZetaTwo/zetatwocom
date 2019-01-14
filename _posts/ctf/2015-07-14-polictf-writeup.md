@@ -32,16 +32,16 @@ Due to a mistake I actually solved this one in an unnecessarily complicated way.
 The challenge provided a service which you could send text to and get it and some other text back encrypted.
 The encryption was a simple repeated XOR with the flag as a key.
 
-A message {% latex %}m{% endlatex %} is sent which get concatenated with some dummy text {% latex %}m'=a|m|b{% endlatex %}.
-Then, each characted (byte) is XOR:ed with the current byte of the key {% latex %}c_i = m'_i \oplus k_i{% endlatex %}.
+A message {% katex %}m{% endkatex %} is sent which get concatenated with some dummy text {% katex %}m'=a|m|b{% endkatex %}.
+Then, each characted (byte) is XOR:ed with the current byte of the key {% katex %}c_i = m'_i \oplus k_i{% endkatex %}.
 However, if we know two of three operands of the XOR operation we can recover the third by XOR:ing the other two. 
 
-{% latex %}c_i \oplus m'_i = k_i \oplus m'_i \oplus m'_i = k_i{% endlatex %}
+{% katex %}c_i \oplus m'_i = k_i \oplus m'_i \oplus m'_i = k_i{% endkatex %}
 
 The easy way to solve this would have been to just send a long string of for example A's and then XOR the cipher you get back with the same message you sent.
 Unfortunately, I made a mistake and thought that the encryption was more complicated than it was and turned this into an oracle attack.
-By sending short messages of a single byte repeated, I figured out that the length of  {% latex %}a{% endlatex %} was 3.
-Then I tried one value for first byte of {% latex %}m{% endlatex %} and with the help of the response, I calculated which byte was in the key.
+By sending short messages of a single byte repeated, I figured out that the length of  {% katex %}a{% endkatex %} was 3.
+Then I tried one value for first byte of {% katex %}m{% endkatex %} and with the help of the response, I calculated which byte was in the key.
 I then repeated this for each byte in the message until I had the full key.
 
 Flag: flag{\_this\_1s\_s0\_simple\_you\_should\_have\_solved\_\_it\_1n\_5\_sec}

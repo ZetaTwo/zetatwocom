@@ -72,7 +72,7 @@ Password: elefant
 In this challenge you are given a Python script and a wordlist.
 The script maps floating point numbers to passwords in the file.
 We are given the seed that was used to generate a certain password and are tasked with finding the password.
-The seed gives us the number {% latex %}0.633603952323{% endlatex %} but that number does not exist in the passwords file.
+The seed gives us the number {% katex %}0.633603952323{% endkatex %} but that number does not exist in the passwords file.
 However, if you remove the last digit you can find the following row in the passwords file.
 
 > 0.63360395232 : nobelpristagare
@@ -283,7 +283,7 @@ From the challenge page we are also given an encrypted file.
 
 The labyrinth lets you choose a number between 1 and 100 and then only allows you to wither start over or go to the next numbered room.
 The also tell you that the solution is in room number 1456. By trying some number and observing the sequence of rooms you arrive in you can deduce that they follow the sequence of the [Collatz Conjeture](https://en.wikipedia.org/wiki/Collatz_conjecture).
-Thus you can calculate a number in the interval {% latex %}[1-100]{% endlatex %} that eventually reaches 1456.
+Thus you can calculate a number in the interval {% katex %}[1-100]{% endkatex %} that eventually reaches 1456.
 I did this by [brute force testing in Python](/assets/other/djul16_collatz.py) which gave me two possible starting rooms: 63 and 95.
 Starting at any of these two rooms and continuing walking eventually gets you to room number 1456 and the following message:
 
