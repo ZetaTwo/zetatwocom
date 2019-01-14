@@ -39,6 +39,15 @@
           </li>
           {% endif %}
 
+          {% if site.youtube_username %}
+          <li>
+            <a href="https://youtube.com/{{ site.youtube_username }}">
+              <i class="fa fa-youtube icon"></i>
+              <span class="username">{{ site.youtube_username }}</span>
+            </a>
+          </li>
+          {% endif %}
+
         </ul>
       </div>
 
