@@ -4,16 +4,14 @@ title: About me
 permalink: /about/
 ---
 
-My name is Calle "Zeta Two" Svensson. I'm a 24 year old graduate in engineering physics with a master's in computer science focused on IT security.
+My name is Calle "Zeta Two" Svensson. I'm a 27 year old graduate in engineering physics with a master's in computer science focused on IT security.
 Computers and programming have basically been a large part of my life since I was very young.
-This site is the fifth incarnation of Zeta-Two.com since the original site I created in 2005 and will act as a blog about IT and other technology topics.
+This site is the fifth incarnation of Zeta-Two.com since the original site I created in 2005 and acts as a blog about IT and other technology topics.
 
-I currently work as a IT security consultant for [Bitsec AB](http://bitsec.se) in Stockholm where I, in addition to other things, do penetration testing, code reviews and forensics. 
+I currently work as the head of security at the healtcare startup [KRY/LIVI](https://kry.se) in Stockholm where I, I'm responsible for IT- and information security. 
 
-As stated above I'm into computer science a lot and is proficient with most mainstream languages with my favorites being C++, Python and C\#.
-I've been into security for real since about three years back following a very long interest for the subject.
+As stated above I'm into computer science a lot and is proficient with most mainstream languages with my favorites being C++, Python and Scala.
+I've been into security for real since about 2013 following a very long interest for the subject.
 I'm currently competing in [CTF:s](https://en.wikipedia.org/wiki/Capture_the_flag#Computer_security) together with the team [HackingForSoju](https://ctftime.org/team/3208). 
 Aside from computers, I do long distance running which is very good for clearing the head or thinking about difficult problems.
 If you want to know more about me, feel free to contact me or employ some [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) on a social media platform near you.
-
-<!-- Tredje delen av flaggan är: chinchilla -->
