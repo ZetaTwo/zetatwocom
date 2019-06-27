@@ -5,6 +5,7 @@ status: published
 type: post
 published: true
 comments: true
+categories: ctf
 ---
 
 British intelligence agency GCHQ has released a christmas card.

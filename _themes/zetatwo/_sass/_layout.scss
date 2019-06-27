@@ -1,0 +1,231 @@
+body {
+  overflow-x: hidden;
+  background-color: $footer-color;
+}
+
+.site-content {
+  background: url('/assets/img/background.png') repeat;
+}
+
+/**
+ * Site header
+ */
+.site-header {
+  overflow: hidden;
+  position: relative;
+  height: 159px;
+
+  .banner-container {
+    $width: 1060px;
+    width: $width;
+    position: absolute;
+    left: 50%;
+    margin-left: -$width/2;
+
+    @include media-query($on-palm) {
+      $zoom: 0.7;
+      $width: $zoom*1060px;
+      width: $width;
+      margin-left: -$width/2;
+    }
+
+    .banner {
+      display: block;
+    }
+  }
+
+}
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+  font-family: "Courier New", Courier, monospace;
+  color: $footer-text-color;
+  width: 100%;
+
+  h2 {
+    color: $footer-text-color;
+    text-decoration: underline;
+  }
+
+  a {
+    color: $footer-text-color;
+  }
+
+  .footer-border {
+    height: 51px;
+    background: url('/assets/img/footer_border.png') repeat-x;
+  }
+
+  .footer-content {
+    background-color: $footer-color;
+  }
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 15px;
+    color: $footer-text-color;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(30% - (#{$spacing-unit} / 2));
+    width:         calc(30% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(30% - (#{$spacing-unit} / 2));
+    width:         calc(30% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(40% - (#{$spacing-unit} / 2));
+    width:         calc(40% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+}
+
+.page-heading {
+  font-size: 20px;
+  font-family: 'Questrial', sans-serif;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+  font-size: $small-font-size;
+  color: $brand-color;
+  font-family: 'Cabin Condensed', sans-serif;
+
+}
+
+.post-meta-list {
+  @extend .post-meta;
+  float: left;
+  text-align: center;
+  font-weight: 800;
+}
+
+.post-link {
+
+  font-family: 'Questrial', sans-serif;
+  background: url("/assets/img/post_header.png") no-repeat;
+  height: 63px;
+  padding: 10px 20px;
+  margin-left: 40px;
+
+  a {
+    display: block;
+    font-size: 24px;
+  }
+
+
+}
+
+.post-read-more {
+  font-family: 'Questrial', sans-serif;
+  background: url("/assets/img/read_more_btn.png") no-repeat;
+  padding: 10px 20px;
+  a {
+    display: block;
+    font-size: 16px;
+  }
+}
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
