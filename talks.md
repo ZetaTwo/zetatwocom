@@ -17,12 +17,16 @@ If you want me to come and give a presentation at your event or your company, fe
 * [Talk at Detectify - From Zero to Zero Day](/education/2019/01/03/detectify18-talk.html) - A talk about my background how to get into security and an RCE in GitHub.
 * [Talk at Google Stockholm - From Overflow to Shell](/education/2019/01/03/google18-talk.html) - A presentation about the basics of binary exploitation.
 * [Guest lecture at KTH - The Basics of Binary Exploitation](/education/2019/02/05/kth19-talk.html) - A presentation about the basics of binary exploitation.
+* [SecuriTea - Lecture on basics of binary exploitation](/education/2019/06/27/foocafe-talk.html) - A presentation about the basics of binary exploitation.
+* [0xFF - Talk and workshop about CTF](/education/2019/06/27/0xff-talk.html) - A presentation and workshop about CTFs.
+* [SecurityFest 2019 - Software Obfuscation with LLVM](/education/2019/06/27/securityfest19-talk.html) - A presentation about code obfuscation and LLVM.
 
 ## Upcoming talks
-* SecuriTea (Feb 2019) - A workshop in binary exploitation (Title pending)
+
 * Video with LiveOverflow (Jan-Feb 2019) - A primer on information theory (Title pending)
 
 ## Talks in Swedish
 * [Krypto i Vardagen - När det blir fel](https://www.youtube.com/watch?v=btLVrlfA1eo) - A talk in Swedish about cryptography attacks as a guest lecturer at Stockholm University. Unfortunately I was very tired when doing this so the delivery is not top notch.
 * [IDG Cloud Confessions - GDPR ur ett startup-perspektiv](/education/2019/01/03/idgcio17-talk.html) - A talk about how we worked with GDPR at my workplace, KRY/LIVI, a healthcare startup.
 * [Talk at Försäkringsföreningen - Hacking som utbildning och tävling](/education/2019/01/03/insurance-ctf-talk.html) - A talk about CTFs and how to use them for security training.
+* [KonsulaTED #3 - Basics of binary exploitation](/education/2019/06/27/konsulated-talk.html) - A talk at our private meetup about binary exploitation.
