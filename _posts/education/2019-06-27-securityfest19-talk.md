@@ -19,7 +19,7 @@ It doesn't really affect the main point of the talk but for completeness I thoug
 
 Basically, I mixed up two different amazing tools by [Trail of Bits](https://www.trailofbits.com/): [McSema](https://github.com/trailofbits/mcsema) and [Manticore](https://github.com/trailofbits/manticore/).
 In the talk, I say that Manticore is a tool in the LLVM ecosystem. This is incorrect. Manticore doesn't have anything with LLVM to do.
-McSema on the other hand is a tools to "x86, amd64, and aarch64 program binaries to LLVM bitcode".
+McSema on the other hand is a "framework for lifting x86, amd64, and aarch64 program binaries to LLVM bitcode".
 In particular, on the sixth slide (at around minute 13 in the recording) I have listed Manticore as an example of an LLVM tool but it should say McSema.
 Then towards the end of the presentation (at around minute 33 in the recording) there is a question about the difference 
 between Manticore and angr I again say that Manticore is uses LLVM which is incorrect. Both of them use their own intermediate representation.
