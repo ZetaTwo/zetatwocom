@@ -27,3 +27,11 @@ The rest of the answer discussing the difference between Ghidra and IDA is still
 
 In short, disregard anything I said about Manticore in the presentation, it's mostly wrong.
 Everything else in the presentation should be mostly correct.
+
+## Pictures
+
+Jesper (organizer) and I on the stage before my talk:
+![Jesper (organizer) and I on the stage before my talk](/assets/images/education/secfest-calle-small.jpg)
+
+Me, on stage talking about LLVM:
+![Me, on stage talking about LLVM](/assets/images/education/secfest-calle-small.jpg)
