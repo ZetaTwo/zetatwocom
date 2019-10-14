@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Trainings
-permalink: /services/trainings
+permalink: /services/trainings/
 ---
 
 ## Basics of Binary Exploitation
