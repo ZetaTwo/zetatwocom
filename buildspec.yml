@@ -1,7 +1,10 @@
-version: 0.1
+version: 0.2
    
 phases:
   install:
+    runtime-versions:
+        ruby: 2.6
+        nodejs: 10
     commands:
       - gem install bundler
       - bundle install
