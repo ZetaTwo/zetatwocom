@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'wdm', '~> 0.1.0' if Gem.win_platform?
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 gem 'jekyll'
 gem 'jekyll-paginate'
 gem 'redcarpet'
 gem 'rouge'
-gem 'execjs', '~> 2.7'
+gem 'execjs', '>= 2.7'
 
 gem "jekyll-theme-zetatwo", :path => "_themes/zetatwo"
 
