@@ -5,12 +5,12 @@ permalink: /services/
 ---
 
 My primary skills are within IT security, reverse engineering and software development.
-While I do have a full time job with no current intention of changing jobs, I am occasionally available for shorter freelance projects.
+I have a full time job but am available for short freelance projects after hours.
 If you are interested in hiring me for a shorter engagement, please send me an email at calle.svensson@zeta-two.com.
 
 ## Consulting
 
-I can provide consulting services within application security, software development or systems administration.
+I provide consulting services within application security, software development or systems administration.
 My speciality is reverse engineering where I have experience with a broad range of architectures and systems.
 Typically, I'm available for shorter projects, from a couple of hours up towards a week as I don't want to commit to anything longer while already working full time.
 
