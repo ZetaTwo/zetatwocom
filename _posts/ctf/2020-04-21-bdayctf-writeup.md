@@ -3,7 +3,7 @@ layout: post
 title: "Birthday CTF 2020: Writeup"
 date: 2020-04-21 13:00
 type: post
-published: true
+published: false
 comments: false
 categories: ctf
 ---
