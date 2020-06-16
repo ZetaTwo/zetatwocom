@@ -46,8 +46,7 @@ $ clang -o chall cha.ll -lstdc++
 {% endhighlight %}
 
 For some reason I couldn't compile this with clang on Linux so I did it on my Macbook instead.
-
-TODO
+I then analyzed the resulting binary in IDA and found the following relevant pieces of code.
 
 {% highlight c++ %}
 int main(int argc, const char **argv, const char **envp)
@@ -98,13 +97,13 @@ __int64 xml_strhash(const unsigned __int8 *data, int len)
 }
 {% endhighlight %}
 
-TODO
+The program takes a string, checks that the input is 18 chars long, hashes the chars in pairs and compares them against a target hash which is initialized with this data:
 
 {% highlight c++ %}
 __data:0000000100004110 flag_hash_const dd 1891, 1711, 1984, 1967, 870, 1727, 1841, 1956, 849
 {% endhighlight %}
 
-TODO
+I put together this script to bruteforce the possible combinations of letters.
 
 {% highlight python %}
 #!/usr/bin/env python3
@@ -137,7 +136,7 @@ for p in pairs:
     print(','.join(''.join(x) for x in p))
 {% endhighlight %}
 
-TODO
+This gave me the following possible combinations for each pair.
 
 {% highlight bash %}
 $ python3 solve.py
@@ -152,13 +151,15 @@ vD,td,st,x$,w4,uT
 21,1A,0Q,.q,/a,3!
 {% endhighlight %}
 
-TODO
+Trying a few different variants to get something readable, we end up with this:
 
 `s3`, `e_`, `y0`, `u_`, `0f`, `f_`, `p1`, `st`, `3!`
 
-TODO
+which results in the following flag:
 
 Flag: BDayCTF{s3e_y0u_0ff_p1st3!}
+
+
 
 ## [b0bb's Challenge](https://twitter.com/0xb0bb/status/1250046144421474304)
 
