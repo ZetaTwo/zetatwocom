@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "Birthday CTF 2020: Writeup"
-date: 2020-04-21 13:00
+date: 2020-07-09 15:00
 type: post
-published: false
+published: true
 comments: false
 categories: ctf
 ---
 
-Last Tuesday was the day of my 29th birthday. I was sitting a my computer working from home when suddenly, at 15:00, my Twitter notifications exploded.
+Earlier this spring I celebrated my 29th birthday. I was sitting a my computer working from home when suddenly, at 15:00, my Twitter notifications exploded.
 My teammates and a few of our CTF friends had prepared a CTF challenge each for me. It was one of best birthday presents I've ever received I think and I was basically sitting there laughing as I saw all the tweets rolling in.
 It actually took me a week to solve the challenges. I blame work and other commitments but I did solve them in the end. Naturally I have to finish it with writing a write-up for the challenges.
 Each challenge was provided as a Tweet directed at me with the [hashtag #ZetaTwoCTFVirtuoso](https://twitter.com/hashtag/ZetaTwoCTFVirtuoso) except two which were follow-ups to another challenge.
@@ -236,23 +236,25 @@ Flag: BDayCTF{Many_Happy_Returns}
 
 ## [capsl's Challenge](https://twitter.com/capslcc/status/1250046148133277698)
 
-TODO
+This challenge was a simple data conversion challenge. First convert the decimal number into hex and then decode the hex as bytes and treat it as ASCII test.
+The following Python snippet does this.
 
 {% highlight python %}
 print(bytes.fromhex('%x' % 668430635688626836307545807846250470926814185595574578375052469735293834318137052219361513769677150920763734277731983741).decode('ascii'))
 {% endhighlight %}
 
-TODO
+Running it prints the flag.
 
 Flag: BDayCTF{Happy~bday~Z!~let~2020~be~HAX~n~awesome!!}
 
 ## [Steven's Challenge](https://twitter.com/StevenVanAcker/status/1250046150347853824)
 
-TODO
+Steven's challenge consisted of the large system of emoji equations.
 
 ![Steven's challenge image](/assets/images/ctf/bday-steven-challenge.jpg)
 
-TODO
+Unfortunately, Python does not support emojis as variable names so I had to manually transcribe the whole image into the following Z3 script.
+It first defines our emoji variables and restrict them to the range `[0, 127]`. Then it sets up the equations, solves them and uses the solution to print the flag.
 
 {% highlight python %}
 #!/usr/bin/env python3
@@ -310,7 +312,7 @@ else:
     print('unsat')
 {% endhighlight %}
 
-TODO
+Running it produces the flag as output.
 
 Flag: BDayCTF{r34dy_f0r_4n07h3r_l4p_4r0und_7h3_5un}
 
@@ -318,7 +320,16 @@ Flag: BDayCTF{r34dy_f0r_4n07h3r_l4p_4r0und_7h3_5un}
 
 > congratulations for leveling up! You might be a stellar haxor but can you crack basing 64 encryption?? zeta.alieni.se
 
-TODO
+The website just contains this text:
+
+> Securelly encrypted flag: 2405922380766088
+
+Inspecting the page shows the following DOM:
+
+> Securelly encrypted flag: <!-- boss said basing 64 but I could only find 36?? --> <span id="flag">2405922380766088</span>
+
+Encoding the number to The number decodes 
+
 
 
 
