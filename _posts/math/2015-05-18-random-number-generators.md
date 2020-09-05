@@ -63,4 +63,3 @@ Can we do better? Of course we can and there have been some interesting research
 For instance, instead of completely throwing away bad input numbers it is possible to treat the number as coming from a smaller range and use some of the bits from it.
 Likewise, instead of rejecting bad output numbers, it is possible to use bits from it and complement it with a few more bits to get a good output.
 Of course both of these improvements makes the implementation more complicated.
-
