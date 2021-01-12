@@ -4,7 +4,7 @@ title: "SANS Holiday Hack Challange 2020: Writeup"
 date: 2021-01-04 15:00
 type: post
 published: true
-comments: false
+comments: true
 categories: ctf
 ---
 
