@@ -20,7 +20,7 @@ If you want me to come and give a presentation at your event or your company, fe
 * [SecuriTea - Lecture on basics of binary exploitation](/education/2019/06/27/foocafe-talk.html) - A presentation about the basics of binary exploitation.
 * [0xFF - Talk and workshop about CTF](/education/2019/06/27/0xff-talk.html) - A presentation and workshop about CTFs.
 * [SecurityFest 2019 - Software Obfuscation with LLVM](/education/2019/06/27/securityfest19-talk.html) - A presentation about code obfuscation and LLVM.
-* SEC-T 2019 - Game Boy hacking / Bringing VGA to the Game Boy - Two presentations given at SEC-T 2019 about Game Boy hacking and building a Game Boy VGA adapter (Will be released soon)
+* [SEC-T 2019 - Game Boy hacking / Bringing VGA to the Game Boy](/education/2019/11/05/sect19-talk.html) - Two presentations given at SEC-T 2019 about Game Boy hacking and building a Game Boy VGA adapter
 
 ## Upcoming talks
 
