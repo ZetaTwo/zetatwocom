@@ -8,8 +8,6 @@ comments: true
 categories: ctf
 ---
 
-
-
 The computer science chapter at my alma mater, KTH, arranges an advent calendar called ["dJulkalendern"](https://djul.datasektionen.se).
 It is a CTF-like puzzle with challenges (almost) every day until christmas and also a competition.
 
@@ -20,7 +18,7 @@ If you want to see everything verbatim, go to the challenge site.
 This year, there were a puzzle every weekday and I will go through and explain them all.
 To prevent this post from being too long, I will be pretty brief in my explanations. If you have any questions or solved something in a different way, please comment below.
 
-## Day -1: All Set!
+## Day -1: Ready?
 
 We are given a description:
 
@@ -30,7 +28,7 @@ We are given a description:
 
 Doing this gives us the password `coming`
 
-##  Day 1: You're hired!
+##  Day 1: Ho-ho-ho
 
 We are given an encrypted message:
 
@@ -53,7 +51,7 @@ print(f'Password: {password}')
 
 Running this gives us the answer `permanent`.
 
-## Day 2: Coffee get!
+## Day 2: Instructions unclear, coffee stuck in machine
 
 We are given a couple of instruction steps including a large block of digits. Taking each digit and colouring it with a different colour reveals the password.
 
@@ -95,7 +93,7 @@ Running this gives the following image:
 
 In the image you can just barely make out the word `shops`.
 
-## Day 3: Light at the end of the tunnel
+## Day 3: Ho Ho Ho-uston, we have a problem
 
 The challenge gives you instructions how to connect to the MUD using netcat. Connecting to the server presents you with a classic text-based adventure game. The game involves walking around, picking up some items, using them in various places and eventually flipping the light switch which gives you the following message:
 
@@ -118,7 +116,7 @@ your work, you go back up the now working elevator back to the office.
 
 And the password is `parched`.
 
-## Day 6: Log(ging) (cab)out
+## Day 6: Logging for answers
 
 You are given a number of log files, all named `x,y.log` and containing one character each. By taking the filename of the log as a coordinate and placing the contents of the file at that location in a grid we can render an image:
 
@@ -161,7 +159,7 @@ B  T  G         K
 
 And we can read the password `garden`.
 
-## Day 7: Rustic Studies
+## Day 7: Quests & ions
 
 This challenge sends you to a quiz page very similar to Kahoot! For every question a request is made to the following URL: `http://djul-2021-kahootish.medusa.datasektionen.se/getStatus/`containing a response like this:
 
@@ -184,7 +182,7 @@ This challenge sends you to a quiz page very similar to Kahoot! For every questi
 
 By looking at the 1-indexed value in `currentA` we know which is the correct answer to the question and we can just keep answering correct until we have accumulated 10 points and we get a popup saying "The word is: `bumfuzzle`".
 
-## Day 8: Read Herring
+## Day 8: Sales, Sheets, Battlestar Galactica
 
 We are given a zip file containing both a .csv and an .xlsx file as well as an info text saying the contents are the same and we can use whichever.
 
@@ -224,7 +222,7 @@ scanned 1 barcode symbols from 1 images in 0,02 seconds
 
 This gives us the password `magnetic`.
 
-## Day 9: 4, 8, 15, 16, 23, 42
+## Day 9: To ponder, or not to ponder
 
 We are given the numbers `38399, 12803, 33497, 22847, 12383`. If we factor each number, sum the factors and decode the sums as ASCII characters we get the answer:
 
@@ -240,7 +238,7 @@ print(f'Password: {answer}')
 
 Running this gives the answer `magma`.
 
-## Day 10: Corporate contributor
+## Day 10: MUDdy business
 
 This challenge is another MUD. When you connect to the server you are presented with a series of rooms. In each room, the goal is to visit every square of the room exactly once. This is called a "self-avoiding walk" and appears in many variations, including some of the 2D Zelda games. Once you have solved all the rooms you are greeted with the following message:
 
@@ -262,7 +260,7 @@ Among the contents, the word 'fastidious' sticks out to you.
 
 So the password is `fastidious`.
 
-## Day 13: Mama&Sons access Primed
+## Day 13: Have a crack at cracking
 
 This challenge provides you with a website with a login form. The hash of the password for the first user is `a01fe2d5aea3c1360eb5b8eb64b668af`. Googling this hash shows that the password is `hyperventilation`.
 
@@ -294,7 +292,7 @@ $ .\hashcat64.exe -m 0 -a 0 -r leet2.rule djul.hash rockyou.txt
 
 Which gives us the passowrd `80h3m14n2h4p50dy` (Bohemian Rhapsody). Logging in with it gives us the password `parameterize`. 
 
-## Day 14: 
+## Day 14: Jumbled Endpoints
 
 This challenge revolves around the Library of Babel which is also implemented as a website at: http://libraryofbabel.info
 
@@ -303,17 +301,17 @@ You are supposed to search for various texts and answer which book, shelf etc th
 Which gives us the password `angler`.
 
 
-## Day 15: We're In
+## Day 15: Checking Loads
 
 In this challenge we are given a video file with a santa dancing on top of some squares. The squares represent a board of Game of Life. By setting up the state from the video and simulating one step of Game of Life, the cells spell out the word `hammer`.
 
-## Day 16: Pointed
+## Day 16: Omega
 
 The challenge consists of an ELF binary. Disassembling it reveals that there is a function called `christmas_present` which is never called by the code. Looking closer at the instructions in the function they don't really make sense but taking the first letter of some of them spell out the password `dollar`.
 
 ![Djul 2021 flag 16](/assets/images/ctf/djul21_flag16.png)
 
-## Day 17: How to check mate with horse and rook???
+## Day 17: Ho ld Your Horses
 
 Here we get another MUD which we can connect to. We are presented with a huge grid but after taking 16 actions the MUD crashes and gives us a link to a logfile:
 
@@ -360,7 +358,7 @@ print(bytes(letters))
 
 Running this gives the password `peaceful`.
 
-## Day 20: dAnkan's Eleven, or Clucking with a Duckling
+## Day 20: The Polar Express, or T. Hanks for the Train
 
 In this challenge we are given a LogiSim schematic with a lock. The lock takes five 7-bit values as input. By studying the schematic we can translate it into the following Z3 code and solve it.
 
@@ -409,7 +407,7 @@ ALIVE
 
 So the password is `alive`.
 
-# Day 21: Rank S
+# Day 21: Non-Solid Duck
 
 In this challenge we are given a binary. By disassembling the code we can see that the program looks for two environment variables: USER and USER_ROLE. It checks that they are set to "admin" and "CYBERTOMTE" respectively. Running the program with these environment variables correctly set gives us the password `bomberman`.
 
@@ -426,7 +424,7 @@ $ USER=admin USER_ROLE=CYBERTOMTE ./duck
 go djul onskar sentor:bomberman
 {% endhighlight %}
 
-## Day 22: Lexicography
+## Day 22: Come Come Kitty Kitty, You're So Pretty Pretty
 
 In this challenge we are given the following "map"
 
@@ -502,7 +500,7 @@ for a,b in letters:
 
 This leaves us with the following possible letters: i, a, (F or b), a, (6 or l), i, m, (r or N). From these letters we can form the word `familiar`.
 
-## Day 23: Great Success!!!
+## Day 23: Squaring Off
 
 In the final real challenge we are provided with a website containing an empty four by four grid and numbers in the background. The numbers only contain the digits 0-7 and can therefore be interpreted as octal numbers:
 
@@ -524,7 +522,7 @@ oo=e
 
 If we read this column by column instead of row by row we get `?showprompt=true`. Adding this to the URL shows an input box and a sound clip called `birthyearoftheartist.ogg`. Using Shazam to identify the song reveals that it is Vanessa's First Smiles by Richard Clayderman who was born in 1953. Entering this in the input show an image called `video.mp4.png` which looks like it should be a video clip. Downloading the file and inspecting it with binwalk reveals that it is both a PNG image and a ZIP archive. Unzipping the image gives us a file called `last step.mp4` which is a slightly corrupted MP4 file. Using a hex editor such as 010Editor and another MP4 file as reference we can repair the file by fixing the names of a few parts of the file and playing the video with VLC. This gives us the password `consumer`.
 
-## Day 24: Among dUckS
+## Day 24: Tying Up Loose Ends
 
 We are given the instructions: 
 
