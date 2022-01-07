@@ -45,7 +45,7 @@ while True:
         print(f'An error occurred while processing data: {e}')
 {% endhighlight %}
 
-Let's pretend that we do not get any stdout data from the unpickling and that not outbound conmnections are allowed so a reverse shell won't do. Note that the unpickled object needs to have a `.process()`method which returns something which we can call `.decode()` on which in turn should return a string. We can then use the following code to craft such a payload:
+Let's pretend that we do not get any stdout data from the unpickling and that not outbound connections are allowed so a reverse shell won't do. Note that the unpickled object needs to have a `.process()`method which returns something which we can call `.decode()` on which in turn should return a string. We can then use the following code to craft such a payload:
 
 {% highlight python %}
 #!/usr/bin/env python3
