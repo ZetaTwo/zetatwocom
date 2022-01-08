@@ -21,6 +21,8 @@ If you want me to come and give a presentation at your event or your company, fe
 * [0xFF - Talk and workshop about CTF](/education/2019/06/27/0xff-talk.html) - A presentation and workshop about CTFs.
 * [SecurityFest 2019 - Software Obfuscation with LLVM](/education/2019/06/27/securityfest19-talk.html) - A presentation about code obfuscation and LLVM.
 * [SEC-T 2019 - Game Boy hacking / Bringing VGA to the Game Boy](/education/2019/11/05/sect19-talk.html) - Two presentations given at SEC-T 2019 about Game Boy hacking and building a Game Boy VGA adapter
+* [Chalmers - Security at KRY/LIVI 2019](/education/2019/04/11/chalmers-kry-talk.html) - A presentation I gave to students at Chalmers University about the security work at KRY/LIVI.
+* [Chalmers - Security at KRY/LIVI 2020](/education/2020/04/26/chalmers-kry-talk.html) - A presentation I gave to students at Chalmers University about the security work at KRY/LIVI.
 * [MassifCon 2020 - Theft and Doxxing](/education/2020/02/08/massifcon20-talk.html) - A talk about the two most unethical things I have done in my career.
 
 ## Upcoming talks
