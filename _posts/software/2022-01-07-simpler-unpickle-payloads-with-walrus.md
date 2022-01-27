@@ -8,7 +8,7 @@ comments: true
 categories: software
 ---
 
-When exploiting Python deserialization, specifically, Pickle, vulnerabilities you need to craft a payload consisting of a collecetion of arguments and a callable that is available on the server. Most commonly you can use the `eval` function and a string to be evaluated. This is fairly flexible and from here you can typically import the `os` module and call `os.system` to do whatever you want. Sometimes there can be some limitations in place, for example, you might not get the output of the directly and it might be blocking outbound connections preventing reverse shells. In some situations you need the result of the unpcikle operation to return an object with specific properties. If you are lucky and convenient classes exist on the target and you have knowledge of them you might get away with simply constructing one of them. If this is not the case it is slightly trickier.
+When exploiting Python deserialization, specifically, Pickle, vulnerabilities you need to craft a payload consisting of a collection of arguments and a callable that is available on the server. Most commonly you can use the `eval` function and a string to be evaluated. This is fairly flexible and from here you can typically import the `os` module and call `os.system` to do whatever you want. Sometimes there can be some limitations in place, for example, you might not get the output of the application directly and it might be blocking outbound connections preventing reverse shells. In some situations you need the result of the unpickle operation to return an object with specific properties. If you are lucky and convenient classes exist on the target and you have knowledge of them you might get away with simply constructing one of them. If this is not the case it is slightly trickier.
 
 A big issue is that `eval` only evaluates a single expression so you can't declare your own classes since that is a statement, not an expression. With the introduction of the new walrus operator in Python, this is now much easier since we can now perform assignments as an expression. The key idea is that we can create a tuple where each element in the tuple can access items which have been assigned in a previous element. For example, this is a valid Python expression which will evaluate to `2`.
 
@@ -45,7 +45,7 @@ while True:
         print(f'An error occurred while processing data: {e}')
 {% endhighlight %}
 
-Let's pretend that we do not get any stdout data from the unpickling and that not outbound connections are allowed so a reverse shell won't do. Note that the unpickled object needs to have a `.process()`method which returns something which we can call `.decode()` on which in turn should return a string. We can then use the following code to craft such a payload:
+Let's pretend that we do not get any stdout data from the unpickling and that no outbound connections are allowed so a reverse shell won't do. Note that the unpickled object needs to have a `.process()`method which returns something which we can call `.decode()` on which in turn should return a string. We can then use the following code to craft such a payload:
 
 {% highlight python %}
 #!/usr/bin/env python3
