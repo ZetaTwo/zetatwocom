@@ -12,3 +12,5 @@ group :jekyll_plugins do
   gem 'jekyll-katex'
   gem 'octopress-video-tag',  :git => 'https://github.com/anarchivist/octopress-video-tag.git', :branch => 'loosen-gemspec'
 end
+
+gem "webrick", "~> 1.7"
