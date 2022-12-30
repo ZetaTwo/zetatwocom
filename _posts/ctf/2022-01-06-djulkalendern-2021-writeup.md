@@ -12,9 +12,6 @@ The computer science chapter at my alma mater, KTH, arranges an advent calendar 
 It is a CTF-like puzzle with challenges (almost) every day until christmas and also a competition.
 
 The puzzles are not really security focused like regular CTF but more broader IT related puzzles.
-The competiton was held in Swedish but I will still do this writeup in English since anyone might learn a thing or two from it.
-This means that I might translate clues and other texts freely into English.
-If you want to see everything verbatim, go to the challenge site.
 This year, there were a puzzle every weekday and I will go through and explain them all.
 To prevent this post from being too long, I will be pretty brief in my explanations. If you have any questions or solved something in a different way, please comment below.
 
