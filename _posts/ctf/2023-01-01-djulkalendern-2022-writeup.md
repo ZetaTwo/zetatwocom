@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "dJulkalender 2022: Write-up"
-date: 2022-12-30 00:00
+date: 2023-01-01 00:00
 type: post
 published: true
-comments: false
+comments: true
 categories: ctf
 ---
 
@@ -15,9 +15,13 @@ The puzzles are not really security focused like regular CTF but more broader IT
 This year, there were a puzzle every weekday and I will go through and explain them all.
 To prevent this post from being too long, I will be pretty brief in my explanations. If you have any questions or solved something in a different way, please comment below.
 
-## Day -1: All set!
+## Day -1: Ready?
 
-## Day 1: Rot-3 Cipher (in Swedish)
+The first window is simply a warm-up and encourages you to read the lore page to get the backstory and create some hype before the challenges begin.
+
+It also introduces how the password system works by giving you the password: further
+
+## Day 1: Mrs. Claus, more like Missing Claus
 
 In this windows, the main content is the following sentence:
 
@@ -38,7 +42,7 @@ print(bytes(roots).decode())
 
 Running this gives us the password: projection
 
-## Day 2: Sofa King
+## Day 2: Writing Safe Code
 
 As is tradition by now in Djulkalendern, the Friday windows are MUD windows. This means that we use the instructions provided to connect to the MUD using netcat. Connecting to the server presents you with a classic text-based adventure game. In the game we walk around in a house and interact with various items.
 
@@ -50,7 +54,7 @@ There are nine chili fruits in the greenhouse. These pieces of information gives
 
 Opening the safe gives us the password: beaned
 
-## Day 5: Mail Snooping
+## Day 5: Two Factor Authentication
 
 In this window we get a text file with 40501 ones and zeroes. That number happens to factor into 101 and 401. If we arrange the ones and zeroes into a rectangle with 401 by 101 pixels and use two different colors for them we get an image. This can be achieved with the below code:
 
@@ -77,7 +81,7 @@ Running this gives us the following image:
 
 So the password is: picturesque
 
-## Day 6: Going Underground
+## Day 6: Obstacles
 
 In this window we get a video of a duck jumping over obstacles. Each obstacle consists of three blocks and each block can be considered having a height of zero, one or two. If we treat each obstacle as a trinary number with three digits, they can give us the numbers 0-26. Realistically 26 will not appear since that obstacle is not possible to jump over but this is still enough to give us every letter in the English alphabet. We can perform this conversion with the code below:
 
@@ -91,7 +95,7 @@ print(''.join(string.ascii_lowercase[int(x, 3)-1] for x in obstacles))
 
 Running this gives us the password: documentary
 
-## Day 7: Base of Data
+## Day 7: Database
 
 In this window we are given a SQL database dump of books and their ISBN numbers. An ISBN number has a [check digit](https://en.wikipedia.org/wiki/ISBN#Check_digits) which can be used as error correction. We can go through each entry and check if the corresponding ISBN number is valid or not. This can be done with the code below which firsts loads the database into memory, queries it for entries and prints entries with a valid ISBN number.
 
@@ -120,7 +124,7 @@ with sqlite3.connect(":memory:") as conn:
 
 Running the above code shows us that only one entry has a valid number and this gives us the password: subsequent
 
-## Day 8: What locker?
+## Day 8: Only For Developers
 
 This windows leads us to a Discord server with a bot who asks three questions:
 
@@ -134,7 +138,7 @@ The answer to the first question can be found on [the lore page](https://djul.da
 
 Thus the password is: sicily
 
-## Day 9: Untitled Goose
+## Day 9: In the lair
 
 This challenge is antoher MUD adventure. This time we are walking around in a five by five grid representing a FAT file system. Running the `showcontent` command while in a cell, gives us the content of that cell. Running the `getfat <index>` command gives us the index of the cell following the one provided. We start in cluster 2 which gives us this information:
 
@@ -184,7 +188,7 @@ with open('image1.jpg', 'wb') as fout:
 
 Running the above code and then viewing the image gives us the password: mango
 
-## Day 12: Unquestionable Answers
+## Day 12: With Love from Julius
 
 In this window we are given an image with a rebus to solve.
 
@@ -196,7 +200,7 @@ Down in the bottom we have "love" which we swap the halves of to get "velo". Thi
 
 Finally we take the last three letters of the string "giikrkxgzout" and combine it with the first two letters of "true" to get the password: trout
 
-## Day 13: Paper Peeping
+## Day 13: One Way
 
 This challenge takes us to a web page which takes a text input and calls a javascript function to validate it. The javascript consists of a number of functions all on the following forms:
 
@@ -267,7 +271,7 @@ From these constraints we can read off: "The password for todays window is throu
 
 A more elegant solution to this window could involve a constraint solver, such as [Z3](https://github.com/Z3Prover/z3), or symbolic execution but in this case I found it easier to just process the constraints manually to arrive at the solution.
 
-## Day 14: Surprised pikachu face
+## Day 14: The plot thickens
 
 In this window we are given a 16x11 pixel PNG image and among other hints the word "plot". If we treat each pixel as a point in 3D space and plot all the pixels we can get a picture by rotating the point cloud in the correct way. The following Python code will plot the pixels from the image:
 
@@ -299,40 +303,292 @@ Running this and then rotating the plot a bit will .give you the following image
 
 Thus the password is: pikachu
 
-## Day 15: Goose House
+## Day 15: Goose Hunting
 
-TODO
+In this window, we get a file with seemingly random letters. The instructions asks us for the "longest word". There are also references to Sparta. There is a classic cipher using a so called [Scytale](https://en.wikipedia.org/wiki/Scytale), also known as a "Spartan cipher". To decrypt this type of cipher yo effectively take every N letter first starting at the first letter, then at the second, etc. We don't know the correct value of N but we can use the following Python code to try all possible combinations:
 
-- Spartan cipher
+{% highlight python %}
+#!/usr/bin/env python3
 
-## Day 16: ORBital success
+with open('cipher.txt', 'r') as fin:
+    cipher = fin.read().strip()
 
-- MUD: mirrors
+for step in range(1, len(cipher)):
+    res = ''
+    for i in range(step):
+        res += cipher[i::step]
+    print(f'{step}: {res}')
+{% endhighlight %}
 
-## Day 19: The (C) sharpest tool in the shed
+Running this will output a lot of garbage but among the output you will also find the following line:
 
-- C# assembly
+> 28: Dear fellow Spartan,  As I sit here, armor shining and spear at the ready, I can't help but reflect on the journey that has brought us to this point. For as long as I can remember, being a Spartan warrior has been my ultimate goal.  As a child, I was taken from my family and brought to the Agoge, where I began my training. It was tough, but I was determined to become the best warrior I could be. I spent countless hours practicing with my weapons, honing my skills and building my strength.  But the training wasn't just about physical prowess. We were also taught the values that make a true Spartan: courage, discipline, and loyalty. These were the principles that would guide us in battle, and in all aspects of our lives.  As I grew older and moved up the ranks, I took part in many battles, defending our city from those who would seek to do it harm. And now, here we are, preparing to face our greatest challenge yet.  But I am not afraid. I know that each and every one of us is ready for this moment. We have dedicated our lives to this cause, and we will not falter.  As we prepare for battle, I wanted to share with you our plan for victory. We will strike at dawn, when our enemies are at their most vulnerable.  Our strategy is simple: we will divide into two groups, one attacking from the front and the other from the rear. This will catch our enemies off guard, and give us the upper hand.  Once we have engaged the enemy, we will fight with all the skill and strength that our training has given us. We will not falter, we will not retreat. We will stand our ground and emerge victorious.  But above all else, we must remember our discipline. We must not be swayed by anger or fear, but focus on the task at hand. If we stay true to our training and our values, victory will be ours.  So let us go forth with courage and determination. We are Spartans, the finest warriors in all the land. Let us go forth, brothers in arms, and face our enemies with courage and determination. We will show them the strength of the Spartan spirit, and we will emerge victorious. Today is the day, we prove it!  Yours in battle, A fellow Spartan soldier.
 
-## Day 20: T'was the co-pilot all along
+The longest word in this text, and thus the password, is: determination
 
-- Keyboard letters
+## Day 16: Too many mirrors
 
-## Day 21: Security Through Onion
+This window is another Friday window which means another MUD challenge. This time you have to play a puzzle game which involves using mirrors to flip the play field horizontally or vertically. There are three floors. The first floor looks like this:
 
-- Sentor -> Tor
+>    1
+>  X345S7
+>    8
+> 9ABCD
+>  E 
 
-## Day 22: On the Moon?
+In room X, Y and Z (TODO) you can only move east and in room X, Y and Z there are mirrors. The second floor looks like this:
 
-- Cparta -> GraphQL -> MongoDB injection
+> X  234
+> 5  678
+> 9ABSDE
 
-## Day 23: Mrs. Claus
+On this floor you can only move east and south in room 3, 7 and D. In room 5 you can only move east and in room 9 you can only move south. Room B contains a mirror to flip the level horizontally and room E flips the floor vertically. You also have an orb which allows you to ignore the move limitations. The main idea of the floor is to drop the orb in room 7 and then flip the room horizontally so that it ends up in room 5 and you can walk to the exit.
 
-- MUD: doors puzzle
+The final floor is actually just a representation of de_dust2 from Counter-Strike. On this map there is a location at the A bomb site commonly referred to as "Goose". By walking to this place on the map you get the following message containing the password:
 
-## Day 24: Merry Christmas!
+> YOU HAVE FOUND THE EVIl GOOSE
+> here is the password: cultural
 
-- Evaluation form
+## Day 19: In the interrogation room
+
+This window gives us a Windows DLL file. Running the file tool on it tells us it is a .NET library. We can open this in a .NET decompiler such as [dnSpy](https://github.com/dnSpy/dnSpy). Doing this shows us that there is a single function which does nothing of interest. However, if we switch from looking at the decompilation to looking at the raw disassembly, we see that there is a string constant which is unused (and therefore optimized away by the decompiler) containing .NET assembly code. The code looks like this:
+
+{% highlight asm %}
+entrypoint
+    // Code size       98 (0x62)
+    .maxstack  3
+    .locals init (int32[] V_0,
+             int32 V_1,
+             int32[] V_2,
+             int32 V_3,
+             int32 V_4)
+    IL_0000:  ldc.i4.s   10
+    IL_0002:  newarr     [System.Runtime]System.Int32
+    IL_0007:  stloc.0
+    IL_0008:  ldloc.0
+    IL_0009:  ldc.i4.0
+    IL_000a:  ldc.i4.0
+    IL_000b:  stelem.i4
+    IL_000c:  ldloc.0
+    IL_000d:  ldc.i4.1
+    IL_000e:  ldc.i4.2
+    IL_000f:  stelem.i4
+    IL_0010:  ldloc.0
+    IL_0011:  ldc.i4.2
+    IL_0012:  ldc.i4.s   -3
+    IL_0014:  stelem.i4
+    IL_0015:  ldloc.0
+    IL_0016:  ldc.i4.3
+    IL_0017:  ldc.i4.s   -11
+    IL_0019:  stelem.i4
+    IL_001a:  ldloc.0
+    IL_001b:  ldc.i4.4
+    IL_001c:  ldc.i4.s   17
+    IL_001e:  stelem.i4
+    IL_001f:  ldloc.0
+    IL_0020:  ldc.i4.5
+    IL_0021:  ldc.i4.s   -18
+    IL_0023:  stelem.i4
+    IL_0024:  ldloc.0
+    IL_0025:  ldc.i4.6
+    IL_0026:  ldc.i4.s   17
+    IL_0028:  stelem.i4
+    IL_0029:  ldloc.0
+    IL_002a:  ldc.i4.7
+    IL_002b:  ldc.i4.s   -11
+    IL_002d:  stelem.i4
+    IL_002e:  ldloc.0
+    IL_002f:  ldc.i4.8
+    IL_0030:  ldc.i4.s   13
+    IL_0032:  stelem.i4
+    IL_0033:  ldloc.0
+    IL_0034:  ldc.i4.s   9
+    IL_0036:  ldc.i4.s   -17
+    IL_0038:  stelem.i4
+    IL_0039:  ldc.i4.s   112
+    IL_003b:  stloc.1
+    IL_003c:  nop
+    IL_003d:  ldloc.0
+    IL_003e:  stloc.2
+    IL_003f:  ldc.i4.0
+    IL_0040:  stloc.3
+    IL_0041:  br.s       IL_005b
+
+    IL_0043:  ldloc.2
+    IL_0044:  ldloc.3
+    IL_0045:  ldelem.i4
+    IL_0046:  stloc.s    V_4
+    IL_0048:  nop
+    IL_0049:  ldloc.1
+    IL_004a:  ldloc.s    V_4
+    IL_004c:  add
+    IL_004d:  stloc.1
+    IL_004e:  ldloc.1
+    IL_004f:  conv.u2
+    IL_0050:  call       void [System.Console]System.Console::Write(char)
+    IL_0055:  nop
+    IL_0056:  nop
+    IL_0057:  ldloc.3
+    IL_0058:  ldc.i4.1
+    IL_0059:  add
+    IL_005a:  stloc.3
+    IL_005b:  ldloc.3
+    IL_005c:  ldloc.2
+    IL_005d:  ldlen
+    IL_005e:  conv.i4
+    IL_005f:  blt.s      IL_0043
+
+    IL_0061:  ret
+{% endhighlight %}
+
+In this code we can see a repeating pattern which looks like this:
+
+{% highlight asm %}
+...
+IL_001a:  ldloc.0
+IL_001b:  ldc.i4.4
+IL_001c:  ldc.i4.s   17
+IL_001e:  stelem.i4
+...
+{% endhighlight %}
+
+Each such block stores an integer into an array. Afterwards we see the number 112 being loaded and some kind of loop. Without looking into exactly what the code is doing we can make a qualified guess. The number 112 sits nicely in the printable ASCII range and all the integers loaded are in the range corresponding to the size of the alphabet. This means that what the code possibly is doing is successively adding these offsets to a number starting at 112 and treating the result as an ASCII value. The following Python code does just that:
+
+{% highlight python %}
+#!/usr/bin/env python3
+
+offsets = [0, 2, -3, -11, 17, -18, 17, -11, 13, -17]
+
+res = []
+cur = 112
+for delta in offsets:
+    cur += delta
+    res.append(cur)
+print(bytes(res).decode())
+{% endhighlight %}
+
+Running this code prints the password: productive
+
+## Day 20: Just another passenger
+
+In this window we get the following sentence:
+
+> WoRks evEn foR youR tYpEWriTeR
+
+We also get some instructions:
+
+> Bury The CAPITAL. Take It DOWN, Take It DOWN, Is What's RIGHT.
+> The lower rise up, rise left.
+
+For every letter in the first sentence we look at the layout of a QWERTY keyboard. If the letter is upper case we "walk" down, down and then right on the keyboard. If the letter is lower case we instead move up and then left. Finally we look at the display image we have been provided with and "turn on" the segment marked with that letter.
+
+![Window 20 Display](/assets/images/ctf/djul22-display.png)
+
+For example, the first letter "W" becomes "C" which means we turn on the top right segment of the first digit. The second letter, "o" becomes "8" which means that we turn on the bottom segment of the third digit. Doing this for all letters in the sentence nets us the following message.
+
+```
+  |  _  |  |  |_|
+ _| |_| |_ |_   |
+```
+
+Which means the password is: jolly
+
+## Day 21: Head(set) Hunt!
+
+In this window we get a URL to a website: http://sentor.djul.datasektionen.se. Looking at the HTML we can find three things of interest. First there is a red herring in the form of some javascript which tries to perform client-side prevention of SQL injections, a fun joke but not relevant to the solution. Second, there is the phrase "THIS SITE ALSO AVAILABLE VIA TOR, BUT I LOST THE URL!". Finally there is a reference to an image: http://sentor.djul.datasektionen.se/files/sentor_logo.png. Removing the filename and simply going to the directory reveals that directory listing is on and we find some more files: http://sentor.djul.datasektionen.se/files/. Here we find todo.txt which tells us that there is a user "admin" with password "bomberman". There is also a message explaining that they lost the Tor hidden service address but that they have the public key which we can download in the form of "tor-v3-hidden-service.zip".
+
+We can use some code to convert the public key into an .onion address. The following javascript code does that:
+
+{% highlight javasvript %}
+const fs = require("fs");
+const base32 = require('rfc-3548-b32');
+var sha3_256 = require('js-sha3').sha3_256;
+
+const chekcsumstr = Buffer.from(".onion checksum","utf8");
+const onion_version = Buffer.from("03","hex");
+
+function onion_service_id_for_public_key(pubKey) {
+  var CHECKSUM = new Buffer(sha3_256.create().update(Buffer.concat([chekcsumstr, pubKey,onion_version])).digest()).slice(0,2);
+  return base32.encode(Buffer.concat([pubKey,CHECKSUM,onion_version])).toLowerCase() + ".onion";
+}
+var servicepubKey = fs.readFileSync('hs_ed25519_public_key').slice(32);
+var hostname = onion_service_id_for_public_key(servicepubKey);
+
+console.log(hostname)
+{% endhighlight %}
+
+Running this will give us the address: hw44qvorlbwlf7binb4ko4edms6wtj26dkdmju75exwmh56dnjlzylqd.onion
+
+Using the Tor browser, surfing to this address and logging in with admin/bomberman gives us the password: tabletennis
+
+## Day 22: Virtual Pilot
+
+This window leads to a website which renders a map and uses a GraphQL-based API to populate the data on the site. Going to the GraphQL endpoint directs us to a GraphQL studio interface where we can explore the API and issue queries. After exploring the structure of the GraphQL database for a bit we can find that there is a query called "country" which takes a JSON query as a string. Playing around with this a bit and sending different values gives us an error message referring to "mongoose" which is a popular library to interface with MongoDB. It turns out that we can perform a NoSQL injection against the MongoDB. In the story text we find out that the evil duck is potentially outside the map. Testing various injections and structures of the query allows us to finally come up with the following query:
+
+{% highlight graphql %}
+query Country {
+  country(query: "{\"latitude\":{\"$eq\":null}}") {
+    name,
+    ponds {
+      ducks {
+        name
+        ... on EvilDuck {
+          flag
+        }
+      }
+    }
+  }
+}
+{% endhighlight %}
+
+Running this gives us the following output:
+
+{% highlight json %}
+{
+  "data": {
+    "country": {
+      "name": "Moon",
+      "ponds": [
+        {
+          "ducks": [
+            {
+              "name": "Dark Lord of Aitken basin",
+              "flag": "monstrosity"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+{% endhighlight %}
+
+Which gives us the password: monstrosity
+
+## Day 23: Pulling the plug
+
+This window is the final real challenge and also another MUD challenge. This MUD is another puzzle game which reminds me of games such as Sokoban. You can connect with up to three clients and join the same lobby with them all. Each lobby is a separate instance of the game separated from the other players. For this challenge, instead of presenting my own solution, I will simply present the clearly written explanation by the player PurkkaKoodari.
+
+- P1 clear bottom right trapdoors, reset
+- P1 step on 9-2 plate (top middle)
+- P2 clear bottom left trapdoors, reset
+- P2 step to the left twice (8-5)
+- P1 step off 9-2 plate
+- P2 step to the left twice (6-5)
+- P1 step back on 9-2 plate
+- P2 clear top left trapdoors, including the one at 4-5, ending up next to the plate
+- P3 goes to 13-2 through the gate
+- P1 reset, goes to 12-2 with the help of P2
+- P1 and P3 go towards exit with the help of P2
+- P2 reset and go towards exit with the help of P1/P3
+
+Once you have walked all three players to the exit they can all interact with the seesaw and you will be given the password: prescription
+
+## Day 24: Not so fast!
+
+To allow people to celebrate Christmans with their families the final day does not contain an actual challenge to solve but simply a link to the evaluation form for this year. After filling it out you get the final password: improvability
+
 
 ## Conclusion
 
-I managed to finish in 11th place this year. Thanks a lot to the organisers for another great edition of Djulkalendern. Looking forward to the next year.
+I managed to finish in 12th place this year. Thanks a lot to the organisers for another great edition of Djulkalendern. Looking forward to the next year.
