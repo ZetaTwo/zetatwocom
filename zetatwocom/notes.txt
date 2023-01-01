@@ -1,0 +1,30 @@
+Conversion:
+
+find . -type f -exec sed -i 's/{% highlight bash %}/```bash/g' {} \;
+find . -type f -exec sed -i 's/{% highlight python %}/```python/g' {} \;
+find . -type f -exec sed -i 's/{% highlight basic %}/```basic/g' {} \;
+find . -type f -exec sed -i 's/{% highlight json %}/```json/g' {} \;
+find . -type f -exec sed -i 's/{% highlight c %}/```c/g' {} \;
+find . -type f -exec sed -i 's/{% highlight C %}/```c/g' {} \;
+find . -type f -exec sed -i 's/{% highlight xml %}/```xml/g' {} \;
+find . -type f -exec sed -i 's/{% highlight ruby %}/```ruby/g' {} \;
+find . -type f -exec sed -i 's/{% highlight asm %}/```asm/g' {} \;
+find . -type f -exec sed -i 's/{% highlight shell %}/```shell/g' {} \;
+find . -type f -exec sed -i 's/{% highlight BASIC %}/```basic/g' {} \;
+find . -type f -exec sed -i 's/{% highlight Python %}/```python/g' {} \;
+find . -type f -exec sed -i 's/{% highlight Bash %}/```bash/g' {} \;
+find . -type f -exec sed -i 's/{% highlight html %}/```html/g' {} \;
+find . -type f -exec sed -i 's/{% highlight javscript %}/```javascript/g' {} \;
+find . -type f -exec sed -i 's/{% highlight javasvript %}/```javascript/g' {} \;
+find . -type f -exec sed -i 's/{% highlight c++ %}/```c++/g' {} \;
+find . -type f -exec sed -i 's/{% highlight powershell %}/```powershell/g' {} \;
+find . -type f -exec sed -i 's/{% highlight yml %}/```yml/g' {} \;
+find . -type f -exec sed -i 's/{% highlight Ini %}/```ini/g' {} \;
+find . -type f -exec sed -i 's/{% highlight graphql %}/```graphql/g' {} \;
+find . -type f -exec sed -i 's/{% endhighlight %}/```/g' {} \;
+
+TODO:
+- layout
+- images
+- LaTeX
+- pages
