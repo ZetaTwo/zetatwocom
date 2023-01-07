@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "SANS Holiday Hack Challange 2022: Writeup"
-date: 2023-01-05 12:00
+date: 2023-01-07 12:00
 type: post
 published: true
-comments: false
+comments: true
 categories: ctf
 ---
 
