@@ -48,16 +48,16 @@ I hope you will find this application to your pleasure and that I have convinced
 Kindest regards  
 Calle "Zeta Two" Svensson  
 
-[^1]: https://t2.fi/2016/10/09/t216-challenge-winners/
-[^2]: https://www.youtube.com/watch?v=GoROmu6WZ5U
-[^3]: https://www.youtube.com/watch?v=Y0JQqyVL46Y
-[^4]: https://researchcenter.paloaltonetworks.com/2017/08/unit42-labyrenth-ctf-2017-winners/
-[^5]: https://www.youtube.com/watch?v=hyoPAOTrUMc
-[^6]: https://www.youtube.com/watch?v=3h9x9q6etuQ&t=2355
-[^7]: https://zeta-two.com/
-[^8]: https://zeta-two.com/reversing/2017/03/20/gothenburg-malware.html
-[^9]: https://zeta-two.com/talks
-[^10]: https://www.youtube.com/user/ZetaTwo
-[^11]: https://www.facebook.com/groups/KTH.CTF.Team/
-[^12]: https://ctftime.org/event/595
-[^13]: https://ctftime.org/event/635
+[^1]: [https://t2.fi/2016/10/09/t216-challenge-winners](https://t2.fi/2016/10/09/t216-challenge-winners)
+[^2]: [https://www.youtube.com/watch?v=GoROmu6WZ5U](https://www.youtube.com/watch?v=GoROmu6WZ5U)
+[^3]: [https://www.youtube.com/watch?v=Y0JQqyVL46Y](https://www.youtube.com/watch?v=Y0JQqyVL46Y)
+[^4]: [https://researchcenter.paloaltonetworks.com/2017/08/unit42-labyrenth-ctf-2017-winners](https://researchcenter.paloaltonetworks.com/2017/08/unit42-labyrenth-ctf-2017-winners)
+[^5]: [https://www.youtube.com/watch?v=hyoPAOTrUMc](https://www.youtube.com/watch?v=hyoPAOTrUMc)
+[^6]: [https://www.youtube.com/watch?v=3h9x9q6etuQ&t=2355](https://www.youtube.com/watch?v=3h9x9q6etuQ&t=2355)
+[^7]: [https://zeta-two.com](https://zeta-two.com)
+[^8]: [https://zeta-two.com/reversing/2017/03/20/gothenburg-malware.html](https://zeta-two.com/reversing/2017/03/20/gothenburg-malware.html)
+[^9]: [https://zeta-two.com/talks](https://zeta-two.com/talks)
+[^10]: [https://www.youtube.com/user/ZetaTwo](https://www.youtube.com/user/ZetaTwo)
+[^11]: [https://www.facebook.com/groups/KTH.CTF.Team](https://www.facebook.com/groups/KTH.CTF.Team)
+[^12]: [https://ctftime.org/event/595](https://ctftime.org/event/595)
+[^13]: [https://ctftime.org/event/635](https://ctftime.org/event/635)

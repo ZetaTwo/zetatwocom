@@ -195,4 +195,3 @@ I'm just a beginner with Z3 and there are probably better ways to do this.
 If you have any feedback or ideas, please post a comment below. For completeness, here is the [full solution script](/assets/other/gchq_christmas_code.py)
  
 Merry christmas!
-

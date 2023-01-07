@@ -34,4 +34,4 @@ Jesper (organizer) and I on the stage before my talk:
 ![Jesper (organizer) and I on the stage before my talk](/assets/images/education/secfest-calle-small.jpg)
 
 Me, on stage talking about LLVM:
-![Me, on stage talking about LLVM](/assets/images/education/secfest-calle-small.jpg)
+![Me, on stage talking about LLVM](/assets/images/education/secfest-calle-small2.jpg)
