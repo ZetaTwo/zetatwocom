@@ -1,6 +1,6 @@
 # zeta-two.com
 
-Personal blog of Calle "Zeta Two" Svensson at https://zeta-two.com. Built with **Hugo 0.123.7 extended**. Migrated from Jekyll in May 2026 (see "Migration history" below; the `pre-hugo-migration` tag will mark the final Jekyll commit on master once the cutover happens).
+Personal blog of Calle "Zeta Two" Svensson at https://zeta-two.com. Built with **Hugo 0.161.1 extended**. Migrated from Jekyll in May 2026; the `pre-hugo-migration` tag points at the final Jekyll commit on master.
 
 ## Local development
 
@@ -10,7 +10,7 @@ hugo --quiet              # one-shot build to public/
 hugo new posts/<cat>/$(date +%Y-%m-%d)-my-slug.md
 ```
 
-Hugo **must be the extended distribution** because the theme pipes SCSS through `resources.Get | toCSS`. Check with `hugo version` — should say `+extended`.
+Hugo **must be the extended distribution** because the theme pipes SCSS through `resources.Get | toCSS`. Check with `hugo version` — should say `+extended`. The deploy workflow pins to the exact version listed at the top of this file; if you upgrade locally, update `HUGO_VERSION` in `.github/workflows/deploy.yml` and `min_version` in `themes/zetatwo/theme.toml` to match.
 
 ## Deploy
 
@@ -83,9 +83,9 @@ Rest of the post.
 - **Date format matters.** Hugo's YAML parser only recognizes a date when it's in ISO form with seconds. Jekyll's `YYYY-MM-DD HH:MM` (no seconds) parses as a *string*, leaves `.Date` zero, and produces `/0001/01/01/...` URLs.
 - **Goldmark typographer is off.** With it on, `m'` in `$m'_i$` gets smart-quoted to `m\rsquo;_i` and KaTeX can't parse it. Trade-off: body-text contractions like "let's" render with ASCII `'`. To revisit later, two options: a math shortcode that bypasses Goldmark, or setting `[markup.goldmark.extensions.typographer].apostrophe = "'"` (preserves primes, keeps quote/dash substitutions).
 - **Stray `$` in non-math content of math posts.** KaTeX auto-render scans the whole body. Anything in a code block is skipped, but stray `$` in regular text or blockquotes will be misrendered. Wrap in backticks or move into a fenced block. Only the 5 `math: true` posts are affected.
-- **Hugo pagination key is the legacy form.** We use `paginate = 5` at the top level, not `[pagination].pagerSize`, because the latter is a 0.128+ feature and we're pinned to 0.123.7.
+- **Pagination uses the `[pagination]` block.** Set `pagerSize = 5` under `[pagination]` in `config.toml`. The legacy top-level `paginate = N` key was silently ignored starting somewhere between Hugo 0.123 and 0.161 — if a future build mysteriously shows 10 posts per page when the config says otherwise, this is what to check.
 - **`outputFormats.RSS.baseName = "feed"`** means every RSS feed across the site is named `feed.xml` (not `index.xml`). Section feeds end up at `/posts/<cat>/feed.xml`, which is harmless.
-- **GA tag is Universal Analytics** (`UA-1543879-1`), which Google retired in July 2024. The script in `head.html` is kept for fidelity but does nothing; consider replacing with GA4 or removing.
+- **`languageCode` config key emits a deprecation warning** in 0.158+ (replaced by per-language `locale`). The site still builds fine and the RSS `<language>` tag still works. Fix when bumping Hugo again: replace top-level `languageCode = "en-us"` with `defaultContentLanguage = "en"` + `[languages.en]\n  locale = "en-us"`, and swap `.Site.LanguageCode` → `.Site.Language.Locale` in `themes/zetatwo/layouts/_default/baseof.html`.
 
 ## Deferred follow-ups
 

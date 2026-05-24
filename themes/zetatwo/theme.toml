@@ -2,7 +2,7 @@ name = "Zeta-Two"
 license = "MIT"
 description = "Custom theme for zeta-two.com"
 homepage = "https://zeta-two.com"
-min_version = "0.123.0"
+min_version = "0.128.0"
 
 [author]
   name = "Calle Svensson"
