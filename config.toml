@@ -27,6 +27,10 @@ paginate = 5
   # The :slug placeholder reads per-post `slug:` frontmatter (added in step 4).
   posts = "/:sections[1:]/:year/:month/:day/:slug/"
 
+[outputFormats.RSS]
+  # Match Jekyll's /feed.xml URL instead of Hugo's default /index.xml.
+  baseName = "feed"
+
 [markup.goldmark.renderer]
   unsafe = true  # Jekyll posts contain raw HTML
 
