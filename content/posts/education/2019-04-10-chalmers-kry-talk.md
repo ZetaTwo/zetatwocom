@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Chalmers - Security at KRY/LIVI 2019"
-date: 2019-04-11 21:00
-type: post
-published: true
-comments: true
-categories: education
+date: 2019-04-11T21:00:00+02:00
+slug: chalmers-kry-talk
+categories: [education]
+aliases:
+  - /education/2019/04/10/chalmers-kry-talk.html
 ---
 
 In April this year, I gave a lecture at Chalmers University of Technology in Gothenburg.

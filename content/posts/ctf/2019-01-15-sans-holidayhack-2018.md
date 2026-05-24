@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "SANS Holiday Hack Challange 2018: Writeup"
-date: 2019-01-15 20:45
-type: post
-published: true
-comments: true
-categories: ctf
+date: 2019-01-15T20:45:00+01:00
+slug: sans-holidayhack-2018
+categories: [ctf]
+aliases:
+  - /ctf/2019/01/15/sans-holidayhack-2018.html
 ---
 
 Like the previous past years, [SANS](https://www.sans.org/) organized their [Holiday Hack Challenge](https://www.holidayhackchallenge.com/2018/).

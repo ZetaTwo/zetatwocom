@@ -1,11 +1,10 @@
 ---
-layout: post
 title: On-Off Keying (ASK) with SDR
-date: 2015-06-23 18:22
-type: post
-published: true
-comments: true
-categories: radio
+date: 2015-06-23T18:22:00+02:00
+slug: ook-ask-sdr
+categories: [radio]
+aliases:
+  - /radio/2015/06/23/ook-ask-sdr.html
 ---
 
 About a year ago I bought a HackRF from Great Scott Gadgets with the goal to learn more about radio and in particular software defined radio, SDR.

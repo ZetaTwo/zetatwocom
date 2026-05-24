@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "CrowdStrike Adversary Quest 2021: Write-up"
-date: 2021-02-03 23:00
-type: post
-published: true
-comments: true
-categories: ctf
+date: 2021-02-03T23:00:00+01:00
+slug: crowdstrike-adversary-quest-2021
+categories: [ctf]
+aliases:
+  - /ctf/2021/02/03/crowdstrike-adversary-quest-2021.html
 ---
 
 Recently, [CrowdStrike Intelligence](https://www.crowdstrike.com/epp-101/threat-intelligence/) ran a small CTF for about two weeks with twelve challenges spread over a wide selection of categories. I managed to solve all the challenges and got eighth place. The challenges were of very high quality and I thoroughly enjoyed them so I decided to publish my solutions here. This is not a full write-up with a lot of details but more a short summary of my solution to each problem. The challenges were divided into three storylines, "adversaries" with four challenges each and as such I will structure this post in the same way.

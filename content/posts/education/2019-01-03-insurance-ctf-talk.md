@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Talk at Försäkringsföreningen"
-date: 2019-01-03 01:10
-type: post
-published: true
-comments: true
-categories: education
+date: 2019-01-03T01:10:00+01:00
+slug: insurance-ctf-talk
+categories: [education]
+aliases:
+  - /education/2019/01/03/insurance-ctf-talk.html
 ---
 
 In October this fall, I gave a short presentation at ["Försäkringsföreningen"](http://forsakringsforeningen.se/).

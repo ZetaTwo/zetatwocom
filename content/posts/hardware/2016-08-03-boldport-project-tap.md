@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Boldport Club project 5: The Tap"
-date: 2016-08-03 22:34 
-type: post
-published: true
-comments: true
-categories: hardware
+date: 2016-08-03T22:34:00+02:00
+slug: boldport-project-tap
+categories: [hardware]
+aliases:
+  - /hardware/2016/08/03/boldport-project-tap.html
 ---
 
 I have long had the wish to learn more about hardware and DIY electronics but never really found the right motivator or opportunity, that is until now.

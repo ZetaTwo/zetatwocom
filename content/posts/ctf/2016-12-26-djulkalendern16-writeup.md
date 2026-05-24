@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "dJulkalender 2016: Writeups"
-date: 2016-12-26 17:22
-type: post
-published: true
-comments: true
-categories: ctf
+date: 2016-12-26T17:22:00+01:00
+slug: djulkalendern16-writeup
+categories: [ctf]
+aliases:
+  - /ctf/2016/12/26/djulkalendern16-writeup.html
 ---
 
 The computer science chapter at my alma mater, KTH, arranges an advent calendar called ["dJulkalendern"](https://djul.datasektionen.se).

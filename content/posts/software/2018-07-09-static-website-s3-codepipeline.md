@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Static Jekyll site with S3, CloudFront & CodePipeline"
-date: 2018-07-09 23:21
-type: post
-published: true
-comments: true
-categories: software
+date: 2018-07-09T23:21:00+02:00
+slug: static-website-s3-codepipeline
+categories: [software]
+aliases:
+  - /software/2018/07/09/static-website-s3-codepipeline.html
 ---
 
 Through my day job I been exposed a lot to AWS. I really like AWS and I think they create some cool services.

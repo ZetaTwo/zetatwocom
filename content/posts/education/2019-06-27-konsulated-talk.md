@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "KonsulaTED - Basics of binary exploitation"
-date: 2019-06-27 21:10
-type: post
-published: true
-comments: true
-categories: education
+date: 2019-06-27T21:10:00+02:00
+slug: konsulated-talk
+categories: [education]
+aliases:
+  - /education/2019/06/27/konsulated-talk.html
 ---
 
 Back in February, I gave a presentation at a private meet-up that I run together with some friends where we talk about various technical topics roughly once per month.

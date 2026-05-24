@@ -1,11 +1,10 @@
 ---
-#layout: post
 title: "SEC-T CTF 2015: Writeups"
-date: 2015-10-04 13:43
-#type: post
-published: true
-comments: true
-#categories: ctf
+date: 2015-10-04T13:43:00+02:00
+slug: sectctf-writeup
+categories: [ctf]
+aliases:
+  - /ctf/2015/09/28/sectctf-writeup.html
 ---
 
 Earlier this month I was at the [SEC-T conference](http://sec-t.org). In addition to listening to several awesome talks by very interesting speakers I also participated in the CTF which was held during the conference.

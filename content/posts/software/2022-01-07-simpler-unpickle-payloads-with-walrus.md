@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Simpler unpickle payloads with the walrus operator"
-date: 2022-01-07 01:00
-type: post
-published: true
-comments: true
-categories: software
+date: 2022-01-07T01:00:00+01:00
+slug: simpler-unpickle-payloads-with-walrus
+categories: [software]
+aliases:
+  - /software/2022/01/07/simpler-unpickle-payloads-with-walrus.html
 ---
 
 When exploiting Python deserialization, specifically, Pickle, vulnerabilities you need to craft a payload consisting of a collection of arguments and a callable that is available on the server. Most commonly you can use the `eval` function and a string to be evaluated. This is fairly flexible and from here you can typically import the `os` module and call `os.system` to do whatever you want. Sometimes there can be some limitations in place, for example, you might not get the output of the application directly and it might be blocking outbound connections preventing reverse shells. In some situations you need the result of the unpickle operation to return an object with specific properties. If you are lucky and convenient classes exist on the target and you have knowledge of them you might get away with simply constructing one of them. If this is not the case it is slightly trickier.

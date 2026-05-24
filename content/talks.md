@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Talks
-permalink: /talks/
 ---
 
 I have given a few talks at various conferences and other contexts. I have collected them all here for your enjoyment.

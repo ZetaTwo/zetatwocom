@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Boldport Club Secret Santa - Build Log"
-date: 2018-12-18 22:10
-type: post
-published: true
-comments: true
-categories: hardware
+date: 2018-12-18T22:10:00+01:00
+slug: boldport-secret-santa
+categories: [hardware]
+aliases:
+  - /hardware/2018/12/18/boldport-secret-santa.html
 ---
 
 As I have [written about previously](/hardware/2016/08/03/boldport-project-tap.html) I'm a member of the [Boldport Club](https://www.boldport.club).

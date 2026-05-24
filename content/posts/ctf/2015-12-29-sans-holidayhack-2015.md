@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "SANS Holiday Hack Challange 2015: Writeup"
-date: 2015-12-29 08:30
-type: post
-published: true
-comments: true
-categories: ctf
+date: 2015-12-29T08:30:00+01:00
+slug: sans-holidayhack-2015
+categories: [ctf]
+aliases:
+  - /ctf/2015/12/29/sans-holidayhack-2015.html
 ---
 
 This post contains the write-up I submitted for the 2015 SANS Holiday Hack challenge. Enojy.

@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Kodsport Game Hacking Challenge
-permalink: /challenges/kodsport-challenge
 ---
 
 ![Starcraft: Brood War logo](/assets/images/software/broodwar-logo.jpg)

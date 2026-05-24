@@ -1,11 +1,10 @@
 ---
-layout: post
 title: Generating uniform random numbers
-date: 2015-05-18 23:55
-type: post
-published: true
-comments: true
-categories: math
+date: 2015-05-18T23:55:00+02:00
+slug: random-number-generators
+categories: [math]
+aliases:
+  - /math/2015/05/18/random-number-generators.html
 ---
 
 We have all probably at some point in our programming career been required to generate a uniformly distributed random number in an interval {% katex %}[A,B]{% endkatex %}.

@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Trainings
-permalink: /services/trainings/
 ---
 
 ## Basics of Binary Exploitation

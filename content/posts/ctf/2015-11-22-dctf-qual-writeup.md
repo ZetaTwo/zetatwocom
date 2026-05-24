@@ -1,11 +1,10 @@
 ---
-#layout: post
 title: "DefCamp D-CTF Qualifiers 2015: Writeups"
-date: 2015-11-22 17:10
-#type: post
-published: true
-comments: true
-#categories: ctf
+date: 2015-11-22T17:10:00+01:00
+slug: dctf-qual-writeup
+categories: [ctf]
+aliases:
+  - /ctf/2015/11/22/dctf-qual-writeup.html
 ---
 
 A few weeks ago we participated in the DefCamp D-CTF qualifiers.

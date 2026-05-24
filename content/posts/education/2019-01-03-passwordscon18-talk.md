@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "PasswordsCon 2018: Passwordless authentication"
-date: 2019-01-03 02:00
-type: post
-published: true
-comments: true
-categories: education
+date: 2019-01-03T02:00:00+01:00
+slug: passwordscon18-talk
+categories: [education]
+aliases:
+  - /education/2019/01/03/passwordscon18-talk.html
 ---
 
 On November 19-20 this fall, I presented at PasswordsCon 2018 which was co-hosted at Internetdagarna in Stockholm.

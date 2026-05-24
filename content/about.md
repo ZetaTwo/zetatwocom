@@ -1,7 +1,5 @@
 ---
-layout: page
 title: About me
-permalink: /about/
 ---
 
 My name is Calle "Zeta Two" Svensson. I'm a 35 year old graduate in engineering physics with a master's degree in computer science focused on IT security.

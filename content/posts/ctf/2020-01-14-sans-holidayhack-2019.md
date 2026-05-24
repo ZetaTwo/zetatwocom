@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "SANS Holiday Hack Challange 2019: Writeup"
-date: 2020-01-14 00:30
-type: post
-published: true
-comments: true
-categories: ctf
+date: 2020-01-14T00:30:00+01:00
+slug: sans-holidayhack-2019
+categories: [ctf]
+aliases:
+  - /ctf/2020/01/14/sans-holidayhack-2019.html
 ---
 
 Here are my solutions for the 2019 SANS Holiday Hack Challenge.

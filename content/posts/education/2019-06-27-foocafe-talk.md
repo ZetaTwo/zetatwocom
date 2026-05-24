@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "SecuriTea - Lecture on basics of binary exploitation"
-date: 2019-06-27 21:00
-type: post
-published: true
-comments: true
-categories: education
+date: 2019-06-27T21:00:00+02:00
+slug: foocafe-talk
+categories: [education]
+aliases:
+  - /education/2019/06/27/foocafe-talk.html
 ---
 
 Back in February this year, I gave a [lecture at the SecuriTea meetup](https://foocafe.org/malmoe/events/2155-an-introduction-to-binary-exploitation) hosted by [Foo Café](https://foocafe.org/malmoe) in Malmö.

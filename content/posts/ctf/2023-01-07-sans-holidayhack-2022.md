@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "SANS Holiday Hack Challange 2022: Writeup"
-date: 2023-01-07 12:00
-type: post
-published: true
-comments: true
-categories: ctf
+date: 2023-01-07T12:00:00+01:00
+slug: sans-holidayhack-2022
+categories: [ctf]
+aliases:
+  - /ctf/2023/01/07/sans-holidayhack-2022.html
 ---
 
 This is my write-up for the [SANS Holiday Hack Challenge 2022](https://holidayhackchallenge.com/2022).

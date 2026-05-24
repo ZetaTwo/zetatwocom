@@ -5,8 +5,9 @@ theme = "zetatwo"
 
 # disqusShortname = "zetatwo"  # deferred: previous Disqus thread ID, to be reintroduced as a baked-in static archive in a separate project
 
-[pagination]
-  pagerSize = 5
+# Hugo 0.128+ moved this to [pagination].pagerSize; this top-level key
+# still works in 0.123 and is forward-compatible (just deprecated later).
+paginate = 5
 
 [params]
   description = "My blog about technology, security and life."

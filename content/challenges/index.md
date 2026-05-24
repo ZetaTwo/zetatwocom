@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Challenges
-permalink: /challenges/
 ---
 
 On this page I plan to publish various challenges I have created. I currently only have one challenge here but I have an ambition to create more over time, especially focused on game hacking.

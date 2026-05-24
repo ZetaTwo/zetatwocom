@@ -1,12 +1,10 @@
 ---
-#layout: post
 title: "PoliCTF 2015: Writeups"
-date: 2015-07-14 13:49
-#type: post
-#published: true
-#comments: true
-#categories: ctf
-draft: true
+date: 2015-07-14T13:49:00+02:00
+slug: polictf-writeup
+categories: [ctf]
+aliases:
+  - /ctf/2015/07/14/polictf-writeup.html
 ---
 
 This weekend we participacted in [PoliCTF](http://polictf.it), a CTF arranged by Italian team [Tower of Hanoi](http://towerofhanoi.github.io).

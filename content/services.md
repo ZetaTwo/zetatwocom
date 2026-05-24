@@ -1,7 +1,5 @@
 ---
-layout: page
 title: Services
-permalink: /services/
 ---
 
 My primary skills are within IT security, reverse engineering and software development.

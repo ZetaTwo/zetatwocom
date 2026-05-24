@@ -1,11 +1,11 @@
 ---
-#layout: post
 title: Solving the GCHQ christmas challenge with Microsoft Z3
+date: 2015-12-14T00:00:00+01:00
+slug: gchq-challenge-z3
+categories: [ctf]
+aliases:
+  - /ctf/2015/12/14/gchq-challenge-z3.html
 status: published
-#type: post
-published: true
-comments: true
-#categories: ctf
 ---
 
 British intelligence agency GCHQ has released a christmas card.

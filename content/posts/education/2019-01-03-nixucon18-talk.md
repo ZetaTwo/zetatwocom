@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "NixuCon 2018: SMT solvers for analysis and exploitation"
-date: 2019-01-03 01:20
-type: post
-published: true
-comments: true
-categories: education
+date: 2019-01-03T01:20:00+01:00
+slug: nixucon18-talk
+categories: [education]
+aliases:
+  - /education/2019/01/03/nixucon18-talk.html
 ---
 
 In September this fall, I gave a presentation at [NixuCon 2018](https://www.nixu.com/).

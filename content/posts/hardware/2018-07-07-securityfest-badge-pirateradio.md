@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Security Fest 2018 Challenge Badge & Prize Assembly"
-date: 2018-07-20 01:28
-type: post
-published: true
-comments: true
-categories: hardware
+date: 2018-07-20T01:28:00+02:00
+slug: securityfest-badge-pirateradio
+categories: [hardware]
+aliases:
+  - /hardware/2018/07/07/securityfest-badge-pirateradio.html
 ---
 
 At this year's [Security Fest](https://securityfest.com) fellow security enthusiast Weckzén ([@Wecksten](https://twitter.com/Wecksten)) had created a challenge badge since he (rightly) believe that every con needs a challenge badge. I solved the challenge badge, got a prize from him in the form of a [Pimoroni Pirate Radio](https://shop.pimoroni.com/products/pirate-radio-pi-zero-w-project-kit) which I assembled and documented here.

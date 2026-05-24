@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "SecurityFest 2019 - Software Obfuscation with LLVM"
-date: 2019-06-27 21:30
-type: post
-published: true
-comments: true
-categories: education
+date: 2019-06-27T21:30:00+02:00
+slug: securityfest19-talk
+categories: [education]
+aliases:
+  - /education/2019/06/27/securityfest19-talk.html
 ---
 
 At the end of May, I gave a presentation at [SecurityFest 2019](https://securityfest.com/).

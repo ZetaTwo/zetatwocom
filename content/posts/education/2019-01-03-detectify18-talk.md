@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "Detectify Hacker School: From Zero to Zero Day"
-date: 2019-01-03 01:30
-type: post
-published: true
-comments: true
-categories: education
+date: 2019-01-03T01:30:00+01:00
+slug: detectify18-talk
+categories: [education]
+aliases:
+  - /education/2019/01/03/detectify18-talk.html
 ---
 
 In December, I gave a presentation at a [Detectify](https://detectify.com/) customer event called "Hacker School".

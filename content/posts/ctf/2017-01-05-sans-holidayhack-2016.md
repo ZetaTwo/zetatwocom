@@ -1,11 +1,10 @@
 ---
-layout: post
 title: "SANS Holiday Hack Challange 2016: Writeup"
-date: 2017-01-05 02:00
-type: post
-published: true
-comments: true
-categories: ctf
+date: 2017-01-05T02:00:00+01:00
+slug: sans-holidayhack-2016
+categories: [ctf]
+aliases:
+  - /ctf/2017/01/05/sans-holidayhack-2016.html
 ---
 
 This post contains my report for the SANS Holiday Hack challenge 2016.
