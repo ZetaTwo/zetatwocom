@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <p class="post-meta">{{ .Date.Format "Jan 2, 2006" }}{{ with .Params.author }} &bull; {{ . }}{{ end }}{{ with .Params.meta }} &bull; {{ . }}{{ end }}</p>
+  </header>
+
+  <article class="post-content">
+    {{ .Content }}
+  </article>
+
+  {{ partial "comments.html" . }}
+
+</div>
+{{ end }}

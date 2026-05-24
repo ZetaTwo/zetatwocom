@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="home">
+
+  {{ $posts := where .Site.RegularPages "Type" "posts" }}
+  {{ $paginator := .Paginate $posts }}
+  <ul class="post-list">
+    {{ range $paginator.Pages }}
+      <li>
+        <span class="post-meta-list">{{ .Date.Format "Jan" }}<br>{{ .Date.Format "2" }}<br>{{ .Date.Format "2006" }}</span>
+
+        <h2 class="post-link">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        {{ .Summary }}
+        <div class="post-read-more"><a href="{{ .RelPermalink }}">Read more</a></div>
+      </li>
+    {{ end }}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/index.xml" | relURL }}">via RSS</a></p>
+
+</div>
+
+{{ partial "pagination.html" . }}
+{{ end }}

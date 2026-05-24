@@ -12,6 +12,10 @@ theme = "zetatwo"
   description = "My blog about technology, security and life."
   author = "Calle Svensson"
   email = "calle.svensson@zeta-two.com"
+  github_username = "ZetaTwo"
+  twitter_username = "zetatwo"
+  youtube_username = "ZetaTwo"
+  google_analytics_id = "UA-1543879-1"  # Universal Analytics — deprecated by Google as of July 2024; kept for fidelity, consider removing or replacing with GA4
 
 [permalinks]
   # Mirror Jekyll's /{category}/{year}/{month}/{day}/{slug}/ URL structure.
