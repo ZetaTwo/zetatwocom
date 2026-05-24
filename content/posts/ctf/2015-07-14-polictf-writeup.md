@@ -5,6 +5,7 @@ slug: polictf-writeup
 categories: [ctf]
 aliases:
   - /ctf/2015/07/14/polictf-writeup.html
+math: true
 ---
 
 This weekend we participacted in [PoliCTF](http://polictf.it), a CTF arranged by Italian team [Tower of Hanoi](http://towerofhanoi.github.io).
@@ -31,16 +32,16 @@ Due to a mistake I actually solved this one in an unnecessarily complicated way.
 The challenge provided a service which you could send text to and get it and some other text back encrypted.
 The encryption was a simple repeated XOR with the flag as a key.
 
-A message {% katex %}m{% endkatex %} is sent which get concatenated with some dummy text {% katex %}m'=a|m|b{% endkatex %}.
-Then, each characted (byte) is XOR:ed with the current byte of the key {% katex %}c_i = m'_i \oplus k_i{% endkatex %}.
+A message $m$ is sent which get concatenated with some dummy text $m'=a|m|b$.
+Then, each characted (byte) is XOR:ed with the current byte of the key $c_i = m'_i \oplus k_i$.
 However, if we know two of three operands of the XOR operation we can recover the third by XOR:ing the other two. 
 
-{% katex %}c_i \oplus m'_i = k_i \oplus m'_i \oplus m'_i = k_i{% endkatex %}
+$$c_i \oplus m'_i = k_i \oplus m'_i \oplus m'_i = k_i$$
 
 The easy way to solve this would have been to just send a long string of for example A's and then XOR the cipher you get back with the same message you sent.
 Unfortunately, I made a mistake and thought that the encryption was more complicated than it was and turned this into an oracle attack.
-By sending short messages of a single byte repeated, I figured out that the length of  {% katex %}a{% endkatex %} was 3.
-Then I tried one value for first byte of {% katex %}m{% endkatex %} and with the help of the response, I calculated which byte was in the key.
+By sending short messages of a single byte repeated, I figured out that the length of  $a$ was 3.
+Then I tried one value for first byte of $m$ and with the help of the response, I calculated which byte was in the key.
 I then repeated this for each byte in the message until I had the full key.
 
 Flag: flag{\_this\_1s\_s0\_simple\_you\_should\_have\_solved\_\_it\_1n\_5\_sec}
@@ -221,7 +222,7 @@ class Magic{
 ```
 
 Which indicated that we want to create a Magic object and call any function on it.
-I registered a user with name "&lt;?php $a = new Magic(); $a->x(); ?&gt;" and lastname "x.php".
+I registered a user with name `<?php $a = new Magic(); $a->x(); ?>` and lastname `x.php`.
 After logging in with the user once, I used the indedx page to include the log file and get the flag.
 Of course, it would have also been possible to directly access the log file, but that is something you easily don't think about at 3am.
 

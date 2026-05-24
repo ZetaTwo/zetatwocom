@@ -5,6 +5,7 @@ slug: dctf-qual-writeup
 categories: [ctf]
 aliases:
   - /ctf/2015/11/22/dctf-qual-writeup.html
+math: true
 ---
 
 A few weeks ago we participated in the DefCamp D-CTF qualifiers.
@@ -29,9 +30,9 @@ Total contribution: 1000
 In this challenge we were given a text file with eleven chiphers which were said to all have been encrypted with the same stream cipher.
 
 A stream cipher encrypts by generating a stream of pseudo-random data and XOR:ing it with the plaintext.
-We denote this as {% katex %} c_i = m_i \oplus k_i{% endkatex %}. The problem with doing this with the same stream several times is that the key is repeated.
+We denote this as $c_i = m_i \oplus k_i$. The problem with doing this with the same stream several times is that the key is repeated.
 Thus if we take two ciphertexts and XOR them we get:
-{% katex %} c_{1i} \oplus c_{2i} = m_{1i} \oplus k_i \oplus k_i \oplus m_{2i} = m_{1i} \oplus m_{2i} {% endkatex %}
+$$c_{1i} \oplus c_{2i} = m_{1i} \oplus k_i \oplus k_i \oplus m_{2i} = m_{1i} \oplus m_{2i}$$
 So now we have just the plaintexts entangled with each other but the key removed. How does this help us?
 
 One interesting thing about the ASCII encoding is that the lowercase and uppercase letters are exactly 32 steps from each other.
@@ -39,7 +40,7 @@ Furthermore, a space is 32 in decimal. This means that by XOR:ing a letter with 
 
 This means that if we have two plaintexts "A " and " B" encrypted and XOR them with each other, we get "ab".
 Also, when we know the plaintext at one position we can recover the key at that position and therefore all plaintexts at that position by computing:
-{% katex %} k_i = m_i \oplus c_i{% endkatex %}
+$$k_i = m_i \oplus c_i$$
 
 By XOR:ing every ciphertext with each other ciphertext, we can use the 110 combinations to extract possible letters at all positions where there is a space somewhere in one of the plaintexts. Combining this with filling in gaps in words and thus getting even more parts of the key, we finally extract the eleventh plaintext which is the flag.
 
@@ -59,21 +60,21 @@ The cipher we were given was "4f3a0e1791e8c8e5fefe93f50df4d8061fee884bcc5ea90503
 The text we are looking to change is only in the first block which makes this easy to solve.
 Looking at how CBC works, we know that the first block of the ciphertext consists of:
 
-{% katex %} c_i = E(m_i \oplus iv, k){% endkatex %}
+$$c_i = E(m_i \oplus iv, k)$$
 
 This means that when decrypting, we get the message by doing
 
-{% katex %} m_i = D(c_i, k) \oplus iv{% endkatex %}
+$$m_i = D(c_i, k) \oplus iv$$
 
 were E and D is AES encryption and decryption respectively.
 This means that by manipulating the IV, we can affect the result of the encryption.
 If we take the IV to be
 
-{% katex %} iv' = iv \oplus m_i \oplus m'_i{% endkatex %}
+$$iv' = iv \oplus m_i \oplus m'_i$$
 
 then the decryption becomes
 
-{% katex %} D(c_i, k) \oplus iv' = m_i \oplus iv \oplus iv \oplus m_i \oplus m'_i = m'_i{% endkatex %}
+$$D(c_i, k) \oplus iv' = m_i \oplus iv \oplus iv \oplus m_i \oplus m'_i = m'_i$$
 
 Thus we have transformed the decrypted plaintext from the first to the second.
 Therefore the flag is the new IV.

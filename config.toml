@@ -30,6 +30,9 @@ paginate = 5
 [markup.goldmark.renderer]
   unsafe = true  # Jekyll posts contain raw HTML
 
+[markup.goldmark.extensions.typographer]
+  disable = true  # off so `m'` (prime) in $..$ math stays straight; KaTeX wants ASCII apostrophe
+
 [markup.highlight]
   style = "monokai"
   noClasses = false

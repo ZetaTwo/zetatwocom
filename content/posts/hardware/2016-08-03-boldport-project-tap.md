@@ -76,7 +76,10 @@ After spending way too much time trying to find a suitable resistor in my box of
 
 Here is a video of it all in action:
 
-{% video /assets/video/boldport-tap.webm /assets/video/boldport-tap.mp4 %}
+<video controls preload="metadata">
+  <source src="/assets/video/boldport-tap.webm" type="video/webm">
+  <source src="/assets/video/boldport-tap.mp4" type="video/mp4">
+</video>
 
 If you found this post inspiring, I urge you to [join the Boldport Club](http://www.boldport.club/) as well.
 As for myself, I'm already looking forward to the next project which should be arriving not too long from now.

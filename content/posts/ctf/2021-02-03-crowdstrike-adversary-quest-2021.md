@@ -5,6 +5,7 @@ slug: crowdstrike-adversary-quest-2021
 categories: [ctf]
 aliases:
   - /ctf/2021/02/03/crowdstrike-adversary-quest-2021.html
+math: true
 ---
 
 Recently, [CrowdStrike Intelligence](https://www.crowdstrike.com/epp-101/threat-intelligence/) ran a small CTF for about two weeks with twelve challenges spread over a wide selection of categories. I managed to solve all the challenges and got eighth place. The challenges were of very high quality and I thoroughly enjoyed them so I decided to publish my solutions here. This is not a full write-up with a lot of details but more a short summary of my solution to each problem. The challenges were divided into three storylines, "adversaries" with four challenges each and as such I will structure this post in the same way.
@@ -73,11 +74,9 @@ len(K)==9 and T(*K)&1 or die('INVALID')
 
 We know from the code that each message is prefixed with "SPACEARMY" before being encrypted. This means that we can set up and solve the matrix equation:
 
-{% katex %}
-\mathbf{K}_{\mathrm{enc}}\cdot \mathbf{M}=\mathbf{C}\Leftrightarrow\mathbf{K}_{\mathrm{enc}}=\mathbf{C}\mathbf{M}^{-1}\Rightarrow\mathbf{K}_{\mathrm{dec}}=\mathbf{K}_{\mathrm{enc}}^{-1}=(\mathbf{C}\mathbf{M}^{-1})^{-1}
-{% endkatex %}.
+$\mathbf{K}_{\mathrm{enc}}\cdot \mathbf{M}=\mathbf{C}\Leftrightarrow\mathbf{K}_{\mathrm{enc}}=\mathbf{C}\mathbf{M}^{-1}\Rightarrow\mathbf{K}_{\mathrm{dec}}=\mathbf{K}_{\mathrm{enc}}^{-1}=(\mathbf{C}\mathbf{M}^{-1})^{-1}$.
 
-Where {% katex %}\mathbf{C}{% endkatex %} and {% katex %}\mathbf{M}{% endkatex %} are created from the ciphertext and plaintext prefixes. Implementing this in Sage and running it on the three ciphertexts gives us the solution:
+Where $\mathbf{C}$ and $\mathbf{M}$ are created from the ciphertext and plaintext prefixes. Implementing this in Sage and running it on the three ciphertexts gives us the solution:
 
 ```python
 R = IntegerModRing(256)
@@ -392,7 +391,7 @@ The first programs checks incoming packets to see if they are IP/UDP packets wit
 78: (55) if r1 != 0x2a00 goto pc+212 ; len = 34 (42-8)
 ```
 
-It will then check that the packet starts with "fsf", discard those characters, xor the rest of the payload with 0x66 and prefix them with "$1$".
+It will then check that the packet starts with "fsf", discard those characters, xor the rest of the payload with 0x66 and prefix them with `$1$`.
 
 ```
 92: (55) if r1 != 0x66 goto pc+198
@@ -703,7 +702,7 @@ mov	ebp, esp
 sub	esp, N
 ```
 
-With this we quickly find that the key starts with "CS{cr" (prologue) and that the seventh character must be "p" (ends with ret). Assuming that the key is between 10 and 60 characters we can solve the equation {% katex %}196 \equiv 7\ (\mathrm{mod}\ \mathrm{keylen}){% endkatex %} and get 21 and 27 as reasonable candidates. It looks like 27 produces more reasonable output further down the code. From here we continue this iterative process, looking for bytes that results in reasonable looking code until we get the full flag.
+With this we quickly find that the key starts with "CS{cr" (prologue) and that the seventh character must be "p" (ends with ret). Assuming that the key is between 10 and 60 characters we can solve the equation $196 \equiv 7\ (\mathrm{mod}\ \mathrm{keylen})$ and get 21 and 27 as reasonable candidates. It looks like 27 produces more reasonable output further down the code. From here we continue this iterative process, looking for bytes that results in reasonable looking code until we get the full flag.
 
 
 ```python
