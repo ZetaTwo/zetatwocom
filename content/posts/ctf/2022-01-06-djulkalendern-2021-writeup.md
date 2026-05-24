@@ -10,6 +10,8 @@ aliases:
 The computer science chapter at my alma mater, KTH, arranges an advent calendar called ["dJulkalendern"](https://djul.datasektionen.se).
 It is a CTF-like puzzle with challenges (almost) every day until christmas and also a competition.
 
+<!--more-->
+
 The puzzles are not really security focused like regular CTF but more broader IT related puzzles.
 This year, there were a puzzle every weekday and I will go through and explain them all.
 To prevent this post from being too long, I will be pretty brief in my explanations. If you have any questions or solved something in a different way, please comment below.

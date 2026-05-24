@@ -9,6 +9,8 @@ aliases:
 
 This post contains my report for the SANS Holiday Hack challenge 2016.
 
+<!--more-->
+
 ## Part 1: A Most Curious Business Card
 
 By taking all of Santa's tweets and lining them up under each other it is possible to read the words "Bug Bounty" as ASCII art. In the most recent Instagram image you can find the filename "SantaGram_v4.2.zip" on the screen and the domain "http://northpolewonderland.com" on a paper on the desk. The zip file can be downloaded from "http://northpolewonderland.com/SantaGram_v4.2.zip" and opened with the password "bugbounty". It contains the SantaGram Android app version 4.2

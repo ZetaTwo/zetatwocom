@@ -10,6 +10,8 @@ aliases:
 Earlier this month I was at the [SEC-T conference](http://sec-t.org). In addition to listening to several awesome talks by very interesting speakers I also participated in the CTF which was held during the conference.
 We, HackingForSoju, chose to play individually rather than together in this CTF, which was available for remote players. We did this because it was a small competition and we thought it would be more fun to let everybody practice.
 
+<!--more-->
+
 ![SEC-T 2015 CTF Final scoreboard](/assets/images/ctf/sect_scoreboard.png)
  
 It was a nice CTF and I was really happy with my performance. I managed to end up in fourth place, second best among the local players.

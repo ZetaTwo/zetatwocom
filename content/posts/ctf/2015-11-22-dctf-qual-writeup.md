@@ -12,6 +12,8 @@ A few weeks ago we participated in the DefCamp D-CTF qualifiers.
 We performed really well and ended up in fourth place, just a single point behind number three.
 This earned us a place in the finals in Bucharest at the DefCamp conference.
 
+<!--more-->
+
 ![D-CTF Qualifiers Scoreboard](/assets/images/ctf/dctf_scoreboard.png)
 
 This writeup will explain the challenges I solved. I try to keep the descriptions fairly brief so if you feel that you would like to know more details, please leave a comment.

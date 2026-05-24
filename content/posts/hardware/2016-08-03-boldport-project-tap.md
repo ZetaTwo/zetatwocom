@@ -12,6 +12,8 @@ It was the day following "brexit" I saw [a tweet](https://twitter.com/boldport/s
 The Boldport Club is kind of like an old school book club which sent you a monthly book, only they send you a monthly DIY electronics kit to assemble.
 I thought this would be the perfect way to finally get into some hardware so I signed up for three months to try it out. In this post I will guide you through the process of assembling the first project: The Tap.
 
+<!--more-->
+
 Boldport Club has been running since earlier this year which meant that by the time I signed up they had reached the fifth project, hence the slightly confusing title.
 While eagerly waiting for my package to arrive, I figured I would need some equipment to work with. I asked around a little in the Boldport Club Slack, another nice feature of the club.
 Apart from the actual kits you receive you also get to be a part of a community of helpful and enthusiastic peers of varying skill level. In practice, you are invited to their Slack team.

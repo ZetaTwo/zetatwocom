@@ -10,6 +10,8 @@ math: true
 
 We have all probably at some point in our programming career been required to generate a uniformly distributed random number in an interval $[A,B]$.
 
+<!--more-->
+
 # The mistake
 
 For this you might have done something along the lines of:

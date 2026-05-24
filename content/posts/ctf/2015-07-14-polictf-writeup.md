@@ -15,6 +15,8 @@ We performed very well and ended up on [second place](http://polictf.it/scoreboa
 This brought us up to 12th place on the [season scoreboard](https://ctftime.org/stats).
 In this post I will explain the challenges I solved:
 
+<!--more-->
+
 * [Crypto 50: Exorcise](#crypto50-exorcise)
 * [Pwnable 100: John Pastry Shop](#pwnable100-john-pastry-shop)
 * [Grab Bag 100: John the Dropper](#grabbag100-john-the-dropper)

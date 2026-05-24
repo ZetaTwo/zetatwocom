@@ -11,6 +11,8 @@ At the end of May, I gave a presentation at [SecurityFest 2019](https://security
 I talked about the code obfuscation and how to use the LLVM compiler framework to obfuscate code.
 The [recorded talk is available at the SecurityFest YouTube channel](https://www.youtube.com/watch?v=bQpPdT7RDqQ) and you can [download the slides here](/assets/other/securityfest19-obfuscation-slides-errata.pdf).
 
+<!--more-->
+
 ## Errata
 
 Unfortunately, I made some incorrect statements in the talk by mixing up some tools.

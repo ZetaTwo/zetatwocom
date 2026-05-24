@@ -9,6 +9,8 @@ aliases:
 
 Here are my solutions for the 2019 SANS Holiday Hack Challenge.
 
+<!--more-->
+
 ## Objective 0 - Talk to Santa in the Quad
 
 > Enter the campus quad and talk to Santa.

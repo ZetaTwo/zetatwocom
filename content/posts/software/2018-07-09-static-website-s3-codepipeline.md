@@ -12,6 +12,8 @@ Until now I have hosted this website on my own server (AWS EC2) using a stack of
 With alternative solutions than doing everything yourself being all the rage now I decided to get rid of managing the server and try to host my website on AWS S3 instead.
 Yesterday I went ahead and did this migration. It was fairly easy and I went ahead and tweeted about it to which I got this reply by my friend Olle.
 
+<!--more-->
+
 ![Write-up Please](/assets/images/software/olle-tweet.png)
 
 I couldn't deny such a request so here is a short write-up on how I set up my website to be served from S3 via CloudFront using CodeBuild and CodePipeline to automatically deploy new updates.

@@ -9,6 +9,8 @@ aliases:
 
 This year the annual T2 conference decided that their "challenge" would be a little bit different than previous years. I visited the conference in 2016 after winning a ticket through the T2 challenge and I was very impressed by the high quality of the event. This year the [challenge was to submit an application](https://t2.fi/2018/07/04/t218-challenge/) proving "To showcase technical excellence and prove you deserve a free ticket". Being from Sweden, as anyone who know about Swedish culture, this required en enormous amount of willpower as boasting about your skills is about as un-Swedish as it gets. However, I pushed through an submitted a motivational letter in the form of a classic [five paragraph essay](https://en.wikipedia.org/wiki/Five-paragraph_essay). To my slight surprise and great joy, [I won the challenge](https://t2.fi/2018/08/09/t218-challenge-winner-announced/)! This means I'm going to the T2 conference next week. I'm really looking forward to it and hope to see you there. Again casting aside my cultural heritage, I have published the text I submitted to deserve this below.
 
+<!--more-->
+
 Hello T2!
 
 This is my open application for the T2'18 annual challenge.

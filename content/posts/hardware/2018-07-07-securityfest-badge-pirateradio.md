@@ -9,6 +9,8 @@ aliases:
 
 At this year's [Security Fest](https://securityfest.com) fellow security enthusiast Weckzén ([@Wecksten](https://twitter.com/Wecksten)) had created a challenge badge since he (rightly) believe that every con needs a challenge badge. I solved the challenge badge, got a prize from him in the form of a [Pimoroni Pirate Radio](https://shop.pimoroni.com/products/pirate-radio-pi-zero-w-project-kit) which I assembled and documented here.
 
+<!--more-->
+
 ## The Challenge Badge
 
 The challenge badge was a fairly simple looking circuit with two buttons, four DIP switches a USB connector and two LEDs.

@@ -12,6 +12,8 @@ It's a great entry level CTF which introduces the players to a wide range of int
 As always, it's packaged as a nice game with a cute story and I try to play through it every year.
 This post contains the write-up I submitted as part of the challenge.
 
+<!--more-->
+
 As I was a bit short on time, this write-up omits some details about what the challenge was about.
 To fully understand the context I recommend trying the challenges yourself as they are pretty good.
 

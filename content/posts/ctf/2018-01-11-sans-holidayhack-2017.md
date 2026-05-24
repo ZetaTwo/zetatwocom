@@ -11,6 +11,8 @@ SANS hosted their yearly [Holiday Hack Challenge](https://holidayhackchallenge.c
 It was a fun event, even though I think the story/non-hacking part was better last year.
 Here is my writeup of the challenges. It's not the most thorough writeup I've done but it outlines my process of solving them.
 
+<!--more-->
+
 ## Questions
 
 > 1. Visit the North Pole and Beyond at the Winter Wonder Landing Level to collect the first page of The Great Book using a giant snowball. What is the title of that page?

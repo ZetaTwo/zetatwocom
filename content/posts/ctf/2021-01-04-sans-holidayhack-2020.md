@@ -10,6 +10,8 @@ aliases:
 This is my write-up for the [SANS Holiday Hack Challenge 2020](https://holidayhackchallenge.com/2020).
 There are two types of challenges: the main objectives and the extra terminals. In the game they are interleaved since solving terminals give you hints for the main objectives but here I have separated them into two sections.
 
+<!--more-->
+
 ## Main Objectives
 
 There are 11 main objectives, or actually 12 if you count the two parts of eleven separately.

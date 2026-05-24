@@ -10,6 +10,8 @@ math: true
 
 Recently, [CrowdStrike Intelligence](https://www.crowdstrike.com/epp-101/threat-intelligence/) ran a small CTF for about two weeks with twelve challenges spread over a wide selection of categories. I managed to solve all the challenges and got eighth place. The challenges were of very high quality and I thoroughly enjoyed them so I decided to publish my solutions here. This is not a full write-up with a lot of details but more a short summary of my solution to each problem. The challenges were divided into three storylines, "adversaries" with four challenges each and as such I will structure this post in the same way.
 
+<!--more-->
+
 ## Space Jackal
 
 The first adversary we are facing is Space Jackal which seems to really like spaces over tabs (an honourable cause).

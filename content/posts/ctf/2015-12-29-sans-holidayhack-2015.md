@@ -9,6 +9,8 @@ aliases:
 
 This post contains the write-up I submitted for the 2015 SANS Holiday Hack challenge. Enojy.
 
+<!--more-->
+
 First of all I want to thank you for a nice and educating challenge.
 It was a great pleasure solving it.
 I don't really know what level of detail you expect from the submssions so I will first just briefly state the answers to the questions and below follow up with some more in-depth explanations of how I arrived at them. I hope this format suits you.

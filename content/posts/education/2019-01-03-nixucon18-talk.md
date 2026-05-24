@@ -12,3 +12,5 @@ My talk was titled "Using SMT solvers for binary analysis and exploitation" wher
 I have yet to find the recording of the talk but you can [download the slides here](/assets/other/nixucon18-slides.pdf).
 Essentially, the talk was a combination of my SEC-T 2016 and 2018 talks with some extra introduction.
 In the talk I show some [code examples](/assets/other/smt-code2.zip) which you also can download as a zip.
+
+<!--more-->

@@ -9,6 +9,8 @@ aliases:
 
 This is my write-up for the [SANS Holiday Hack Challenge 2022](https://holidayhackchallenge.com/2022).
 
+<!--more-->
+
 ## Main Objectives
 
 The first part of the objective is an introduction where you are told about how your badge work, how the terminal works and a tutorial on setting up your wallet. It also establishes the backstory and sends you down in the underground tunnels. After this is completed there are five main objective chapters, each containing a few challenges.

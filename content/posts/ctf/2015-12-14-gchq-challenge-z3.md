@@ -18,6 +18,8 @@ As stated previously, the challenge consists of a grid, specifically a 25x25 gri
 Below is an image of the grid. Apparently, this is famous type of puzzle called a [Nonogram](https://en.wikipedia.org/wiki/Nonogram). I didn't know this until after I wrote this and a friend pointed it out.
 You know what they say, you learn something every day.
 
+<!--more-->
+
 ![The GCHQ christmas challenge grid](/assets/images/ctf/gchq_christmas_card.jpg)
 
 The rules of the challenge are that each number in a series denotes the size of a block of sequentially filled (black) cell separated by at least one unfilled (white) cell.

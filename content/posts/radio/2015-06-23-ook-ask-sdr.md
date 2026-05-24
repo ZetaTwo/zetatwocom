@@ -13,6 +13,8 @@ After completing the "hello world" of SDR, namely a FM radio receiver and listen
 My family have a wireless doorbell which hasn't been installed yet.
 It seemed like a perfect candidate for learning more about on-off keying, OOK, or amplitude shift keying, ASK, which it is also called.
 
+<!--more-->
+
 In the rest of this post, I will try to keep things general but also talk about what I did specifically with the HackRF.
 The doorbell consists of two parts, the button which is supposed to be mounted next to the door, and the speaker which is supposed to mounted somewhere inside the house.
 Building on top of Ossman's course and [a blogpost](http://blog.kismetwireless.net/2013/08/playing-with-hackrf-keyfobs.html) by Kismet, I started by recording a sample of the button signal.

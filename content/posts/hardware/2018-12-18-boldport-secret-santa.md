@@ -13,6 +13,8 @@ Like many communities, this christmas one member took the initiative to organize
 I thought this sounded like an excellent idea an signed up to this. You can see [the end result](https://www.instagram.com/p/BrgNuDYhby8/) on [my Instagram](https://www.instagram.com/zetatwo/).
 This blog post is a short description of what I made and what the process looked like.
 
+<!--more-->
+
 At first I tried to do some online stalking of my recipient to figure out what would be a suitable gift.
 Unfortunately, that person both had a fairly common name and not a super strong (publicly available) online presence so I was out of luck.
 I wanted to give something somewhat related to the electronics or "maker" theme but did'nt think I had the skills and time to design some kind of electronics circuit.
