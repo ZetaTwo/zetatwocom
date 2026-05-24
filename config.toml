@@ -1,4 +1,30 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
+baseURL = "https://zeta-two.com/"
+languageCode = "en-us"
+title = "Zeta-Two.com"
+theme = "zetatwo"
+
+# disqusShortname = "zetatwo"  # deferred: previous Disqus thread ID, to be reintroduced as a baked-in static archive in a separate project
+
+[pagination]
+  pagerSize = 5
+
+[params]
+  description = "My blog about technology, security and life."
+  author = "Calle Svensson"
+  email = "calle.svensson@zeta-two.com"
+
+[permalinks]
+  # Mirror Jekyll's /{category}/{year}/{month}/{day}/{slug}/ URL structure.
+  # Posts live at content/posts/<cat>/<date>-<slug>.md; :sections[1:] drops the
+  # leading "posts" so the URL becomes /<cat>/<year>/<month>/<day>/<slug>/.
+  # Requires an _index.md in each category subdirectory so Hugo treats the
+  # category as a sub-section (otherwise :sections is just ["posts"]).
+  # The :slug placeholder reads per-post `slug:` frontmatter (added in step 4).
+  posts = "/:sections[1:]/:year/:month/:day/:slug/"
+
+[markup.goldmark.renderer]
+  unsafe = true  # Jekyll posts contain raw HTML
+
+[markup.highlight]
+  style = "monokai"
+  noClasses = false
