@@ -1,5 +1,5 @@
 baseURL = "https://zeta-two.com/"
-languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Zeta-Two.com"
 theme = "zetatwo"
 
