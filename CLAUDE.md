@@ -89,10 +89,7 @@ Rest of the post.
 
 ## Deferred follow-ups
 
-- **Disqus comment archive.** The original site used `disqus_shortname: zetatwo`. Comments are currently disabled (`themes/zetatwo/layouts/partials/comments.html` is a stub). The plan is a separate project: scrape the Disqus thread for each post and bake the HTML into the page below the post body. The shortname is preserved as a comment in `config.toml` for the future scrape.
-- **Section landing pages at `/<cat>/`.** Jekyll had category index pages at `/ctf/`, `/education/`, etc. Hugo's section pages live at `/posts/ctf/`, `/posts/education/`. To match Jekyll, add `url: /<cat>/` to each `content/posts/<cat>/_index.md`.
-- **Draft branches.** Seven half-finished writeups live on their own branches (`draft-bdayctf2020`, `draft-djul2020`, `draft-ssm2016`, `draft-sstic21`, `draft-starcraft`, `injection-attacks-draft`, `page-achievments`). Rebase onto `master` (post-cutover) and finish individually.
-- **DCTF finals writeup.** Noted in [TODO](TODO) as "Add writeups for DCTF finals" — write as a normal new post.
+See [TODO.md](TODO.md).
 
 ## Migration history
 
