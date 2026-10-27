@@ -75,6 +75,7 @@ Rest of the post.
 - **URL pattern**: posts get `/<category>/<YYYY>/<MM>/<DD>/<slug>/` from the `[permalinks]` block in `config.toml`. The category comes from the file's parent directory (via `:sections[1:]`), so a post under `content/posts/ctf/` is at `/ctf/...`. Per-post `slug:` is what `:slug` reads — without it, Hugo would default to a title-slug and break URL fidelity.
 - **Aliases**: every post from the Jekyll era has an `aliases:` entry for its old Jekyll `.html` URL. Hugo emits a meta-refresh stub at that path so old links keep working. Jekyll built that URL as `/<all categories joined by />/<YYYY>/<MM>/<DD>/<filename slug>.html`, taking the date from front matter (not the filename) whenever `date:` was set. To double-check one, look at the post's front matter in `git show pre-hugo-migration:_posts/<cat>/<file>.md`.
 - **Section pages**: each `content/posts/<cat>/_index.md` sets `url: /<cat>/`, so category listings live at `/<cat>/`. Hugo's taxonomy pages are disabled (`disableKinds`); `categories:` front matter only feeds the RSS `<category>` tags.
+- **Language**: the site is English; a page in another language sets `params: {lang: sv}` for `<html lang>` (a top-level `lang:` key is reserved by Hugo and fails the build).
 - **Summary**: `<!--more-->` after the first paragraph mirrors Jekyll's `post.excerpt` contract.
 
 ### Math

@@ -1,5 +1,7 @@
 ---
 title: Kodsport Game Hacking Challenge
+params:
+  lang: sv  # page language for <html lang>; the site is otherwise English
 url: /challenges/kodsport-challenge/
 aliases:
   - /challenges/kodsport-challenge.html
