@@ -18,6 +18,8 @@ disableKinds = ["taxonomy", "term"]
   github_username = "ZetaTwo"
   twitter_username = "zetatwo"
   youtube_username = "ZetaTwo"
+  # Default link-preview image (OpenGraph / Twitter card) for pages without their own.
+  images = ["/img/og-image.png"]
 
 [permalinks]
   # Mirror Jekyll's /{category}/{year}/{month}/{day}/{slug}/ URL structure.

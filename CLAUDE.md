@@ -43,7 +43,7 @@ themes/zetatwo/
   layouts/partials/{head,header,footer,post-list,pagination,comments,comment,katex}.html
   assets/css/main.css                entry point: @imports the files below, bundled by css.Build
   assets/css/{variables,base,layout,syntax-highlighting}.css   plain CSS; variables.css holds the custom properties
-  static/img/                        theme images (banners, backgrounds)
+  static/img/                        theme images (banners, backgrounds, og-image.png link-preview card)
 static/
   assets/                            content images, PDFs, videos, downloads
   {CNAME, favicon.ico, robots.txt}
