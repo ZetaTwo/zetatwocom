@@ -1,3 +1,8 @@
+/*!
+ * Parts of this file are derived from the default site template of Jekyll 2.x,
+ * MIT License, Copyright (c) 2008-2015 Tom Preston-Werner.
+ */
+
 body {
   overflow-x: hidden;
   background-color: var(--footer-color);

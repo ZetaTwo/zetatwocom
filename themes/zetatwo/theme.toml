@@ -1,5 +1,5 @@
 name = "Zeta-Two"
-license = "MIT"
+license = "Apache-2.0"
 description = "Custom theme for zeta-two.com"
 homepage = "https://zeta-two.com"
 min_version = "0.161.1"
