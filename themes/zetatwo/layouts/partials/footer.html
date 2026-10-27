@@ -14,7 +14,7 @@
           <li><a href="{{ "/services/" | relURL }}">Services</a></li>
           <li>
             <a href="{{ "/feed.xml" | relURL }}" title="RSS">
-              <i class="fas fa-rss icon"></i> Feed
+              <i class="fa-solid fa-rss icon"></i> Feed
             </a>
           </li>
         </ul>
@@ -26,7 +26,7 @@
           {{ with .Site.Params.github_username }}
           <li>
             <a href="https://github.com/{{ . }}">
-              <i class="fab fa-github icon"></i>
+              <i class="fa-brands fa-github icon"></i>
               <span class="username">{{ . }}</span>
             </a>
           </li>
@@ -34,8 +34,8 @@
 
           {{ with .Site.Params.twitter_username }}
           <li>
-            <a href="https://twitter.com/{{ . }}">
-              <i class="fab fa-twitter icon"></i>
+            <a href="https://x.com/{{ . }}">
+              <i class="fa-brands fa-x-twitter icon"></i>
               <span class="username">{{ . }}</span>
             </a>
           </li>
@@ -44,7 +44,7 @@
           {{ with .Site.Params.youtube_username }}
           <li>
             <a href="https://youtube.com/{{ . }}">
-              <i class="fab fa-youtube icon"></i>
+              <i class="fa-brands fa-youtube icon"></i>
               <span class="username">{{ . }}</span>
             </a>
           </li>
