@@ -11,6 +11,3 @@
 * `draft-starcraft`
 * `injection-attacks-draft`
 * `page-achievments`
-
-## Site / infra
-* Mobile layout: header banner height/crop, post-title brush that stretches with wrapped titles, date above title on phones, wrap long unbroken strings in post bodies

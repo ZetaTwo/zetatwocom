@@ -76,7 +76,7 @@ len(K)==9 and T(*K)&1 or die('INVALID')
 
 We know from the code that each message is prefixed with "SPACEARMY" before being encrypted. This means that we can set up and solve the matrix equation:
 
-\(\mathbf{K}_{\mathrm{enc}}\cdot \mathbf{M}=\mathbf{C}\Leftrightarrow\mathbf{K}_{\mathrm{enc}}=\mathbf{C}\mathbf{M}^{-1}\Rightarrow\mathbf{K}_{\mathrm{dec}}=\mathbf{K}_{\mathrm{enc}}^{-1}=(\mathbf{C}\mathbf{M}^{-1})^{-1}\).
+\[\mathbf{K}_{\mathrm{enc}}\cdot \mathbf{M}=\mathbf{C}\Leftrightarrow\mathbf{K}_{\mathrm{enc}}=\mathbf{C}\mathbf{M}^{-1}\Rightarrow\mathbf{K}_{\mathrm{dec}}=\mathbf{K}_{\mathrm{enc}}^{-1}=(\mathbf{C}\mathbf{M}^{-1})^{-1}.\]
 
 Where \(\mathbf{C}\) and \(\mathbf{M}\) are created from the ciphertext and plaintext prefixes. Implementing this in Sage and running it on the three ciphertexts gives us the solution:
 
