@@ -30,14 +30,12 @@ This writeup will explain the challenges I solved. I try to keep the description
 
 Total score: 1160
 
-## <a name="forensics10-ctfbot"></a>Forensics 10: CTFBot
-
+## Forensics 10: CTFBot {#forensics10-ctfbot}
 A standard simple challenge to lure people in to the IRC channel. I simply sent a PM to the user "CTFBot" in the IRC channel and it responded with the flag.
 
 Flag: sect{hello\_sect\_ctf\_2015}
 
-## <a name="forensics100-leetphone"></a>Forensics 100: Leet Phone
-
+## Forensics 100: Leet Phone {#forensics100-leetphone}
 You were given an audio file with a series of tones. The tones sounded a lot like dialing tones from a phone.
 Looking at the file in a spectrogram clearly revealed [DTMF](https://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling) tones.
  
@@ -68,8 +66,7 @@ Recalling the theme, the instruction to convert zeros to underscores and everyon
 
 Flag: call\_me\_maybe
 
-## <a name="forensics200-drunkfs"></a>Forensics 200: Drunk-FS
-
+## Forensics 200: Drunk-FS {#forensics200-drunkfs}
 In this challenge, we were given a slightly corrupted disk image containing a lot of images named 1.jpg up to 250.jpg but with a few of them missing.
 Inspecting the files, we discover that each of them contain the same JPEG data followed by 1-3 additional bytes which simply are the filename.
 The image itself is a white image with "nope" written in black and no other interesting information.
@@ -83,8 +80,7 @@ This file is larger and significantly different than the others. Opening this im
 
 Flag: sect{hidden\_in\_plain\_sight}
 
-## <a name="pwnable50-ssftp1"></a>Pwnable 50: SSFTP I
-
+## Pwnable 50: SSFTP I {#pwnable50-ssftp1}
 This challenge consisted of two parts with the same binary. The binary is an FTP-like service and the first part is logging in to the FTP server.
 Analyzing the binary, we find something that looks like this:
 
@@ -133,8 +129,7 @@ Main menu
 
 Flag: sect{y0u\_n33d\_m0r3\_f1re3y3s}
 
-## <a name="pwnable100-ssftp2"></a>Pwnable 100: SSFTP II
-
+## Pwnable 100: SSFTP II {#pwnable100-ssftp2}
 Ok, we now have access to the server. Time to get the second flag.
 We have access to two features, manage users and show files.
 Using the show files command we can see two files called "FLAG_1" and "FLAG_2".
@@ -191,8 +186,7 @@ Main menu
 
 Flag: sect{yoU\_and\_1\_ar3\_bss\_fri3nds}
 
-## <a name="pwnable200-beergame"></a>Pwnable 200: Beergame
-
+## Pwnable 200: Beergame {#pwnable200-beergame}
 In this challenge we are given the task to play a guessing game against our friend.
 The number we are trying to guess is generated with "rand() % 50" and we need to be correct all 69 times.
 We can find in the code that the PRNG is seeded with the classical "srand(time(0))" construct.
@@ -233,8 +227,7 @@ sect{n0w_yOu_d3serv_a_b33r}
 
 Flag: sect{n0w\_yOu\_d3serv\_a\_b33r}
 
-## <a name="reversing250-piratelocker"></a>Reversing 250: Pirate Locker
-
+## Reversing 250: Pirate Locker {#reversing250-piratelocker}
 This challenge provides us with an Android APK file.
 By unpacking it with your favorite zip-tool we get, among other files,
 a library file "lib/armeabi/libcyberpiratelocker.so"
@@ -271,8 +264,7 @@ Only two combinations of blocks gives something sensible and we get two flags:
 
 Flag: sect{3ncRypt\_4ll\_th3\_b00tY!}
 
-## <a name="web250-davyjones"></a>Web 250: Davy Jones
-
+## Web 250: Davy Jones {#web250-davyjones}
 The competition's only web challenge consisted of a web site with a few pages.
 The pages were served from a single template server located at `/?template=<pagename>`.
 One of the pages /?template=davyjones complained that "You are not localhost".

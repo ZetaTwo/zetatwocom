@@ -37,6 +37,7 @@ themes/zetatwo/
   layouts/_default/{baseof,single,list}.html
   layouts/_default/rss.xml           full-content, posts-only feed (see "Gotchas")
   layouts/_markup/render-passthrough.html   build-time KaTeX (see "Math")
+  layouts/shortcodes/{abbr,video}.html      for the HTML that Markdown can't express (see "Gotchas")
   layouts/posts/single.html          post template with .post-meta date line
   layouts/{index,404}.html
   layouts/partials/{head,header,footer,post-list,pagination,comments,comment,katex}.html
@@ -98,6 +99,7 @@ Comments are a read-only archive of the old Disqus threads (shortname `zetatwo`)
 - **Pagination uses the `[pagination]` block.** Set `pagerSize = 5` under `[pagination]` in `config.toml`. The legacy top-level `paginate = N` key was silently ignored starting somewhere between Hugo 0.123 and 0.161 — if a future build mysteriously shows 10 posts per page when the config says otherwise, this is what to check.
 - **`outputFormats.RSS.baseName = "feed"`** means every RSS feed across the site is named `feed.xml` (not `index.xml`): `/feed.xml` for the site and `/<cat>/feed.xml` per category. The theme's `rss.xml` mirrors the old Jekyll feed: posts only, full content (root-relative links made absolute), capped by `[services.rss] limit` in `config.toml`.
 - **`url()` in the theme CSS must point at an external path.** `css.Build` (esbuild) tries to bundle every `url()` it sees and fails with "Could not resolve". Theme images live in `themes/zetatwo/static/img/` and are listed as `externals: ["/img/*"]` in `partials/head.html`; a `url()` to any other path needs its own externals entry.
+- **Raw HTML in Markdown is off** (Hugo's default). Goldmark drops it and leaves `<!-- raw HTML omitted -->` in the output, so grep the build for that after adding content. Use `## Heading {#anchor}` for custom heading IDs, the theme's `{{< abbr title="..." >}}..{{< /abbr >}}` and `{{< video "a.webm" "a.mp4" >}}` shortcodes, and backticks around literal `<placeholder>` text.
 - **Bare URLs inside double quotes need `<..>`.** With the typographer on, Goldmark's linkify pulls the closing `"` into the link (`href="https://example.com/%22"`). Write `"<https://example.com>"` instead, or use backticks for URLs that are examples rather than links.
 - **Don't add `[languages.<lang>]` to `config.toml`** unless you're ready to also touch every URL in content. As soon as that table exists, Hugo switches into multilingual mode and applies a built-in `_markup/render-link.html` hook that calls `urls.Parse` on every link. The 2015 djulkalendern writeup links to a tryapl.org URL using JavaScript-style `%uXXXX` escapes (not RFC-3986 `%XX`) and the parser refuses to build. Without that table the build stays single-language in Hugo's default `en` and the bad URL gets through. Side-effect: `<html lang>` and the RSS `<language>` tag are just `en` rather than `en-us`.
 

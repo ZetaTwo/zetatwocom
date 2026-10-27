@@ -27,8 +27,7 @@ This writeup will explain the challenges I solved. I try to keep the description
 
 Total contribution: 1000
 
-## <a name="crypto50-11"></a>Crypto 50: 11
-
+## Crypto 50: 11 {#crypto50-11}
 In this challenge we were given a text file with eleven chiphers which were said to all have been encrypted with the same stream cipher.
 
 A stream cipher encrypts by generating a stream of pseudo-random data and XOR:ing it with the plaintext.
@@ -48,8 +47,7 @@ By XOR:ing every ciphertext with each other ciphertext, we can use the 110 combi
 
 Flag: "when using a stream cipher, never use the key more than once!"
 
-## <a name="crypto200-no-crypto"></a>Crypto 200: No Crypto
-
+## Crypto 200: No Crypto {#crypto200-no-crypto}
 The challenge consisted of two plaintexts, and a ciphertext which was the first plaintext encrypted with AES-CBC with an unknown key.
 The question was "how would you change the ciphertext so that when decrypted it would instead give the second plaintext?".""
 
@@ -83,8 +81,7 @@ Therefore the flag is the new IV.
 
 Flag: "19a9d10c3b15464f9c585543cef10bce"
 
-## <a name="misc100-she-said-it-doesnt-matter"></a>Misc. 100: She said it doesn't matter
-
+## Misc. 100: She said it doesn't matter {#misc100-she-said-it-doesnt-matter}
 In this challenge we were given a very strange looking PNG file.
 
 ![The broken PNG file](/assets/images/ctf/dctf_size1.png)
@@ -97,8 +94,7 @@ Additionally, the CRC checksums are not correct. Changing the size in the header
 
 Flag: "s1z3\_d03s\_ma773r\_baby"
 
-## <a name="misc200-try-harder"></a>Misc. 200: Try Harder
-
+## Misc. 200: Try Harder {#misc200-try-harder}
 This was a multi-part challenge in which we first were given to compressed files, "misc200.part0.jpg.gz" and "part3.zip".
 The second one was password protected. Trusting the names, I started with looking at the first one.
 Extracting it gave us a roughly 4Gb large file which according to "file" is not a jpeg as the names suggests but instead a "DOS/MBR boot sector".
@@ -133,8 +129,7 @@ Doing this gives us a new BMP file which contains the password for the last part
 
 Flag: DCTF{711389441a47c19a244c8473ee5aceff}
 
-## <a name="misc350-emotional-roller-coaster"></a>Misc. 350: Emotional Roller Coaster
-
+## Misc. 350: Emotional Roller Coaster {#misc350-emotional-roller-coaster}
 This was a really interesting level with a nice twist.
 The challenge had a description including "you are the target".
 By listening on the network traffic with Wireshark while being connected to the VPN, you could see an incoming DNS request.
@@ -151,8 +146,7 @@ This zip file contained a lot of junk to increase the size of the archive but al
 
 Flag: DCTF{e4045481e906132b24c173c5ee52cd1e}
 
-## <a name="reversing100-entry-language"></a>Reversing 100: Entry Language
-
+## Reversing 100: Entry Language {#reversing100-entry-language}
 This was a standard "key verifier challenge". The binary took an input and verified it to a target value.
 By disassembling the binary it was possible to extract the verifier code and translate it to this equivalent Python code
 

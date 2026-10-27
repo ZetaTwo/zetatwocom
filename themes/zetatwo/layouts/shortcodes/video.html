@@ -1,0 +1,8 @@
+{{- /* Self-hosted video with one <source> per argument, in order of preference:
+       {{< video "/assets/video/clip.webm" "/assets/video/clip.mp4" >}}
+       The MIME type is taken from the file extension. */ -}}
+<video controls preload="metadata">
+  {{- range .Params }}
+  <source src="{{ . }}" type="video/{{ path.Ext . | strings.TrimPrefix "." }}">
+  {{- end }}
+</video>

@@ -32,9 +32,6 @@ disableKinds = ["taxonomy", "term"]
   # Match Jekyll's /feed.xml URL instead of Hugo's default /index.xml.
   baseName = "feed"
 
-[markup.goldmark.renderer]
-  unsafe = true  # Jekyll posts contain raw HTML
-
 [markup.goldmark.extensions.passthrough]
   # Math is left untouched by Goldmark (no typographer, no emphasis) and
   # rendered at build time by the theme's render-passthrough hook.

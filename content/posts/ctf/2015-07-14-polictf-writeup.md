@@ -28,8 +28,7 @@ Total contribution: 800
 
 If you want to read more writeups from this CTF, there is [a great GitHub repo with them](https://github.com/ctfs/write-ups-2015/tree/master/polictf-2015)
 
-## <a name="crypto50-exorcise"></a>Crypto 50: Exorcise
-
+## Crypto 50: Exorcise {#crypto50-exorcise}
 Due to a mistake I actually solved this one in an unnecessarily complicated way.
 The challenge provided a service which you could send text to and get it and some other text back encrypted.
 The encryption was a simple repeated XOR with the flag as a key.
@@ -49,8 +48,7 @@ I then repeated this for each byte in the message until I had the full key.
 Flag: flag{\_this\_1s\_s0\_simple\_you\_should\_have\_solved\_\_it\_1n\_5\_sec}
 
 
-## <a name="pwnable100-john-pastry-shop"></a>Pwnable 100: John Pastry Shop
-
+## Pwnable 100: John Pastry Shop {#pwnable100-john-pastry-shop}
 This challenge was quite interesting. It provided a service to which you could send a specially encoded JAR-file.
 If this JAR file was properly encoded, signed and contained a certain class, that class would be used in a program.
 The program would instantiate the class, run addIngredientsToCake() on it and then print out a list of ingredients in the cake.
@@ -99,8 +97,7 @@ This printed out the flag in the ingredient list.
 Flag: flag{PinzimonioIsTheSecretIngredientAndANiceFlag}
 
 
-## <a name="grabbag100-john-the-dropper"></a>Grab Bag 100: John the Dropper
-
+## Grab Bag 100: John the Dropper {#grabbag100-john-the-dropper}
 In this challenge, we were given the address to a server _dropper.polictf.it_. However, the server didn't seem to do anything useful.
 It had no ports open at all except the admin SSH interface, but it was alive and responded to pings.
 
@@ -135,8 +132,7 @@ Obviously there was a mistake somewhere on the way but it's good enough to get t
 
 Flag: flag{it-is-never-too-late-for-a-drop}
 
-## <a name="web100-john-the-traveller"></a>Web 100: John the Traveller
-
+## Web 100: John the Traveller {#web100-john-the-traveller}
 This challenge led us to a web site with a flight booking site.
 It had a single search field in which you could search for a European capital.
 
@@ -157,8 +153,7 @@ Decoding the QR code gives us the flag.
 Flag: flag{run\_to\_the\_hills\_run\_for\_your\_life}
 
 
-## <a name="web350-magic"></a>Web 350: Magic chall
-
+## Web 350: Magic chall {#web350-magic}
 I felt like this challenge was almost made for me. A few weeks ago, I was at [Confidence](http://confidence.org.pl) to compete.
 As a part of that, I gave a talk about PHP's file stream features and what problems that can lead to.
 This was exactly what was used here to get source disclosure.
@@ -236,8 +231,7 @@ Of course, it would have also been possible to directly access the log file, but
 
 Flag: flag{session\_regenerate\_id()\_is\_a\_very\_cool\_function\_use\_it\_whenever\_you\_happen\_to\_use\_session\_start()}
 
-## <a name="forensics100-hungry"></a>Forensics 100: It's Hungry
-
+## Forensics 100: It's Hungry {#forensics100-hungry}
 This challenge consisted of a song _oldmcdonald.flac_ and a text:
 
 > 100 Points  Old McDonald had a farm. Old McDonald liked chiptune.
