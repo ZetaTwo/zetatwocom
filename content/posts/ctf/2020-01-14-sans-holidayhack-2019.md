@@ -1,5 +1,5 @@
 ---
-title: "SANS Holiday Hack Challange 2019: Writeup"
+title: "SANS Holiday Hack Challenge 2019: Writeup"
 date: 2020-01-14T00:30:00+01:00
 slug: sans-holidayhack-2019
 categories: [ctf]

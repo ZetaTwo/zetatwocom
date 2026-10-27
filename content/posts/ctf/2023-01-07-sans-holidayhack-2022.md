@@ -1,5 +1,5 @@
 ---
-title: "SANS Holiday Hack Challange 2022: Writeup"
+title: "SANS Holiday Hack Challenge 2022: Writeup"
 date: 2023-01-07T12:00:00+01:00
 slug: sans-holidayhack-2022
 categories: [ctf]
