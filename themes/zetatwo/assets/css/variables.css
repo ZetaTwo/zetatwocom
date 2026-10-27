@@ -1,0 +1,29 @@
+:root {
+    --base-font-family: Helvetica, Arial, sans-serif;
+    --base-font-size:   16px;
+    --small-font-size:  calc(var(--base-font-size) * 0.875);
+    --base-line-height: 1.5;
+
+    --spacing-unit:     30px;
+
+    --text-color:       #111;
+    --background-color: #efeeee;
+    --brand-color:      #d72031;
+    --brand-color-dark: #941622;  /* brand colour, 15% less lightness */
+
+    --grey-color:       #828282;
+    --grey-color-light: #e8e8e8;  /* grey colour, 40% more lightness */
+
+    --footer-color:      #ffffff;
+    --footer-text-color: var(--brand-color);
+
+    /* Width of the content area */
+    --content-width:    800px;
+}
+
+/*
+ * Breakpoints can't be custom properties (var() isn't allowed in media
+ * queries), so they are written out in each @media rule:
+ *   palm:   max-width: 600px
+ *   laptop: max-width: 800px
+ */

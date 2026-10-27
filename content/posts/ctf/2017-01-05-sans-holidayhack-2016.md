@@ -13,7 +13,7 @@ This post contains my report for the SANS Holiday Hack challenge 2016.
 
 ## Part 1: A Most Curious Business Card
 
-By taking all of Santa's tweets and lining them up under each other it is possible to read the words "Bug Bounty" as ASCII art. In the most recent Instagram image you can find the filename "SantaGram_v4.2.zip" on the screen and the domain "http://northpolewonderland.com" on a paper on the desk. The zip file can be downloaded from "http://northpolewonderland.com/SantaGram_v4.2.zip" and opened with the password "bugbounty". It contains the SantaGram Android app version 4.2
+By taking all of Santa's tweets and lining them up under each other it is possible to read the words "Bug Bounty" as ASCII art. In the most recent Instagram image you can find the filename "SantaGram_v4.2.zip" on the screen and the domain "http://northpolewonderland.com" on a paper on the desk. The zip file can be downloaded from "<http://northpolewonderland.com/SantaGram_v4.2.zip>" and opened with the password "bugbounty". It contains the SantaGram Android app version 4.2
 
 * Answer 1: "Bug Bounty"  
 * Answer 2: An APK file for SantaGram version 4.2  
@@ -62,7 +62,7 @@ The Analytics server exposes a git repository at http://analytics.northpolewonde
 The second MP3 is obtained via a second order SQL-injection by mass assignment. First create an auth cookie for "administrator" and login. By creating and saving a report it is possible to then alter the query executed by the report through the "edit.php" page to instead select from the "audio" table. This can be used to both get the name of the file and also the contents by using the MySQL "TO_BASE64" to extract the audio data.
 
 To attack the debug server we look at the decompiled code in the Android app to see what a valid request looks like and how it is created. By sending such a request we get back a response indicating that our request had the "verbose" paramter set to its default setting "false". By sending a new request but with the paramter "verbose" added and set to "true" we get back more data including a list of all files. This list includes "debug-20161224235959-0.mp3" which then can be downloaded from
-"http://dev.northpolewonderland.com/debug-20161224235959-0.mp3".
+"<http://dev.northpolewonderland.com/debug-20161224235959-0.mp3>".
 
 To attack the exception server we start in the same way as with the debug server by looking at the usage in the code and crafting a valid request. From this we determine that there are two operations: "WriteCrashDump" and "ReadCrashDump". The latter can be used together with php://filter to extract the exception.php file. Sending the following data in the request gives us back the code base64 encoded.
 
@@ -77,10 +77,12 @@ To attack the exception server we start in the same way as with the debug server
 
 By base64 decoding the response we can read the code including a comment as follows:
 
-> \# Audio file from Discombobulator in webroot: discombobulated-audio-6-  
-> XyzE3N9YqKNH.mp3  
+```text
+# Audio file from Discombobulator in webroot: discombobulated-audio-6-
+XyzE3N9YqKNH.mp3
+```
 
-Thus the file can be downloaded from "http://ex.northpolewonderland.com/discombobulatedaudio-6-XyzE3N9YqKNH.mp3"
+Thus the file can be downloaded from "<http://ex.northpolewonderland.com/discombobulatedaudio-6-XyzE3N9YqKNH.mp3>"
 
 The ad server is very easily attacked with the "Meteor Miner" Tampermonkey script: https://github.com/nidem/MeteorMiner. The script shows that there is a collection called "HomeQuotes". By calling "HomeQuotes.find().fetch()" in the console, we get a list of all quotes including a hidden one:
 
@@ -94,7 +96,7 @@ The ad server is very easily attacked with the "Meteor Miner" Tampermonkey scrip
 }
 ```
 
-The file can then be downloaded from "http://ads.northpolewonderland.com/ofdAR4UYRaeNxMg/discombobulatedaudio5.mp3"
+The file can then be downloaded from "<http://ads.northpolewonderland.com/ofdAR4UYRaeNxMg/discombobulatedaudio5.mp3>"
 
 The final server, the dungeon server can be exploited by reverse engineering the dungeon binary given by one of the elves. There we can find that there is a command called "GDT" which opens up an admin console. By Googling some strings in the program you can discover that the game is called "Zork". By following a walkthrough it is possible to find a room with a painting which can be taken. The GDT command can then be used to change the current location of the player. Since this seems to be a modified version of the game it is likely that any added rooms have been appended to the end of the location list. Thus setting the player location to the highest possible seems plausible. Trial and error reveals that 192 is the highest ID for a location which corresponds to the north pole. By walking inside and giving the painting to the elf, the game is completed and an e-mail address is shown. Sending an e-mail to this address yields a response with the MP3 file attached. Shortening the process yields the following game transcript:
 

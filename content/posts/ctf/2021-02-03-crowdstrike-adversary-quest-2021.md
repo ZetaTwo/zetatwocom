@@ -76,9 +76,9 @@ len(K)==9 and T(*K)&1 or die('INVALID')
 
 We know from the code that each message is prefixed with "SPACEARMY" before being encrypted. This means that we can set up and solve the matrix equation:
 
-$\mathbf{K}_{\mathrm{enc}}\cdot \mathbf{M}=\mathbf{C}\Leftrightarrow\mathbf{K}_{\mathrm{enc}}=\mathbf{C}\mathbf{M}^{-1}\Rightarrow\mathbf{K}_{\mathrm{dec}}=\mathbf{K}_{\mathrm{enc}}^{-1}=(\mathbf{C}\mathbf{M}^{-1})^{-1}$.
+\(\mathbf{K}_{\mathrm{enc}}\cdot \mathbf{M}=\mathbf{C}\Leftrightarrow\mathbf{K}_{\mathrm{enc}}=\mathbf{C}\mathbf{M}^{-1}\Rightarrow\mathbf{K}_{\mathrm{dec}}=\mathbf{K}_{\mathrm{enc}}^{-1}=(\mathbf{C}\mathbf{M}^{-1})^{-1}\).
 
-Where $\mathbf{C}$ and $\mathbf{M}$ are created from the ciphertext and plaintext prefixes. Implementing this in Sage and running it on the three ciphertexts gives us the solution:
+Where \(\mathbf{C}\) and \(\mathbf{M}\) are created from the ciphertext and plaintext prefixes. Implementing this in Sage and running it on the three ciphertexts gives us the solution:
 
 ```python
 R = IntegerModRing(256)
@@ -326,7 +326,7 @@ We are allowed to run this program as root with sudo but for this to work we nee
 $ XAUTHORITY=$(pwd)/.Xauthority sudo /usr/local/bin/mapviewer
 ```
 
-Every GTK program takes a number of extra command line parameters including one called "--gtk-module" where you can specify extra libraries to load, similar to LD_PRELOAD. We can use this to build a library which will simply open a shell on load and provide it as an argument to the program:
+Every GTK program takes a number of extra command line parameters including one called `--gtk-module` where you can specify extra libraries to load, similar to LD_PRELOAD. We can use this to build a library which will simply open a shell on load and provide it as an argument to the program:
 
 ```bash
 cat << EOF > privesc.c
@@ -704,7 +704,7 @@ mov	ebp, esp
 sub	esp, N
 ```
 
-With this we quickly find that the key starts with "CS{cr" (prologue) and that the seventh character must be "p" (ends with ret). Assuming that the key is between 10 and 60 characters we can solve the equation $196 \equiv 7\ (\mathrm{mod}\ \mathrm{keylen})$ and get 21 and 27 as reasonable candidates. It looks like 27 produces more reasonable output further down the code. From here we continue this iterative process, looking for bytes that results in reasonable looking code until we get the full flag.
+With this we quickly find that the key starts with "CS{cr" (prologue) and that the seventh character must be "p" (ends with ret). Assuming that the key is between 10 and 60 characters we can solve the equation \(196 \equiv 7\ (\mathrm{mod}\ \mathrm{keylen})\) and get 21 and 27 as reasonable candidates. It looks like 27 produces more reasonable output further down the code. From here we continue this iterative process, looking for bytes that results in reasonable looking code until we get the full flag.
 
 
 ```python

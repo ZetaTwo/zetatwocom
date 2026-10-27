@@ -13,6 +13,5 @@
 * `page-achievments`
 
 ## Site / infra
-* Bake historical Disqus comments as static HTML below each post (shortname: `zetatwo`); kept as a comment in `config.toml` for the future scrape
-* Move Hugo section landing pages from `/posts/<cat>/` to `/<cat>/` to match the Jekyll URLs — add `url: /<cat>/` to each `content/posts/<cat>/_index.md`
-* Bring back smart quotes for body text without breaking KaTeX primes — either set `apostrophe = "'"` under `[markup.goldmark.extensions.typographer]` (keeps quote/dash substitutions, leaves `'` alone) or wrap math in a shortcode that bypasses Goldmark, then re-enable the extension
+* Mobile layout: header banner height/crop, post-title brush that stretches with wrapped titles, date above title on phones, wrap long unbroken strings in post bodies
+* Small cleanups: drop unused `static/assets/katex/katex.min.js`; drop `style = "monokai"` (no effect with `noClasses = false`); drop obsolete `X-UA-Compatible`; add `Sitemap:` to `robots.txt`; style `.pagination`; verify the Hugo `.deb` checksum in CI

@@ -1,8 +1,10 @@
-{{/*
-  Comments are disabled during the Hugo migration.
-
-  Previously this loaded Disqus comments using the shortname "zetatwo" and
-  per-post identifier "{{ site.disqusid }}{{ page.url }}". The plan is to
-  scrape and bake the historical comments as static HTML in a separate
-  follow-up project; that work will reinstate the rendered output here.
-*/}}
+{{/* Comments archived from Disqus (shortname "zetatwo"), stored in data/comments.json keyed by post URL. */}}
+{{ with index hugo.Data.comments .RelPermalink }}
+<section class="comments">
+  <h2 class="comments-heading">Comments</h2>
+  <p class="comments-note">Archived from Disqus. Commenting is closed.</p>
+  <ul class="comment-list">
+    {{ range . }}{{ partial "comment.html" . }}{{ end }}
+  </ul>
+</section>
+{{ end }}

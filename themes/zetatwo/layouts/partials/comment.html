@@ -1,0 +1,9 @@
+<li class="comment">
+  <p class="comment-meta"><span class="comment-author">{{ .name }}</span> &bull; {{ (time .date).Format "Jan 2, 2006" }}</p>
+  <div class="comment-body">{{ .message | safeHTML }}</div>
+  {{ with .replies }}
+  <ul class="comment-list">
+    {{ range . }}{{ partial "comment.html" . }}{{ end }}
+  </ul>
+  {{ end }}
+</li>

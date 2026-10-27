@@ -37,26 +37,28 @@ Here is a transcript of me playing through the game.
 nc 188.166.63.14 1338
 ```
 
-> Mysterious Santa: What is your name?  
-> $ ZetaTwo  
-> Mysterious Santa: Welcome to the world. *Poof*  
-> This is an open field west of a white house, with a boarded front door.  
->   
-> To the east: A white house.  
-> To the north: A large switchboard.  
-> To the south: You'll have to cooperate  
-> To the west: A shed  
->   
-> $ go north  
-> In front of you is a large switchboard.   
-> Strangely, there's only one little switch.  
-> Currently, it is turned off.  
->   
-> To the south: An open field  
->   
-> $ turn on  
-> Your phone is ringing:  
-> PHONE: ... "HJÄLP", står det.  
+```text
+Mysterious Santa: What is your name?
+$ ZetaTwo
+Mysterious Santa: Welcome to the world. *Poof*
+This is an open field west of a white house, with a boarded front door.
+
+To the east: A white house.
+To the north: A large switchboard.
+To the south: You'll have to cooperate
+To the west: A shed
+
+$ go north
+In front of you is a large switchboard.
+Strangely, there's only one little switch.
+Currently, it is turned off.
+
+To the south: An open field
+
+$ turn on
+Your phone is ringing:
+PHONE: ... "HJÄLP", står det.
+```
 
 Password: hjälp
 
@@ -168,25 +170,27 @@ When you get through the door, there are four directions to choose between.
 Choosing the correct one (which I think was random) gives us the answer.
 Here is a transcript of the last part of the game.
 
-> /---------------\  
-> |[X]|[X]|[X]|[X]|  
-> \---------------/  
-> At long last, you are nearing the heart of the NSA system.  
-> But what's this?  
-> Their final measure is confusion!  
->  
-> To the north: The junction  
-> To the north-south: The heart of the NSA storage facility.  
-> To the east-west: This is the heart of the NSA storage facility.  
-> To the north-west-south-east: This IS the heart of the NSA storage facility.  
->  
-> $ go east-west  
-> There's nothing here.  
-> The walls are empty, no people, no windows...  
-> Oh, but there is one thing.  
-> A detonator lies on the ground.  
-> A detonator?!  
-> This has to be reported immediatelly!  
+```text
+/---------------\
+|[X]|[X]|[X]|[X]|
+\---------------/
+At long last, you are nearing the heart of the NSA system.
+But what's this?
+Their final measure is confusion!
+
+To the north: The junction
+To the north-south: The heart of the NSA storage facility.
+To the east-west: This is the heart of the NSA storage facility.
+To the north-west-south-east: This IS the heart of the NSA storage facility.
+
+$ go east-west
+There's nothing here.
+The walls are empty, no people, no windows...
+Oh, but there is one thing.
+A detonator lies on the ground.
+A detonator?!
+This has to be reported immediatelly!
+```
 
 Password: detonator
 
@@ -198,29 +202,32 @@ Using dig to do a TXT query on "jsimo.se" gives the following:
 ```bash
 dig jsimo.se ANY
 ```
-> ; <<>> DiG 9.9.5-11ubuntu1-Ubuntu <<>> jsimo.se ANY  
-> ;; global options: +cmd  
-> ;; Got answer:  
-> ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35040  
-> ;; flags: qr rd ra; QUERY: 1, ANSWER: 6, AUTHORITY: 0, ADDITIONAL: 1  
->  
-> ;; OPT PSEUDOSECTION:  
-> ; EDNS: version: 0, flags:; udp: 512  
-> ;; QUESTION SECTION:  
-> ;jsimo.se.			IN	ANY  
->  
-> ;; ANSWER SECTION:  
-> jsimo.se.		859	IN	NS	ns1.digitalocean.com.  
-> jsimo.se.		859	IN	TXT	"inget finns i toppen, leta vidare!"  
-> jsimo.se.		859	IN	A	188.166.63.14  
-> jsimo.se.		859	IN	NS	ns2.digitalocean.com.  
-> jsimo.se.		859	IN	SOA	ns1.digitalocean.com. hostmaster.jsimo.se. 1449694817 10800 3600 604800 1800  
-> jsimo.se.		859	IN	NS	ns3.digitalocean.com.  
->  
-> ;; Query time: 12 msec  
-> ;; SERVER: 127.0.1.1#53(127.0.1.1)  
-> ;; WHEN: Thu Dec 10 14:15:40 CET 2015  
-> ;; MSG SIZE  rcvd: 217  
+
+```text
+; <<>> DiG 9.9.5-11ubuntu1-Ubuntu <<>> jsimo.se ANY
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35040
+;; flags: qr rd ra; QUERY: 1, ANSWER: 6, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;jsimo.se.			IN	ANY
+
+;; ANSWER SECTION:
+jsimo.se.		859	IN	NS	ns1.digitalocean.com.
+jsimo.se.		859	IN	TXT	"inget finns i toppen, leta vidare!"
+jsimo.se.		859	IN	A	188.166.63.14
+jsimo.se.		859	IN	NS	ns2.digitalocean.com.
+jsimo.se.		859	IN	SOA	ns1.digitalocean.com. hostmaster.jsimo.se. 1449694817 10800 3600 604800 1800
+jsimo.se.		859	IN	NS	ns3.digitalocean.com.
+
+;; Query time: 12 msec
+;; SERVER: 127.0.1.1#53(127.0.1.1)
+;; WHEN: Thu Dec 10 14:15:40 CET 2015
+;; MSG SIZE  rcvd: 217
+```
 
 Which tells us that there is nothing at the top (-domain).
 Trying again with the "pr-tomten" sub domain gives us a binary string.
@@ -229,24 +236,26 @@ Trying again with the "pr-tomten" sub domain gives us a binary string.
 dig pr-tomten.jsimo.se ANY
 ```
 
-> ; <<>> DiG 9.9.5-11ubuntu1-Ubuntu <<>> pr-tomten.jsimo.se ANY  
-> ;; global options: +cmd  
-> ;; Got answer:  
-> ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10805  
-> ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1  
->  
-> ;; OPT PSEUDOSECTION:  
-> ; EDNS: version: 0, flags:; udp: 512  
-> ;; QUESTION SECTION:  
-> ;pr-tomten.jsimo.se.		IN	ANY  
->  
-> ;; ANSWER SECTION:  
-> pr-tomten.jsimo.se.	1799	IN	TXT	"01110000011001010110111001110100011000010110011101101111011011100110010101101110"  
->  
-> ;; Query time: 64 msec  
-> ;; SERVER: 127.0.1.1#53(127.0.1.1)  
-> ;; WHEN: Thu Dec 10 14:15:49 CET 2015  
-> ;; MSG SIZE  rcvd: 140  
+```text
+; <<>> DiG 9.9.5-11ubuntu1-Ubuntu <<>> pr-tomten.jsimo.se ANY
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10805
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;pr-tomten.jsimo.se.		IN	ANY
+
+;; ANSWER SECTION:
+pr-tomten.jsimo.se.	1799	IN	TXT	"01110000011001010110111001110100011000010110011101101111011011100110010101101110"
+
+;; Query time: 64 msec
+;; SERVER: 127.0.1.1#53(127.0.1.1)
+;; WHEN: Thu Dec 10 14:15:49 CET 2015
+;; MSG SIZE  rcvd: 140
+```
 
 That string is simply the password encoded as an ASCII binary string.
 
@@ -263,7 +272,7 @@ Password : robotfabrik
 Here we are given a link to the marketing elf's Twitter account.
 [His last tweet](https://twitter.com/dJultomten/status/675605997239578624) says that he is on a nice vacation.
 However, looking at the spaces between the words, we see that some of them are regular spaces and some of them are Unicode "narrow spaces".
-Interpreting this as morse code gives us "...---..." which we all recognize as "SOS".
+Interpreting this as morse code gives us `...---...` which we all recognize as "SOS".
 
 Password: sos 
 
@@ -300,54 +309,56 @@ Pressing the button here starts a computer which allows us to play the MUD insid
 Here some knowledge of KTH's computer labs are required. Some of them are named after colors.
 Next to "Crimson", in which we start is "Grey", therefore we can "go grey" to get further.
 
-> $ nc 188.166.63.14 1338  
-> Mysterious Santa: What is your name?  
-> $ ZetaTwo  
-> Mysterious Santa: Welcome to the world. *Poof*  
-> This is an open field west of a white house, with a boarded front door.  
->  
-> To the east: A white house.  
-> To the north: A large switchboard.  
-> To the south: You'll have to cooperate  
-> To the west: A shed  
->  
-> $ go west  
-> This shed is very dark and damp, there are cobwebs covering every wall.  
-> You feel around for the light switch and there it is, on the wall, just  
-> waiting for you to press.  
->  
-> To the east: An open field  
->  
-> $ press  
-> 
-> As you press the light switch, spiders running away from your fingers, a bright  
-> screen lights up the room. It's a terminal, with green letters on a black  
-> background, a little dusty perhaps. There is a keyboard underneath. You could  
-> type something...  
->  
-> FROM CONSOLE:  
-> Mysterious Santa: What is your name?  
-> END OF TRANSMISSION.  
-> $ type ZetaTwo2  
-> FROM CONSOLE:  
-> Mysterious Santa: Welcome to the world. *Poof*  
-> END OF TRANSMISSION.  
-> FROM CONSOLE:  
-> You are standing in an open field... no, wait, a large room...  
-> With computers?  
-> On the wall, "CRIMSON" is written in some weird nordic language.  
-> You feel a fleeting smell of donkeys...  
->  
-> END OF TRANSMISSION.  
-> $ type go gray  
-> FROM CONSOLE:  
-> This room spells of donkeys. A large group of nerds is creating some weird  
-> Christmas competition about solving needlessly hard and irrelevant problems.  
-> On the table lay two Star Wars tickets. The booking number is "a3JhZnRlbg==".  
-> On one of the computers, an annoying video is playing:  
->     https://www.youtube.com/watch?v=8fvTxv46ano  
->  
-> END OF TRANSMISSION.  
+```text
+$ nc 188.166.63.14 1338
+Mysterious Santa: What is your name?
+$ ZetaTwo
+Mysterious Santa: Welcome to the world. *Poof*
+This is an open field west of a white house, with a boarded front door.
+
+To the east: A white house.
+To the north: A large switchboard.
+To the south: You'll have to cooperate
+To the west: A shed
+
+$ go west
+This shed is very dark and damp, there are cobwebs covering every wall.
+You feel around for the light switch and there it is, on the wall, just
+waiting for you to press.
+
+To the east: An open field
+
+$ press
+
+As you press the light switch, spiders running away from your fingers, a bright
+screen lights up the room. It's a terminal, with green letters on a black
+background, a little dusty perhaps. There is a keyboard underneath. You could
+type something...
+
+FROM CONSOLE:
+Mysterious Santa: What is your name?
+END OF TRANSMISSION.
+$ type ZetaTwo2
+FROM CONSOLE:
+Mysterious Santa: Welcome to the world. *Poof*
+END OF TRANSMISSION.
+FROM CONSOLE:
+You are standing in an open field... no, wait, a large room...
+With computers?
+On the wall, "CRIMSON" is written in some weird nordic language.
+You feel a fleeting smell of donkeys...
+
+END OF TRANSMISSION.
+$ type go gray
+FROM CONSOLE:
+This room spells of donkeys. A large group of nerds is creating some weird
+Christmas competition about solving needlessly hard and irrelevant problems.
+On the table lay two Star Wars tickets. The booking number is "a3JhZnRlbg==".
+On one of the computers, an annoying video is playing:
+    https://www.youtube.com/watch?v=8fvTxv46ano
+
+END OF TRANSMISSION.
+```
 
 The booking number is a base 64 encoded string which decodes to "kraften"
 
@@ -361,17 +372,20 @@ Looking at the headers of the logo image we find half the solution.
 ```bash
  curl -I http://img.jsimo.se/djuldanke.png
 ```
-> HTTP/1.1 200 OK  
-> Server: nginx/1.4.6 (Ubuntu)  
-> Date: Thu, 17 Dec 2015 11:46:11 GMT  
-> Content-Type: image/png  
-> Content-Length: 31005  
-> Last-Modified: Mon, 30 Nov 2015 21:55:56 GMT  
-> Connection: keep-alive  
-> ETag: "565cc5ec-791d"  
-> X-hemlighet: Kilo Mike Oscar Tango Romeo  
-> X-tips: Half of the solution, you only have. Yes, hmmm  
-> Accept-Ranges: bytes  
+
+```http
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Thu, 17 Dec 2015 11:46:11 GMT
+Content-Type: image/png
+Content-Length: 31005
+Last-Modified: Mon, 30 Nov 2015 21:55:56 GMT
+Connection: keep-alive
+ETag: "565cc5ec-791d"
+X-hemlighet: Kilo Mike Oscar Tango Romeo
+X-tips: Half of the solution, you only have. Yes, hmmm
+Accept-Ranges: bytes
+```
 
 If we download the image and open it in a hex editor, we see that where the PNG data ends, there is more.
 Extracting this data into another file we see that it is an MP3 file.
@@ -428,7 +442,10 @@ We are tasked with finding the sender of the mail. Using the correct flags for t
 ```bash
 tar -tvf mail.tgz 
 ```
-> -rw-rw-r-- ondsketomten/nsa 96 2015-12-20 22:47 mail.txt
+
+```text
+-rw-rw-r-- ondsketomten/nsa 96 2015-12-20 22:47 mail.txt
+```
 
 We see that the sender is the evil elf of the NSA.
 
@@ -484,11 +501,19 @@ We then run the patched binary and answer anything.
 ```bash
 xxd tomtefar.bak | grep 7410
 ```
-> 00001390: 38c6 7410 4181 fd98 0000 000f 85e7 0000  8.t.A...........
+
+```text
+00001390: 38c6 7410 4181 fd98 0000 000f 85e7 0000  8.t.A...........
+```
+
 ```bash
 xxd tomtefar | grep eb10 
 ```
-> 00001390: 38c6 eb10 4181 fd98 0000 000f 85e7 0000  8...A...........
+
+```text
+00001390: 38c6 eb10 4181 fd98 0000 000f 85e7 0000  8...A...........
+```
+
 ```bash
 python -c'print("j\n"*20)' | ./tomtefar | tail -c9
 ```

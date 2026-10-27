@@ -1,5 +1,8 @@
 ---
 title: Trainings
+url: /services/trainings/
+aliases:
+  - /trainings/
 ---
 
 ## Basics of Binary Exploitation

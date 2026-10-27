@@ -1,0 +1,30 @@
+{{- /* Full-content feed of posts only, matching the old Jekyll feed.xml. Root-relative links are made absolute for feed readers. */ -}}
+{{- $pages := cond .IsHome (where site.RegularPages "Type" "posts") .RegularPagesRecursive -}}
+{{- $base := strings.TrimSuffix "/" site.BaseURL -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} on {{ site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ site.Params.description }}</description>
+    <language>{{ site.Language.Locale }}</language>
+    {{- with $pages }}
+    <lastBuildDate>{{ (index . 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
+    {{- end }}
+    {{- with .OutputFormats.Get "RSS" }}
+    <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
+    {{- end }}
+    {{- range first site.Config.Services.RSS.Limit $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      <guid isPermaLink="true">{{ .Permalink }}</guid>
+      {{- range .Params.categories }}
+      <category>{{ . }}</category>
+      {{- end }}
+      <description>{{ replaceRE `(href|src)="/([^/])` (printf `$1="%s/$2` $base) .Content | transform.XMLEscape | safeHTML }}</description>
+    </item>
+    {{- end }}
+  </channel>
+</rss>

@@ -167,7 +167,7 @@ We can investigate this brute force more closely by filtering on "ip.addr==18.22
 
 #### 404 FTW
 
-After the brute force login we need to find the first successful request. We can do this by filtering on the suspicious IP address and looking for HTTP responses with status code 200 among all packets after packet 21457: "ip.addr==18.222.86.32 && http.response.code == 200 && frame.number > 21457". We can then find the first successful response and go to the corresponding request to see that the URL was "http://www.toteslegit.us/proc".
+After the brute force login we need to find the first successful request. We can do this by filtering on the suspicious IP address and looking for HTTP responses with status code 200 among all packets after packet 21457: "ip.addr==18.222.86.32 && http.response.code == 200 && frame.number > 21457". We can then find the first successful response and go to the corresponding request to see that the URL was "<http://www.toteslegit.us/proc>".
 
 #### IMDS, XXE, and Other Abbreviations
 
@@ -295,16 +295,18 @@ trufflehog git https://haugfactory.com/asnowball/aws_scripts.git
 
 This gives us, among other things, the following result:
 
-> Found unverified result 🐷🔑❓  
-> Detector Type: AWS  
-> Decoder Type: PLAIN  
-> Raw result: AKIAAIDAYRANYAHGQOHD  
-> Commit: 106d33e1ffd53eea753c1365eafc6588398279b5  
-> File: put_policy.py  
-> Email: asnowball <alabaster@northpolechristmastown.local>  
-> Repository: https://haugfactory.com/asnowball/aws_scripts.git  
-> Timestamp: 2022-09-07 07:53:12 -0700 -0700  
-> Line: 6  
+```text
+Found unverified result 🐷🔑❓
+Detector Type: AWS
+Decoder Type: PLAIN
+Raw result: AKIAAIDAYRANYAHGQOHD
+Commit: 106d33e1ffd53eea753c1365eafc6588398279b5
+File: put_policy.py
+Email: asnowball <alabaster@northpolechristmastown.local>
+Repository: https://haugfactory.com/asnowball/aws_scripts.git
+Timestamp: 2022-09-07 07:53:12 -0700 -0700
+Line: 6
+```
 
 So the answer to the challenge is: `put_policy.py`
 

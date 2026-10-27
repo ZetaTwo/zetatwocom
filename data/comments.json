@@ -1,0 +1,143 @@
+{
+  "/ctf/2015/12/14/gchq-challenge-z3/": [
+    {
+      "name": "camitz",
+      "date": "2015-12-18T17:16:27Z",
+      "message": "<p>Mistake visiting your page on a Friday night when I'm supposed to be somewhere. Attempting to grasp the problem by attack vector: Microsofts Excel! More laborious I suspect its Z3 is.</p><p>Anyway, row 13 in your solution, counting from the bottom, I believe is incorrect, which may be why certain scanners are not able to read it.</p>",
+      "replies": [
+        {
+          "name": "camitz",
+          "date": "2015-12-19T02:06:24Z",
+          "message": "<p>Oh, forget it. It's transposed.</p>",
+          "replies": [
+            {
+              "name": "Zeta Two",
+              "date": "2016-01-11T04:18:23Z",
+              "message": "<p>Thanks for pointing that out. I had a small bug in the image rendering code.</p>",
+              "replies": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "/ctf/2016/12/26/djulkalendern16-writeup/": [
+    {
+      "name": "Ludvig Janiuk",
+      "date": "2016-12-27T13:53:36Z",
+      "message": "<p>On day two, there is a second solution. You might as well steal the key and experience the alternate story line, you will still get the solution if you cry in the crying room at the end.</p>",
+      "replies": []
+    }
+  ],
+  "/ctf/2018/10/18/t2-application/": [
+    {
+      "name": "William son",
+      "date": "2021-10-06T05:55:44Z",
+      "message": "<p>Thanks for all the tips mentioned in this article!<br> it’s always good to read things you have heard before<br> and are implementing, but from a different perspective,<br> always pick up some extra bits of information..Regarding<br><a href=\"https://smssquad.com/\" rel=\"nofollow noopener\" target=\"_blank\" title=\"https://smssquad.com/\">transactional sms</a></p>",
+      "replies": []
+    }
+  ],
+  "/education/2016/09/08/sect2016-talk/": [
+    {
+      "name": "Alexandre Dumont",
+      "date": "2020-01-17T21:14:28Z",
+      "message": "<p>Thanks for the talk.</p>",
+      "replies": []
+    }
+  ],
+  "/education/2019/06/27/0xff-talk/": [
+    {
+      "name": "Mukund Kalra",
+      "date": "2019-12-09T01:13:22Z",
+      "message": "<p>Loved the intro talk man. Awesome work. Thanks a bunch!</p>",
+      "replies": []
+    }
+  ],
+  "/education/2020/02/08/massifcon20-talk/": [
+    {
+      "name": "Penny",
+      "date": "2022-01-07T02:53:32Z",
+      "message": "<p>Ꭰо уоս ԝаոt tο рⅼау Τhе Ԝіtсhеr роrո ցаⅿе fοr аⅾսⅼtѕ ԝіth ⅿе? Տtаrt рⅼауіոց thе hоttеѕt ᎡΡᏀ ѕех раrοⅾу ցаⅿе οf 2022. Рⅼау ցаⅿе ոοԝ: <br><br>💚<u><i><b> <a href=\"https://adultgames.space/witcher/8959691299\" rel=\"nofollow noopener\" target=\"_blank\" title=\"https://adultgames.space/witcher/8959691299\">https://adultgames.space/wi...</a> </b></i></u>💚<br><br><a href=\"https://uploads.disquscdn.com/images/53e4ec46b9642a5f598dca9969634681829faeb523ca1e53ba9cb58cde235b4b.gif\" rel=\"nofollow noopener\" target=\"_blank\" title=\"https://uploads.disquscdn.com/images/53e4ec46b9642a5f598dca9969634681829faeb523ca1e53ba9cb58cde235b4b.gif\">https://uploads.disquscdn.c...</a><br><s>ozBjkftz6ki1Q8WuloeYpDB7gDLQ2e3yLH5ORMCS</s></p>",
+      "replies": []
+    }
+  ],
+  "/news/2015/05/18/site-up/": [
+    {
+      "name": "Foqnax",
+      "date": "2015-05-19T14:40:54Z",
+      "message": "<p>np</p>",
+      "replies": []
+    }
+  ],
+  "/radio/2015/06/23/ook-ask-sdr/": [
+    {
+      "name": "Arturo Gonzalez Thomas",
+      "date": "2017-09-30T13:58:50Z",
+      "message": "<p>Thank for the info, this is what I have been looking for a while.</p>",
+      "replies": [
+        {
+          "name": "Zeta Two",
+          "date": "2017-10-22T13:19:18Z",
+          "message": "<p>Glad you liked it! :D</p>",
+          "replies": []
+        }
+      ]
+    },
+    {
+      "name": "Trevor Taubitz",
+      "date": "2017-10-16T16:14:45Z",
+      "message": "<p>I'm so glad for this! Every other tutorial I could find was either dumb replay attacks or arbitrary bit-level attacks with the Yardstick One. I'm glad to find a way to do this with the HackRF</p>",
+      "replies": [
+        {
+          "name": "Zeta Two",
+          "date": "2017-10-22T13:19:11Z",
+          "message": "<p>Glad you liked it. Hopefully I will write more about SDR at some point.</p>",
+          "replies": []
+        }
+      ]
+    },
+    {
+      "name": "Valer Cara",
+      "date": "2017-12-29T18:24:14Z",
+      "message": "<p>Nice read! What's the multiply constant block for? (is it just a leftover?)</p>",
+      "replies": [
+        {
+          "name": "Zeta Two",
+          "date": "2018-07-01T00:10:28Z",
+          "message": "<p>Thank you very much! Yes, I was experimenting with the strength of the signal but in the end settled on 1 so it's just a leftover.</p>",
+          "replies": []
+        }
+      ]
+    }
+  ],
+  "/reversing/2017/03/20/gothenburg-malware/": [
+    {
+      "name": "James Tucker",
+      "date": "2017-03-22T09:55:03Z",
+      "message": "<p>Great rundown. Thanks for posting it. I have a few customers asking about this 'attack', and it'll be nice to have a good rundown to link. <br>While this incident was uninspiring, I do think the methodology is quite interesting and has been used in more sophisticated attacks in the past. </p>",
+      "replies": [
+        {
+          "name": "Zeta Two",
+          "date": "2017-03-24T14:48:43Z",
+          "message": "<p>Thanks! Glad to hear that you find it valuable. You are completely correct in that the \"candy drop\", i.e. dropping USB drives near targets, technique can be, and have been, used for much more interesting attacks. The general rule to never insert unknown drives into your computer still holds of course.</p>",
+          "replies": []
+        }
+      ]
+    }
+  ],
+  "/software/2022/01/07/simpler-unpickle-payloads-with-walrus/": [
+    {
+      "name": "Tethik",
+      "date": "2022-01-07T00:37:03Z",
+      "message": "<p>Neat! *makes notes for next time a pickle CTF task is encountered*</p>",
+      "replies": [
+        {
+          "name": "Zeta Two",
+          "date": "2022-01-07T02:09:53Z",
+          "message": "<p>Glad you liked it!</p>",
+          "replies": []
+        }
+      ]
+    }
+  ]
+}

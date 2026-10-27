@@ -74,10 +74,12 @@ Password: elefant
 In this challenge you are given a Python script and a wordlist.
 The script maps floating point numbers to passwords in the file.
 We are given the seed that was used to generate a certain password and are tasked with finding the password.
-The seed gives us the number $0.633603952323$ but that number does not exist in the passwords file.
+The seed gives us the number \(0.633603952323\) but that number does not exist in the passwords file.
 However, if you remove the last digit you can find the following row in the passwords file.
 
-> 0.63360395232 : nobelpristagare
+```text
+0.63360395232 : nobelpristagare
+```
 
 Password: nobelpristagare
 
@@ -86,7 +88,9 @@ Password: nobelpristagare
 We are given a file with two parts: the first part contains pairs of numbers separated by a space and the second part contains pairs separated by an arrow.
 By interpreting the first part as coordinates and the second part as indicies of points to draw lines between, I created [a dot file](/assets/other/djul16_data.dot) which, when compiled with the following:
 
-> dot -Kfdp -n -Tpng -o solution.png data.dot
+```bash
+dot -Kfdp -n -Tpng -o solution.png data.dot
+```
 
 generates an image like this from which we can read of the password.
 
@@ -168,7 +172,9 @@ Password: blodbad
 We are given an image which is actually a [Piet program](https://esolangs.org/wiki/Piet).
 Running this program (the image) through [a Piet interpreter](https://www.bertnase.de/npiet), it ouputs the following
 
-> HejHejHejHejHejHejHejHejHejHej...
+```text
+HejHejHejHejHejHejHejHejHejHej...
+```
 
 over and over forever. Thus we have the password.
 
@@ -178,7 +184,9 @@ Password: hej
 
 Here we are given the following string:
 
-> /.,mnb cl ; jcte s;bxvn jxm ; nbz,.mcn,mw Yvn .g;n ;m, bxu nbzcth xtq
+```text
+/.,mnb cl ; jcte s;bxvn jxm ; nbz,.mcn,mw Yvn .g;n ;m, bxu nbzcth xtq
+```
 
 The text tells a story about an American consultant writing on a keyboard without looking and that everything is chaos in the workshop.
 By taking an American QWERTY layout and turning it upside down, typing the string gives us:
@@ -209,15 +217,19 @@ Password: dodekaeder
 The text contains references to "Morse code" and we are given the password "CBBh".
 By converting the password to ascii and interpreting it as a binary string, we get
 
-> 01000011 01000010 01000010 01101000
+```text
+01000011 01000010 01000010 01101000
+```
 
 By replacing the 0 with "." and 1 with "-" we get the following morse string
 
-> .-....--.-....-..-....-..--.-...
+```text
+.-....--.-....-..-....-..--.-...
+```
 
 The way morse code works, this doesn't uniquely translate to letters since we don't have the spaces between
 the characters. By instead taking a wordlist of Swedish words and translating them to morse string we can search for a match.
-Doing this, we eventually find that the word "luciafirande" corresponds to the morse string ".-....--.-....-..-....-..--.-...".
+Doing this, we eventually find that the word "luciafirande" corresponds to the morse string `.-....--.-....-..-....-..--.-...`.
 
 Password: luciafirande
 
@@ -230,16 +242,20 @@ We are given an image with six black dots.
 By further inspection we can see that the dots are not pure black (0,0,0) but instead very dark grey.
 Taking the RGB values for each dot we get the following numbers.
 
-> (45, 46, 46)  
-> (46, 32, 46)  
-> (46, 45, 32)  
-> (46, 45, 46)  
-> (32, 45, 46)  
-> (45, 32, 32)  
+```text
+(45, 46, 46)
+(46, 32, 46)
+(46, 45, 32)
+(46, 45, 46)
+(32, 45, 46)
+(45, 32, 32)
+```
 
 Treating these numbers as ASCII, we get the following string.
 
-> "-... ..- .-. -.-  "
+```text
+"-... ..- .-. -.-  "
+```
 
 Which of course is morse and translates to the password.
 
@@ -248,7 +264,7 @@ Password: burk
 ## Day 21: Data Mining 2
 
 In this challenge we are given 25 triplets of numbers.
-By plotting these in a 3D scatter plot, [for example with matplotlib](assets/other/djul16_3dplot.py)
+By plotting these in a 3D scatter plot, [for example with matplotlib](/assets/other/djul16_3dplot.py)
 you get something like this:
 
 ![3D scatter plot 1](/assets/images/ctf/djul16_points1.png)
@@ -285,19 +301,23 @@ From the challenge page we are also given an encrypted file.
 
 The labyrinth lets you choose a number between 1 and 100 and then only allows you to wither start over or go to the next numbered room.
 The also tell you that the solution is in room number 1456. By trying some number and observing the sequence of rooms you arrive in you can deduce that they follow the sequence of the [Collatz Conjeture](https://en.wikipedia.org/wiki/Collatz_conjecture).
-Thus you can calculate a number in the interval $[1-100]$ that eventually reaches 1456.
+Thus you can calculate a number in the interval \([1-100]\) that eventually reaches 1456.
 I did this by [brute force testing in Python](/assets/other/djul16_collatz.py) which gave me two possible starting rooms: 63 and 95.
 Starting at any of these two rooms and continuing walking eventually gets you to room number 1456 and the following message:
 
-> This is room number 1456.  
-> You have found one part of the solution!  
-> It is: 59247711723113  
+```text
+This is room number 1456.
+You have found one part of the solution!
+It is: 59247711723113
+```
 
 In the speech, Trump says that he is 1 and Hillary is 0 and then starts naming US states in alphabetical order.
 He also mentions that DC isn't a real state.
 By looking at the election results of every state except Washington DC, taking a Trump victory as a 1 and a Hillary victory as a 0 (regarding Maine as a Hillary victory) you get the following sequence:
 
-> 11110000110101111100010111100000111101011111000111
+```text
+11110000110101111100010111100000111101011111000111
+```
 
 Taking this as a binary sequence, [repeating it over and over and XOR:ing it with the encrypted file](/assets/other/djul16_trump.py), you get a decrypted speech.
 
@@ -306,8 +326,10 @@ Taking this as a binary sequence, [repeating it over and over and XOR:ing it wit
 
 Inputting this password "antikvariat" into the password protected terminal gives the following response:
 
-> type antikvariat  
-> GRANTED. 129476. Bzzt.  
+```text
+type antikvariat
+GRANTED. 129476. Bzzt.
+```
 
 Now we have the two halves of the solution "59247711723113" and "129476".
 The hint mentions that they are to be combined "into a greater whole".

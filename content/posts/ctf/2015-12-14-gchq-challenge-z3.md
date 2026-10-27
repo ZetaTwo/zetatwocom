@@ -5,6 +5,7 @@ slug: gchq-challenge-z3
 categories: [ctf]
 aliases:
   - /ctf/2015/12/14/gchq-challenge-z3.html
+  - /2015/12/14/gchq-challenge-z3.html
 status: published
 ---
 

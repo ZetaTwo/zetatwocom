@@ -61,7 +61,9 @@ This takes us through the follow URLs:
 
 In the CSV, we can search for "Data Loss for Rainbow Teams: A Path in the Darkness" and find this entry:
 
-> "qmt3,2,8040424,200,FALSE,FALSE,John,McClane,Director of Security,Data Loss for Rainbow Teams: A Path in the Darkness,1,11"
+```text
+"qmt3,2,8040424,200,FALSE,FALSE,John,McClane,Director of Security,Data Loss for Rainbow Teams: A Path in the Darkness,1,11"
+```
 
 Which gives the answer "John McClane"
 
@@ -151,7 +153,7 @@ This unlocks the door and gives us the access control number: 19880715
 
 ## Objective 7 - HR Incident Response
 
-By browsing around the site and triggering a 404 page we get to know that files in the path "C:\careerportal\resources\public\" are accessible at the URL "https://careers.kringlecastle.com/public".
+By browsing around the site and triggering a 404 page we get to know that files in the path "C:\careerportal\resources\public\" are accessible at the URL "<https://careers.kringlecastle.com/public>".
 We are trying to get the contents of the file "C:\candidate_evaluation.docx".
 Submitting the form with a CSV containing the following payload:
 
@@ -159,15 +161,15 @@ Submitting the form with a CSV containing the following payload:
 =cmd|'/C powershell copy C:\\candidate_evaluation.docx  C:\\careerportal\\resources\\public\\a.docx'!A0
 ```
 
-will then copy the file to the publicly accessible path and can then be downloaded at "https://careers.kringlecastle.com/public/a.docx".
+will then copy the file to the publicly accessible path and can then be downloaded at "<https://careers.kringlecastle.com/public/a.docx>".
 
 Which gives us the name of the organisation: "Fancy Beaver"
 
 ## Objective 8 - Network Traffic Forensics
 
 Looking at the client side code we find a comment: "All extensions and sizes are validated server-side in app.js"
-There is also a js file hosted at "https://packalyzer.kringlecastle.com/pub/js/custom.js"
-Adding this together leads us to getting the (corrupted) source code at "https://packalyzer.kringlecastle.com/pub/app.js".
+There is also a js file hosted at "<https://packalyzer.kringlecastle.com/pub/js/custom.js>"
+Adding this together leads us to getting the (corrupted) source code at "<https://packalyzer.kringlecastle.com/pub/app.js>".
 
 In the source code we see that we can list the contents of the environment variable list by accessing them as a path.
 Doing this gives us the path of the SSLKEYLOGFILE.
@@ -243,14 +245,16 @@ By analyzing the source code, we see that the malware generates a secret key, do
 Usung powerdump we can search for Powershell variables in memory. By downloading the same public key "server.crt" and encrypting a dummy value we can see that the encrypted key is 512 characters.
 With this info we can search in powerdump for variables of roughly that length which gives is a few results. All of them are code blocks except one which has the following value:
 
-> 3cf903522e1a3966805b50e7f7dd51dc7969c73cfb1663a75a56ebf4aa4a1849  
-> d1949005437dc44b8464dca05680d531b7a971672d87b24b7a6d672d1d811e6c  
-> 34f42b2f8d7f2b43aab698b537d2df2f401c2a09fbe24c5833d2c5861139c4b4  
-> d3147abb55e671d0cac709d1cfe86860b6417bf019789950d0bf8d83218a56e6  
-> 9309a2bb17dcede7abfffd065ee0491b379be44029ca4321e60407d44e6e3816  
-> 91dae5e551cb2354727ac257d977722188a946c75a295e714b668109d75c0010  
-> 0b94861678ea16f8b79b756e45776d29268af1720bc49995217d814ffd1e4b6e  
-> dce9ee57976f9ab398f9a8479cf911d7d47681a77152563906a2c29c6d12f971  
+```text
+3cf903522e1a3966805b50e7f7dd51dc7969c73cfb1663a75a56ebf4aa4a1849
+d1949005437dc44b8464dca05680d531b7a971672d87b24b7a6d672d1d811e6c
+34f42b2f8d7f2b43aab698b537d2df2f401c2a09fbe24c5833d2c5861139c4b4
+d3147abb55e671d0cac709d1cfe86860b6417bf019789950d0bf8d83218a56e6
+9309a2bb17dcede7abfffd065ee0491b379be44029ca4321e60407d44e6e3816
+91dae5e551cb2354727ac257d977722188a946c75a295e714b668109d75c0010
+0b94861678ea16f8b79b756e45776d29268af1720bc49995217d814ffd1e4b6e
+dce9ee57976f9ab398f9a8479cf911d7d47681a77152563906a2c29c6d12f971
+```
 
 We can then download the private key "server.key" and first decrypt the key and then use the key to decrypt the password database with the following Python code:
 

@@ -3,7 +3,11 @@ defaultContentLanguage = "en"
 title = "Zeta-Two.com"
 theme = "zetatwo"
 
-# disqusShortname = "zetatwo"  # deferred: previous Disqus thread ID, to be reintroduced as a baked-in static archive in a separate project
+# Category pages are the posts/<cat>/ sections (served at /<cat>/); no taxonomy pages.
+disableKinds = ["taxonomy", "term"]
+
+[services.rss]
+  limit = 10
 
 [pagination]
   pagerSize = 5
@@ -32,8 +36,13 @@ theme = "zetatwo"
 [markup.goldmark.renderer]
   unsafe = true  # Jekyll posts contain raw HTML
 
-[markup.goldmark.extensions.typographer]
-  disable = true  # off so `m'` (prime) in $..$ math stays straight; KaTeX wants ASCII apostrophe
+[markup.goldmark.extensions.passthrough]
+  # Math is left untouched by Goldmark (no typographer, no emphasis) and
+  # rendered at build time by the theme's render-passthrough hook.
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['\[', '\]']]
+    inline = [['\(', '\)']]
 
 [markup.highlight]
   style = "monokai"

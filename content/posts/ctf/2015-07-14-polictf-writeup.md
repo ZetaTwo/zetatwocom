@@ -34,16 +34,16 @@ Due to a mistake I actually solved this one in an unnecessarily complicated way.
 The challenge provided a service which you could send text to and get it and some other text back encrypted.
 The encryption was a simple repeated XOR with the flag as a key.
 
-A message $m$ is sent which get concatenated with some dummy text $m'=a|m|b$.
-Then, each characted (byte) is XOR:ed with the current byte of the key $c_i = m'_i \oplus k_i$.
+A message \(m\) is sent which get concatenated with some dummy text \(m'=a|m|b\).
+Then, each characted (byte) is XOR:ed with the current byte of the key \(c_i = m'_i \oplus k_i\).
 However, if we know two of three operands of the XOR operation we can recover the third by XOR:ing the other two. 
 
-$$c_i \oplus m'_i = k_i \oplus m'_i \oplus m'_i = k_i$$
+\[c_i \oplus m'_i = k_i \oplus m'_i \oplus m'_i = k_i\]
 
 The easy way to solve this would have been to just send a long string of for example A's and then XOR the cipher you get back with the same message you sent.
 Unfortunately, I made a mistake and thought that the encryption was more complicated than it was and turned this into an oracle attack.
-By sending short messages of a single byte repeated, I figured out that the length of  $a$ was 3.
-Then I tried one value for first byte of $m$ and with the help of the response, I calculated which byte was in the key.
+By sending short messages of a single byte repeated, I figured out that the length of  \(a\) was 3.
+Then I tried one value for first byte of \(m\) and with the help of the response, I calculated which byte was in the key.
 I then repeated this for each byte in the message until I had the full key.
 
 Flag: flag{\_this\_1s\_s0\_simple\_you\_should\_have\_solved\_\_it\_1n\_5\_sec}
@@ -116,14 +116,16 @@ However, there was a strange behaviour. If you pinged it continuously, you notic
  
 Treating a drop as a 1 and a response as a 0, you got the following sequence.
 
-> 010101001110111011100101010000011110101010100101001010100000101001
-> 010100000111001010101001000001010111010010111010100101110011101110
-> 100101110111010111001010011100111010101010111001010010101001110101
-> 010101110011101001001010101110010010111010011101010101011100111001
-> 110111011100111011101110011101010101011100101110101001011100111001
-> 001110101010101110010101110100111011101110010111010011101010101011
-> 100101110011101010101011100111010100101110100111011101110010111011
-> 10100101110111010111011101
+```text
+010101001110111011100101010000011110101010100101001010100000101001
+010100000111001010101001000001010111010010111010100101110011101110
+100101110111010111001010011100111010101010111001010010101001110101
+010101110011101001001010101110010010111010011101010101011100111001
+110111011100111011101110011101010101011100101110101001011100111001
+001110101010101110010101110100111011101110010111010011101010101011
+100101110011101010101011100111010100101110100111011101110010111011
+10100101110111010111011101
+```
 
 There is definitely some structure to this but at first it wasn't obvious at all. Trying to interpret it as ASCII gives nothing.
 I also tried looking at it as bytes to see if it was some kind of file or other known format.
@@ -166,7 +168,9 @@ When logging in you got to a page with a random video. The interesting part was 
 Pages were accessed by going to /index.php?page=X where X was for example "login".
 If we instead changed this to: 
 
-> http://magic.polictf.it/index.php?page=php://filter/convert.base64-encode/resource=index
+```text
+http://magic.polictf.it/index.php?page=php://filter/convert.base64-encode/resource=index
+```
 
 We got the contents of index.php outputted as base64 encoded text. This was then decoded to reveal the code.
 The index page included several classes and using the same technique, we could get the source of them all.
@@ -200,7 +204,9 @@ private $host, $filename, $user;
 
 So by creating a user with PHP code as its name, anything as its last name, we can include the log file from the index page by accessing:
 
-> http://magic.polictf.it/index.php?page=log/X_Y
+```text
+http://magic.polictf.it/index.php?page=log/X_Y
+```
 
 where X is your hostname and Y is the lastname of the user minus ".php"
 

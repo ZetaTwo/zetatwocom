@@ -143,28 +143,32 @@ Thus the password is: sicily
 
 This challenge is antoher MUD adventure. This time we are walking around in a five by five grid representing a FAT file system. Running the `showcontent` command while in a cell, gives us the content of that cell. Running the `getfat <index>` command gives us the index of the cell following the one provided. We start in cluster 2 which gives us this information:
 
-> You are in cluster 2
-> 
-> It is a folder cluster and contains:
-> NAME     EXT  TYPE     CLUSTER   SIZE
-> .             FOLDER   2         0x0
-> CRIMES        FOLDER   7         0x0
-> README   TXT  FILE     13        0xed
-> SYNONYMS      FOLDER   18        0x0
+```text
+You are in cluster 2
+
+It is a folder cluster and contains:
+NAME     EXT  TYPE     CLUSTER   SIZE
+.             FOLDER   2         0x0
+CRIMES        FOLDER   7         0x0
+README   TXT  FILE     13        0xed
+SYNONYMS      FOLDER   18        0x0
+```
 
 If we walk to cluster 7 we get this information. The file "CRIME D" stands out as it is an image. We can see that it starts at cluster 22.
 
-> You are in cluster 7
-> 
-> It is a folder cluster and contains:
-> NAME     EXT  TYPE     CLUSTER   SIZE
-> .             FOLDER   7         0x0
-> ..            FOLDER   2         0x0
-> CRIME A  TXT  FILE     11        0x2b
-> CRIME B  TXT  FILE     8         0x2b
-> CRIME C  TXT  FILE     14        0x2b
-> CRIME D  JPG  FILE     22        0xa59
-> CRIME E  TXT  FILE     19        0x2b
+```text
+You are in cluster 7
+
+It is a folder cluster and contains:
+NAME     EXT  TYPE     CLUSTER   SIZE
+.             FOLDER   7         0x0
+..            FOLDER   2         0x0
+CRIME A  TXT  FILE     11        0x2b
+CRIME B  TXT  FILE     8         0x2b
+CRIME C  TXT  FILE     14        0x2b
+CRIME D  JPG  FILE     22        0xa59
+CRIME E  TXT  FILE     19        0x2b
+```
 
 By using the `getfat` command we can get a chain of clusters we need to reassemble the image. We can then walk to those clusters and use the `showcontent` command to collect the data. We can then use the following Python code to reassemble the file:
 
@@ -331,24 +335,30 @@ The longest word in this text, and thus the password, is: determination
 
 This window is another Friday window which means another MUD challenge. This time you have to play a puzzle game which involves using mirrors to flip the play field horizontally or vertically. There are three floors. The first floor looks like this:
 
->    1
->  X345S7
->    8
-> 9ABCD
->  E 
+```text
+   1
+ X345S7
+   8
+9ABCD
+ E
+```
 
 In room X, Y and Z (TODO) you can only move east and in room X, Y and Z there are mirrors. The second floor looks like this:
 
-> X  234
-> 5  678
-> 9ABSDE
+```text
+X  234
+5  678
+9ABSDE
+```
 
 On this floor you can only move east and south in room 3, 7 and D. In room 5 you can only move east and in room 9 you can only move south. Room B contains a mirror to flip the level horizontally and room E flips the floor vertically. You also have an orb which allows you to ignore the move limitations. The main idea of the floor is to drop the orb in room 7 and then flip the room horizontally so that it ends up in room 5 and you can walk to the exit.
 
 The final floor is actually just a representation of de_dust2 from Counter-Strike. On this map there is a location at the A bomb site commonly referred to as "Goose". By walking to this place on the map you get the following message containing the password:
 
-> YOU HAVE FOUND THE EVIl GOOSE
-> here is the password: cultural
+```text
+YOU HAVE FOUND THE EVIl GOOSE
+here is the password: cultural
+```
 
 ## Day 19: In the interrogation room
 

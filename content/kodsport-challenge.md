@@ -1,5 +1,8 @@
 ---
 title: Kodsport Game Hacking Challenge
+url: /challenges/kodsport-challenge/
+aliases:
+  - /challenges/kodsport-challenge.html
 ---
 
 ![Starcraft: Brood War logo](/assets/images/software/broodwar-logo.jpg)

@@ -4,7 +4,7 @@ date: 2018-07-20T01:28:00+02:00
 slug: securityfest-badge-pirateradio
 categories: [hardware]
 aliases:
-  - /hardware/2018/07/07/securityfest-badge-pirateradio.html
+  - /hardware/2018/07/20/securityfest-badge-pirateradio.html
 ---
 
 At this year's [Security Fest](https://securityfest.com) fellow security enthusiast Weckzén ([@Wecksten](https://twitter.com/Wecksten)) had created a challenge badge since he (rightly) believe that every con needs a challenge badge. I solved the challenge badge, got a prize from him in the form of a [Pimoroni Pirate Radio](https://shop.pimoroni.com/products/pirate-radio-pi-zero-w-project-kit) which I assembled and documented here.
@@ -37,32 +37,34 @@ Toggling the first DIP switch and pressing the button again gives this message i
 
 Moving on to the next switch gives this message:
 
-> -----BEGIN PGP PRIVATE KEY BLOCK-----  
-> Version: GnuPG v2  
->   
-> lQOYBFsQIJMBCACpi463WY6z0jM00s4g15wFPCrRix42VjXg3CqRIBTK3RMJixkn  
-> 3t8BCd9QARrKGnskq/EemztB4C83wNtsdk16LYoSsKWI2+o2H6hjtPthp7j7xgNa  
-> WosyCbkpcEgFM4vMyETbxBDoTJyZ+JdgGuAxl1p6Z3DMvqZtjAovCgXdQxMntrRi  
-> fBpADq4hFwPdWVsgrPYl86Mdl16puIWHRa4k3MNuGoS32zEGvLmnBGS7RN++QIHd  
-> /y29DiMtm5kXimnnBBkeNEQLIV9BEETtBZDN1ysEgM1mKuD/fyvVjjs9/ZfJDL66  
-> krnEpUuOBJFlduwtLbY0kp9UG8GjmmGQQtldABEBAAEAB/41iSG5d4f99APDTEVW  
-> TX6wkH0cyYbytWox5JN0W+L047XdL5Tz6AYWt91Rz+d7pbz4qWprtaySco22Vyly  
-> KDDywWp12F2Mx5Q/HuP3B/DQtztMFQx9/VUyqatUEGZNbidYtGw50MFd+MMCQ2LZ  
-> L+NXBWnGeN8/Z3v531xf2hRb9wyFLn7tt/sUvfhniLrsztKijEB1T5hdw4Xx4wyh  
-> lkDlc5dYe0u589nQHMzbfRGK/eE1ZSvThIGDOyAnnYrY37uHZQxPEdh+EIqGti55  
-> QQfqGftNVvw+UfB4JH39HfzPonJauCd1B1hZ3GaCpk1SpzpGxtwV6dY5AbLez872  
-> qVlpBADPiP5Hueo0RY/FfPft9WDBqRvLk/sZRBzN0ISLWymj0YQzzTvU6WlRp57T  
->   
-> £££  
-> OUT OF MEMORY --- REBOOTING!  
-> SOME DATA WAS LOST!  
-> THE LOST DATA WAS SENT HOME!  
-> RECOVERY SUCCEDED!  
-> RESTARTING!  
-> £££  
->   
-> =V6y8  
-> -----END PGP PRIVATE KEY BLOCK-----  
+```text
+-----BEGIN PGP PRIVATE KEY BLOCK-----
+Version: GnuPG v2
+
+lQOYBFsQIJMBCACpi463WY6z0jM00s4g15wFPCrRix42VjXg3CqRIBTK3RMJixkn
+3t8BCd9QARrKGnskq/EemztB4C83wNtsdk16LYoSsKWI2+o2H6hjtPthp7j7xgNa
+WosyCbkpcEgFM4vMyETbxBDoTJyZ+JdgGuAxl1p6Z3DMvqZtjAovCgXdQxMntrRi
+fBpADq4hFwPdWVsgrPYl86Mdl16puIWHRa4k3MNuGoS32zEGvLmnBGS7RN++QIHd
+/y29DiMtm5kXimnnBBkeNEQLIV9BEETtBZDN1ysEgM1mKuD/fyvVjjs9/ZfJDL66
+krnEpUuOBJFlduwtLbY0kp9UG8GjmmGQQtldABEBAAEAB/41iSG5d4f99APDTEVW
+TX6wkH0cyYbytWox5JN0W+L047XdL5Tz6AYWt91Rz+d7pbz4qWprtaySco22Vyly
+KDDywWp12F2Mx5Q/HuP3B/DQtztMFQx9/VUyqatUEGZNbidYtGw50MFd+MMCQ2LZ
+L+NXBWnGeN8/Z3v531xf2hRb9wyFLn7tt/sUvfhniLrsztKijEB1T5hdw4Xx4wyh
+lkDlc5dYe0u589nQHMzbfRGK/eE1ZSvThIGDOyAnnYrY37uHZQxPEdh+EIqGti55
+QQfqGftNVvw+UfB4JH39HfzPonJauCd1B1hZ3GaCpk1SpzpGxtwV6dY5AbLez872
+qVlpBADPiP5Hueo0RY/FfPft9WDBqRvLk/sZRBzN0ISLWymj0YQzzTvU6WlRp57T
+
+£££
+OUT OF MEMORY --- REBOOTING!
+SOME DATA WAS LOST!
+THE LOST DATA WAS SENT HOME!
+RECOVERY SUCCEDED!
+RESTARTING!
+£££
+
+=V6y8
+-----END PGP PRIVATE KEY BLOCK-----
+```
 
 The fourth message reads:
 

@@ -31,7 +31,9 @@ Doing this gives us the password `coming`
 We are given an encrypted message:
 
 
-> hoO-HOo-hoo hoO-Hoo-HoO hoO-HOo-hOo hoO-HoO-HoO hoO-Hoo-hoO hoO-HoO-HOo hoO-Hoo-HoO hoO-HoO-HOo hoO-HOo-Hoo
+```text
+hoO-HOo-hoo hoO-Hoo-HoO hoO-HOo-hOo hoO-HoO-HoO hoO-Hoo-hoO hoO-HoO-HOo hoO-Hoo-HoO hoO-HoO-HOo hoO-HOo-Hoo
+```
 
 Every chunk has 3x3=9 characters, treating a lowercase character as a 0 and an uppercase character as a 1 and decoding it as ASCII we get the answer.
 
@@ -426,7 +428,9 @@ go djul onskar sentor:bomberman
 
 In this challenge we are given the following "map"
 
-> ed,ai,dk,fe,EF,ib,ae,BE,gh,GF,dh,fj,II,hf,gk,CD,hd,bj,IC,bd,BF,HL,ID,df,ei,ba,gc,DD,JF,CB,kf,FD,BH,hb,HG,if,bg,je,CG,dc,EE,FF,ig,ie,ih,GD,BK,bi,FI,KD,EJ
+```text
+ed,ai,dk,fe,EF,ib,ae,BE,gh,GF,dh,fj,II,hf,gk,CD,hd,bj,IC,bd,BF,HL,ID,df,ei,ba,gc,DD,JF,CB,kf,FD,BH,hb,HG,if,bg,je,CG,dc,EE,FF,ig,ie,ih,GD,BK,bi,FI,KD,EJ
+```
 
 
 Notice that the character are either lower or upper case. Treating each pair of characters as an X/Y coordinate pair- with coordinates ranging from A to K and lowercase as 0 and uppercase as 1 we can construct the following grid:

