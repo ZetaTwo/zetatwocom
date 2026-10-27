@@ -1,5 +1,6 @@
 {{- /* Full-content feed of posts only, matching the old Jekyll feed.xml. Root-relative links are made absolute for feed readers. */ -}}
 {{- $pages := cond .IsHome (where site.RegularPages "Type" "posts") .RegularPagesRecursive -}}
+{{- with site.Config.Services.RSS.Limit }}{{ if ge . 1 }}{{ $pages = first . $pages }}{{ end }}{{ end -}}
 {{- $base := strings.TrimSuffix "/" site.BaseURL -}}
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -14,7 +15,7 @@
     {{- with .OutputFormats.Get "RSS" }}
     <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
     {{- end }}
-    {{- range first site.Config.Services.RSS.Limit $pages }}
+    {{- range $pages }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>

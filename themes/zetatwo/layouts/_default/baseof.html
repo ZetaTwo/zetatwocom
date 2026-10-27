@@ -5,15 +5,19 @@
 
   <body>
 
-    {{ partial "header.html" . }}
+    <div class="site-content">
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ block "main" . }}{{ end }}
+      {{ partial "header.html" . }}
+
+      <div class="page-content">
+        <div class="wrapper">
+          {{ block "main" . }}{{ end }}
+        </div>
       </div>
-    </div>
 
-    {{ partial "footer.html" . }}
+      {{ partial "footer.html" . }}
+
+    </div>
 
   </body>
 

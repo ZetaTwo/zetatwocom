@@ -1,7 +1,4 @@
 .idea
-_site
-.sass-cache
-.jekyll-cache
 
 # Hugo build artifacts
 /public/

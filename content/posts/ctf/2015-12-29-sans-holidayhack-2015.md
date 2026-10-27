@@ -38,7 +38,7 @@ I don't really know what level of detail you expect from the submssions so I wil
 
 7. The five super gnomes has the following vulnerabilities:
 	1. No real vulnerability. It is possible to log in with the extracted credentials (admin/SittingOnAShelf) and download the files from the file menu.
-	2. This gnome has a LFI vulnerability that is caused by the combination of two bugs. First, the settings upload function does not properly sanitize the uploaded file name which allows the creation of a directory named <random chars>/.png/. Second, the camera viewer allows for directory traversal and only adds ".png" as a suffix if it is not already found in the filename.
+	2. This gnome has a LFI vulnerability that is caused by the combination of two bugs. First, the settings upload function does not properly sanitize the uploaded file name which allows the creation of a directory named `<random chars>/.png/`. Second, the camera viewer allows for directory traversal and only adds ".png" as a suffix if it is not already found in the filename.
 	3. Here, the password for the admin user is changed but this gnome has an injection vulnerability in the login function. There is no escaping of the username and password which allows for a MongoDB injection. When logged in, the files can simply be downloaded from the files menu.
 	4. This gnome has a code injection vulnerability. The postproc input in the file upload menu is not sanitized and then passed to eval(). The result of this call is displayed to the user.
 	5. This gnome runs a service on port 4242 which has a buffer overflow vulnerability. It uses a static stack canary which can be subverted. Using carefully crafted input will bypass the stack canary and the ASLR to provide a reverse shell.
@@ -239,7 +239,7 @@ Anyway, this solves question five and six since we have the five IP addresses an
 Now it was time for the fun part: find vulnerabilitites and exploit the targets.
 I will go through one gnome at a time and explain the vulnerability and how I exploited it.
 In all Super Gnomes except SG-03 it was possible to login with the credentials leaked from the MongoDB: admin/SittingOnAShelf.
-The goal in each Super Gnome was to download the files stored in the /www/files/ directory, specificaly the one called "factory\_cam\_x.zip" and the one called "<somedate>.zip".
+The goal in each Super Gnome was to download the files stored in the /www/files/ directory, specificaly the one called `factory_cam_x.zip` and the one called `<somedate>.zip`.
 Furthermore, I will discribe the process for each Super Gnome individually but in reality I first looked in the code to find vulnerabilities and then worked back and forth to figure out which vulnerability was applicable to which Super Gnome.
 
 In short, the first Super Gnome required no exploitation, the next three required me to exploit the web application and the last one required me to exploit the sgstatd binary service. I started looking at the code in the web app and noted that there were several comments. Some of the comments related to commented out code which was extra interesting since it had bugs. After some trial and error I realized that each bug was present in one of the Super Gnomes.
@@ -395,7 +395,7 @@ $ ROPgadget --binary sgstatd
 
 I also needed to know exactly where the canary ended up in relation to the buffer. This was done by running the binary locally and sending a payload of blocks of four letters, i.e. "AAAABBBBCCCC..." etc. and then breaking at the "movl -4(%ebp)" instruction. By doing this, I fiured out that I needed 103 bytes of whatever followed by the canary value "0xe4ffffe4". I then did the same thing to figure out exactly where there the saved return address was located to know where to put the address to "jmp esp".
 
-As a final preparation, I needed to setup the reverse shell listener. I wanted to send a command to give me back one file. Again, to make the transfer robust, I wanted to base 64 encode it. So, I set up netcat to listen on port 55555 and gave it the command "cat <file> | base64" and then piped the response to "base64 -d" to decode the data on my side. I had a script which looked like this.
+As a final preparation, I needed to setup the reverse shell listener. I wanted to send a command to give me back one file. Again, to make the transfer robust, I wanted to base 64 encode it. So, I set up netcat to listen on port 55555 and gave it the command `cat <file> | base64` and then piped the response to "base64 -d" to decode the data on my side. I had a script which looked like this.
 
 ```shell
 #!/bin/sh  

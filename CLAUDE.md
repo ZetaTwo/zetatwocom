@@ -10,6 +10,8 @@ hugo --quiet              # one-shot build to public/
 hugo new posts/<cat>/$(date +%Y-%m-%d)-my-slug.md
 ```
 
+New posts start with `draft: true`, which `hugo server -D` shows but the deploy skips; remove it to publish.
+
 The theme's stylesheets are plain CSS in `themes/zetatwo/assets/css/`. Hugo's built-in `css.Build` (esbuild) bundles `main.css`'s `@import`s and minifies the result. The deploy workflow pins `HUGO_VERSION` (the version at the top of this file) in `.github/workflows/deploy.yml`. If you upgrade Hugo locally, update `HUGO_VERSION`, `HUGO_SHA256` (the `linux-amd64.deb` line of the release's `hugo_<version>_checksums.txt`) and `min_version` in `themes/zetatwo/theme.toml` to match.
 
 ## Deploy
@@ -22,7 +24,8 @@ Push to `master`. The workflow at `.github/workflows/deploy.yml` runs the Hugo v
 
 ```
 config.toml              site config: baseURL, [pagination], [params], [permalinks], Goldmark, RSS limit
-archetypes/default.md    `hugo new` template
+archetypes/posts.md      `hugo new posts/...` template: slug and category from the path, Stockholm-time date, draft
+archetypes/default.md    `hugo new` template for other pages
 content/
   about.md services.md talks.md trainings.md challenges.md kodsport-challenge.md
   posts/_index.md          marks /posts/ as not rendered (categories live at /<cat>/)
@@ -36,7 +39,7 @@ themes/zetatwo/
   layouts/_markup/render-passthrough.html   build-time KaTeX (see "Math")
   layouts/posts/single.html          post template with .post-meta date line
   layouts/{index,404}.html
-  layouts/partials/{head,header,footer,comments,comment,katex,pagination}.html
+  layouts/partials/{head,header,footer,post-list,pagination,comments,comment,katex}.html
   assets/css/main.css                entry point: @imports the files below, bundled by css.Build
   assets/css/{variables,base,layout,syntax-highlighting}.css   plain CSS; variables.css holds the custom properties
   static/img/                        theme images (banners, backgrounds)
@@ -69,7 +72,7 @@ Rest of the post.
 ```
 
 - **URL pattern**: posts get `/<category>/<YYYY>/<MM>/<DD>/<slug>/` from the `[permalinks]` block in `config.toml`. The category comes from the file's parent directory (via `:sections[1:]`), so a post under `content/posts/ctf/` is at `/ctf/...`. Per-post `slug:` is what `:slug` reads — without it, Hugo would default to a title-slug and break URL fidelity.
-- **Aliases**: every post has an `aliases:` entry for its old Jekyll `.html` URL. Hugo emits a meta-refresh stub at that path so old links keep working. Jekyll built that URL as `/<all categories joined by />/<YYYY>/<MM>/<DD>/<filename slug>.html`, taking the date from front matter (not the filename) whenever `date:` was set. To double-check one, look at the post's front matter in `git show pre-hugo-migration:_posts/<cat>/<file>.md`.
+- **Aliases**: every post from the Jekyll era has an `aliases:` entry for its old Jekyll `.html` URL. Hugo emits a meta-refresh stub at that path so old links keep working. Jekyll built that URL as `/<all categories joined by />/<YYYY>/<MM>/<DD>/<filename slug>.html`, taking the date from front matter (not the filename) whenever `date:` was set. To double-check one, look at the post's front matter in `git show pre-hugo-migration:_posts/<cat>/<file>.md`.
 - **Section pages**: each `content/posts/<cat>/_index.md` sets `url: /<cat>/` (with an alias for the short-lived `/posts/<cat>/`), so category listings live at `/<cat>/`. Hugo's taxonomy pages are disabled (`disableKinds`); `categories:` front matter only feeds the RSS `<category>` tags.
 - **Summary**: `<!--more-->` after the first paragraph mirrors Jekyll's `post.excerpt` contract.
 
@@ -96,7 +99,7 @@ Comments are a read-only archive of the old Disqus threads (shortname `zetatwo`)
 - **`outputFormats.RSS.baseName = "feed"`** means every RSS feed across the site is named `feed.xml` (not `index.xml`): `/feed.xml` for the site and `/<cat>/feed.xml` per category. The theme's `rss.xml` mirrors the old Jekyll feed: posts only, full content (root-relative links made absolute), capped by `[services.rss] limit` in `config.toml`.
 - **`url()` in the theme CSS must point at an external path.** `css.Build` (esbuild) tries to bundle every `url()` it sees and fails with "Could not resolve". Theme images live in `themes/zetatwo/static/img/` and are listed as `externals: ["/img/*"]` in `partials/head.html`; a `url()` to any other path needs its own externals entry.
 - **Bare URLs inside double quotes need `<..>`.** With the typographer on, Goldmark's linkify pulls the closing `"` into the link (`href="https://example.com/%22"`). Write `"<https://example.com>"` instead, or use backticks for URLs that are examples rather than links.
-- **Don't add `[languages.<lang>]` to `config.toml`** unless you're ready to also touch every URL in content. As soon as that table exists, Hugo switches into multilingual mode and applies a built-in `_markup/render-link.html` hook that calls `urls.Parse` on every link. The 2015 djulkalendern writeup links to a tryapl.org URL using JavaScript-style `%uXXXX` escapes (not RFC-3986 `%XX`) and the parser refuses to build. We use `defaultContentLanguage = "en"` instead, which keeps the build single-language and lets the bad URL through. Side-effect: `<html lang>` and the RSS `<language>` tag are just `en` rather than `en-us`.
+- **Don't add `[languages.<lang>]` to `config.toml`** unless you're ready to also touch every URL in content. As soon as that table exists, Hugo switches into multilingual mode and applies a built-in `_markup/render-link.html` hook that calls `urls.Parse` on every link. The 2015 djulkalendern writeup links to a tryapl.org URL using JavaScript-style `%uXXXX` escapes (not RFC-3986 `%XX`) and the parser refuses to build. Without that table the build stays single-language in Hugo's default `en` and the bad URL gets through. Side-effect: `<html lang>` and the RSS `<language>` tag are just `en` rather than `en-us`.
 
 ## Deferred follow-ups
 
@@ -104,4 +107,4 @@ See [TODO.md](TODO.md).
 
 ## Migration history
 
-`git log master..hugo --oneline` (pre-cutover) walks through the migration step-by-step. The plan that drove it lived at `~/.claude/plans/this-is-my-personal-gleaming-sunset.md`. The `pre-hugo-migration` tag (created at cutover) points at the final Jekyll commit on master so `git diff pre-hugo-migration master -- <path>` can spot anything that got missed.
+`git log --oneline pre-hugo-migration..master` walks through the migration step by step (the `hugo` branch it was built on has been merged and deleted), followed by the post-migration fixes. The `pre-hugo-migration` tag (created at cutover) points at the final Jekyll commit on master so `git diff pre-hugo-migration master -- <path>` can spot anything that got missed.

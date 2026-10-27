@@ -8,6 +8,10 @@
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "/feed.xml" | absURL }}" />
 
+  {{/* Hugo's built-in link-preview tags for social media and chat apps. */}}
+  {{ partial "opengraph.html" . }}
+  {{ partial "twitter_cards.html" . }}
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
   {{/* Bundles the @imports and minifies; theme images are served from static/, so esbuild must not try to resolve them. */}}

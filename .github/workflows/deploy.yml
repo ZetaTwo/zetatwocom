@@ -10,7 +10,7 @@ permissions:
   pages: write
   id-token: write
 
-# Cancel in-progress runs but let already-deployed runs finish.
+# One deploy at a time; a newer push waits for the running deploy instead of cancelling it.
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -40,7 +40,6 @@ jobs:
       - name: Build
         env:
           HUGO_ENVIRONMENT: production
-          HUGO_ENV: production
         # Use the baseURL from config.toml ("https://zeta-two.com/") rather than
         # configure-pages' base_url output — the latter sometimes returns the
         # project-pages URL (https://zetatwo.github.io/zetatwocom/) even when a

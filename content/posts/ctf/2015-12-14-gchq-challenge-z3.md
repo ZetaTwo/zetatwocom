@@ -6,7 +6,6 @@ categories: [ctf]
 aliases:
   - /ctf/2015/12/14/gchq-challenge-z3.html
   - /2015/12/14/gchq-challenge-z3.html
-status: published
 ---
 
 British intelligence agency GCHQ has released a christmas card.

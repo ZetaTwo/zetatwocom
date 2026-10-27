@@ -274,10 +274,10 @@ Flag: sect{3ncRypt\_4ll\_th3\_b00tY!}
 ## <a name="web250-davyjones"></a>Web 250: Davy Jones
 
 The competition's only web challenge consisted of a web site with a few pages.
-The pages were served from a single template server located at /?template=<pagename>.
+The pages were served from a single template server located at `/?template=<pagename>`.
 One of the pages /?template=davyjones complained that "You are not localhost".
 This leads us to believe that we want to make a local request to this page.
-There is also an image proxy script located at /imageproxy.php?url=<url om imgur image>.
+There is also an image proxy script located at `/imageproxy.php?url=<url om imgur image>`.
 By guessing, or apparently by looking at robots.txt, it is possible to get the source of the imageproxy from /imageproxy.phps.
 This reveals the following code: 
 

@@ -1,5 +1,4 @@
 baseURL = "https://zeta-two.com/"
-defaultContentLanguage = "en"
 title = "Zeta-Two.com"
 theme = "zetatwo"
 
@@ -26,7 +25,7 @@ disableKinds = ["taxonomy", "term"]
   # leading "posts" so the URL becomes /<cat>/<year>/<month>/<day>/<slug>/.
   # Requires an _index.md in each category subdirectory so Hugo treats the
   # category as a sub-section (otherwise :sections is just ["posts"]).
-  # The :slug placeholder reads per-post `slug:` frontmatter (added in step 4).
+  # The :slug placeholder reads per-post `slug:` frontmatter.
   posts = "/:sections[1:]/:year/:month/:day/:slug/"
 
 [outputFormats.RSS]
