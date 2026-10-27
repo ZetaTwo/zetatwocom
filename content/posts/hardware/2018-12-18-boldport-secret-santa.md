@@ -7,7 +7,7 @@ aliases:
   - /hardware/2018/12/18/boldport-secret-santa.html
 ---
 
-As I have [written about previously](/hardware/2016/08/03/boldport-project-tap.html) I'm a member of the [Boldport Club](https://www.boldport.club).
+As I have [written about previously](/hardware/2016/08/03/boldport-project-tap/) I'm a member of the [Boldport Club](https://www.boldport.club).
 Apart from producing amazing DIY electronics projects it's also a great community where electronics interested people interact.
 Like many communities, this christmas one member took the initiative to organize a [secret santa](https://en.wikipedia.org/wiki/Secret_Santa).
 I thought this sounded like an excellent idea an signed up to this. You can see [the end result](https://www.instagram.com/p/BrgNuDYhby8/) on [my Instagram](https://www.instagram.com/zetatwo/).
