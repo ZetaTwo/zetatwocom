@@ -155,11 +155,14 @@ body {
 .post-link {
   font-family: 'Questrial', sans-serif;
   background: url("/img/post_header.png") no-repeat;
-  /* The brush is 622x63: one-line titles get it at natural size, longer ones stretch it. */
-  background-size: min(100%, 622px) calc(100% - 20px);
-  min-height: 63px;
+  /* The brush is 622x63 and covers the whole box: one-line titles get it at
+     natural size (43px + 2 * 10px padding), wrapped titles stretch it. */
+  background-size: min(100%, 622px) 100%;
+  min-height: 43px;
   padding: 10px 20px;
   margin-left: 40px;
+  /* Vertical rhythm plus the 20px the box used to reserve below the brush. */
+  margin-bottom: calc(var(--spacing-unit) / 2 + 20px);
 }
 
 @media screen and (max-width: 600px) {
