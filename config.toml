@@ -44,4 +44,5 @@ disableKinds = ["taxonomy", "term"]
     inline = [['\(', '\)']]
 
 [markup.highlight]
+  # Emit CSS classes; the colours live in themes/zetatwo/assets/css/syntax-highlighting.css.
   noClasses = false
