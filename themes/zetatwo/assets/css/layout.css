@@ -59,11 +59,6 @@ body {
   background-color: var(--footer-color);
 }
 
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: calc(var(--spacing-unit) / 2);
-}
-
 .contact-list,
 .social-media-list {
     list-style: none;
