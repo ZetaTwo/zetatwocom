@@ -45,5 +45,4 @@ disableKinds = ["taxonomy", "term"]
     inline = [['\(', '\)']]
 
 [markup.highlight]
-  style = "monokai"
   noClasses = false

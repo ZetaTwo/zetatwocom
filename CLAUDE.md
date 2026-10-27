@@ -10,7 +10,7 @@ hugo --quiet              # one-shot build to public/
 hugo new posts/<cat>/$(date +%Y-%m-%d)-my-slug.md
 ```
 
-The theme's stylesheets are plain CSS in `themes/zetatwo/assets/css/`. Hugo's built-in `css.Build` (esbuild) bundles `main.css`'s `@import`s and minifies the result. The deploy workflow pins `HUGO_VERSION` (the version at the top of this file) in `.github/workflows/deploy.yml`. If you upgrade Hugo locally, update `HUGO_VERSION` and `min_version` in `themes/zetatwo/theme.toml` to match.
+The theme's stylesheets are plain CSS in `themes/zetatwo/assets/css/`. Hugo's built-in `css.Build` (esbuild) bundles `main.css`'s `@import`s and minifies the result. The deploy workflow pins `HUGO_VERSION` (the version at the top of this file) in `.github/workflows/deploy.yml`. If you upgrade Hugo locally, update `HUGO_VERSION`, `HUGO_SHA256` (the `linux-amd64.deb` line of the release's `hugo_<version>_checksums.txt`) and `min_version` in `themes/zetatwo/theme.toml` to match.
 
 ## Deploy
 
@@ -41,7 +41,7 @@ themes/zetatwo/
   assets/css/{variables,base,layout,syntax-highlighting}.css   plain CSS; variables.css holds the custom properties
   static/img/                        theme images (banners, backgrounds)
 static/
-  assets/                            content images, KaTeX JS, PDFs, videos
+  assets/                            content images, PDFs, videos, downloads
   {CNAME, favicon.ico, robots.txt}
 .github/workflows/deploy.yml         GH Pages deploy
 ```
