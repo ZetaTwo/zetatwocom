@@ -9,8 +9,8 @@ If you want me to come and give a presentation at your event or your company, fe
 * [SEC-T 2016 Talk: SMT in RE](/education/2016/09/08/sect2016-talk/) - A talk about how SMT can be used in Reverse Engineering originally given at SEC-T 2016.
 * [Security Fest 2017 Talk: Reversing with determination](/education/2017/09/21/secfest17-talk/) - A talk about Reverse Engineering techniques at Security Fest 2017.
 * [SEC-T 2017 Talk: Unauthenticated encryption in the wild](/education/2017/10/22/sect2017-talk/) - A talk about the problems of using unauthenticated encryption given at SEC-T 2017.
-* [Nixucon 2018: Using SMT solvers for binary analysis and exploitation](/education/2019/01/03/passwordscon18-talk/) - Essentially my SEC-T 2016 and 2018 talks combined into a longer talk.
-* [SEC-T 2018 Talk: Fun with symbolic execution](/education/2019/01/03/sect18-talk/) - A talk about symbolic exection and examples on how to use it.
+* [Nixucon 2018: Using SMT solvers for binary analysis and exploitation](/education/2019/01/03/nixucon18-talk/) - Essentially my SEC-T 2016 and 2018 talks combined into a longer talk.
+* [SEC-T 2018 Talk: Fun with symbolic execution](/education/2019/01/03/sect18-talk/) - A talk about symbolic execution and examples on how to use it.
 * [PasswordsCon 2018 - Protecting medical data with passwordless authentication](/education/2019/01/03/passwordscon18-talk/) - A talk about how we do authentication and identification at KRY/LIVI.
 * [Talk at Detectify - From Zero to Zero Day](/education/2019/01/03/detectify18-talk/) - A talk about my background how to get into security and an RCE in GitHub.
 * [Talk at Google Stockholm - From Overflow to Shell](/education/2019/01/03/google18-talk/) - A presentation about the basics of binary exploitation.
@@ -19,9 +19,12 @@ If you want me to come and give a presentation at your event or your company, fe
 * [0xFF - Talk and workshop about CTF](/education/2019/06/27/0xff-talk/) - A presentation and workshop about CTFs.
 * [SecurityFest 2019 - Software Obfuscation with LLVM](/education/2019/06/27/securityfest19-talk/) - A presentation about code obfuscation and LLVM.
 * [SEC-T 2019 - Game Boy hacking / Bringing VGA to the Game Boy](/education/2019/11/05/sect19-talk/) - Two presentations given at SEC-T 2019 about Game Boy hacking and building a Game Boy VGA adapter
+* [0xFF - Binary exploitation](/education/2019/11/21/0xff-exploit-talk/) - A presentation about the basics of binary exploitation.
 * [Chalmers - Security at KRY/LIVI 2019](/education/2019/04/11/chalmers-kry-talk/) - A presentation I gave to students at Chalmers University about the security work at KRY/LIVI.
 * [Chalmers - Security at KRY/LIVI 2020](/education/2020/04/29/chalmers-kry-talk/) - A presentation I gave to students at Chalmers University about the security work at KRY/LIVI.
 * [MassifCon 2020 - Theft and Doxxing](/education/2020/02/08/massifcon20-talk/) - A talk about the two most unethical things I have done in my career.
+* [DSC Munich 2021 - An Introduction to Binary Exploitation](/education/2021/01/28/dsc-munich-talk/) - A presentation about the basics of binary exploitation for students at DSC Munich.
+* [RE//verse 2026 - Reversing Age of Empires 2: Upgrading tools from Dark Age to Castle Age](/education/2026/03/05/reverse26-talk/) - A talk about reverse engineering Age of Empires 2 and the Binary Ninja automation and plugins I developed to decrypt and de-obfuscate its code.
 
 ## Upcoming talks
 
