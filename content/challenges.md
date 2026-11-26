@@ -8,9 +8,14 @@ On this page I plan to publish various challenges I have created. I currently on
 
 ![Starcraft: Brood War logo](/assets/images/software/broodwar-logo.jpg)
 
-The goal of this challenge is to exploit an old bug in Starcraft: Brood War. It was originally developed for the Midnight Sun 2020 CTF but I have now published it here for anyone to try out. To attempt the challenge, [download the materials](/assets/other/starcraft-challenge.tgz), follow the instructions and start hacking. Once you have solved the challenge, please send me an email as outlined in the README file. If there are any issues with the challenge, reach out to me. Note that there are public write-ups of the challenge but I expect you to not simply copy-paste an existing solution. I will soon also publish a post about building the infrastrucure for this challenge as it was quite a project.
+The goal of this challenge is to exploit an old bug in Starcraft: Brood War. It was originally developed for the Midnight Sun 2020 CTF. For a while I also hosted a standalone version here that anyone could play against a live bot. I have since **retired the hosted version** and taken the download offline.
 
-Solvers:
+If you want to understand the bug and how the exploit works, I've written it up in detail in [this blog post](/software/2020/04/05/exploiting-starcraft1/).
+
+Solvers of the hosted version:
 
 - 2022-01-26: ZetaTwo
-- Your name here?
+
+## Challenge Archive
+
+I'm putting together an archive of the CTF challenges I've authored over the years, collected in one place with their source, handouts, and solutions. This Starcraft challenge will be part of it, repackaged so you can run the whole thing locally without any hosted server. I'll link the archive here once it's released.
